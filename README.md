@@ -1,6 +1,6 @@
 # A short introduction to Python for computing
 
-## nbvierwer: Read the notebooks (cannot edit or run)
+## nbviewer: Read the notebooks (cannot edit or run)
 
  * [Introduction](http://nbviewer.jupyter.org/github/cpraveen/python/blob/master/01_intro.ipynb)
  * [Numpy](http://nbviewer.jupyter.org/github/cpraveen/python/blob/master/02_numpy.ipynb)
@@ -23,6 +23,8 @@ or import the individual notebooks into colab using the following links
  * [Matplotlib](http://colab.research.google.com/github/cpraveen/python/blob/master/04_matplotlib.ipynb)
  * [Sympy](http://colab.research.google.com/github/cpraveen/python/blob/master/05_sympy.ipynb)
  * [Scipy](http://colab.research.google.com/github/cpraveen/python/blob/master/06_scipy.ipynb)
+
+After importing into colab, you can edit and run the notebooks but the changes you make will not be saved. To save your changes, you must first make a copy of the notebook into your google drive by File --> Save a copy in drive.
 
 ## Other resources
 
