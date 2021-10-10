@@ -24,7 +24,7 @@ or import the individual notebooks into colab using the following links
  * [Sympy](http://colab.research.google.com/github/cpraveen/python/blob/master/05_sympy.ipynb)
  * [Scipy](http://colab.research.google.com/github/cpraveen/python/blob/master/06_scipy.ipynb)
 
-After importing into colab, you can edit and run the notebooks but the changes you make will not be saved. To save your changes, you must first make a copy of the notebook into your google drive by File --> Save a copy in drive.
+After importing into colab, you can edit and run the notebooks but the **changes you make will not be saved**. To save your changes, you must first make a copy of the notebook into your google drive by `File --> Save a copy in drive`.
 
 ## Other resources
 
