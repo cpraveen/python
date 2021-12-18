@@ -9,6 +9,10 @@
  * [Sympy](http://nbviewer.jupyter.org/github/cpraveen/python/blob/master/05_sympy.ipynb)
  * [Scipy](http://nbviewer.jupyter.org/github/cpraveen/python/blob/master/06_scipy.ipynb)
 
+## binder: Read/edit/run the notebooks
+
+Run the code in binder: [![Binder](https://mybinder.org/badge_logo.svg)](https://mybinder.org/v2/gh/cpraveen/python/HEAD)
+
 ## colab: Read/edit/run the notebooks
 
 You can see a listing of all the notebooks on colab via this url
