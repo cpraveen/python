@@ -2,6 +2,7 @@
 
 ## nbviewer: Read the notebooks (cannot edit or run)
 
+ * [Coding tips](http://nbviewer.jupyter.org/github/cpraveen/python/blob/master/00_tips.ipynb)
  * [Introduction](http://nbviewer.jupyter.org/github/cpraveen/python/blob/master/01_intro.ipynb)
  * [Numpy](http://nbviewer.jupyter.org/github/cpraveen/python/blob/master/02_numpy.ipynb)
  * [Functions](http://nbviewer.jupyter.org/github/cpraveen/python/blob/master/03_functions.ipynb)
