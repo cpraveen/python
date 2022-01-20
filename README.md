@@ -13,7 +13,7 @@
 
 ## binder: Read/edit/run the notebooks
 
-Run the code in binder: [![Binder](https://mybinder.org/badge_logo.svg)](https://mybinder.org/v2/gh/cpraveen/python/HEAD). When you first click on this link, it may take a few minutes to set up the environment with all required packages.
+Run the code in binder: [![Binder](https://mybinder.org/badge_logo.svg)](https://mybinder.org/v2/gh/cpraveen/python/HEAD). When you first click on this link, it may take a few minutes to set up the environment with all required packages. Then you can edit and run the notebooks, but you cannot save them; but you can download the notebooks to your computer.
 
 ## colab: Read/edit/run the notebooks
 
