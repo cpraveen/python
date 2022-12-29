@@ -36,3 +36,6 @@ After importing into colab, you can edit and run the notebooks but the **changes
 * [Python tutorial](https://docs.python.org/tutorial)
 * [NumPy Illustrated](http://medium.com/better-programming/numpy-illustrated-the-visual-guide-to-numpy-3b1d4976de1d)
 * [Scipy Lecture Notes](http://scipy-lectures.org)
+* Markdown syntax
+  * [The Ultimate Markdown Guide](https://medium.com/analytics-vidhya/the-ultimate-markdown-guide-for-jupyter-notebook-d5e5abf728fd)
+  * [Working with markdown cells](https://jupyter-notebook.readthedocs.io/en/stable/examples/Notebook/Working%20With%20Markdown%20Cells.html)
