@@ -1,0 +1,13 @@
+# Table of contents
+# Learn more at https://jupyterbook.org/customize/toc.html
+
+format: jb-book
+root: front
+chapters:
+  - file: 00_tips.ipynb
+  - file: 01_intro.ipynb
+  - file: 02_numpy.ipynb
+  - file: 03_functions.ipynb
+  - file: 04_matplotlib.ipynb
+  - file: 05_sympy.ipynb
+  - file: 06_scipy.ipynb
