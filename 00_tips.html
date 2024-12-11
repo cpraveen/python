@@ -371,7 +371,7 @@
 <li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#main-title">Main title</a><ul class="visible nav section-nav flex-column">
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#section">Section</a><ul class="nav section-nav flex-column">
 <li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#subsection">Subsection</a><ul class="nav section-nav flex-column">
-<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#id1">Subsection</a></li>
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#subsubsection">Subsubsection</a></li>
 </ul>
 </li>
 </ul>
@@ -398,7 +398,7 @@
 <div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="c1"># Main title</span>
 <span class="c1">## Section</span>
 <span class="c1">### Subsection</span>
-<span class="c1">#### Subsection</span>
+<span class="c1">#### Subsubsection</span>
 </pre></div>
 </div>
 <p>gives</p>
@@ -409,8 +409,8 @@
 <h2>Section<a class="headerlink" href="#section" title="Link to this heading">#</a></h2>
 <section id="subsection">
 <h3>Subsection<a class="headerlink" href="#subsection" title="Link to this heading">#</a></h3>
-<section id="id1">
-<h4>Subsection<a class="headerlink" href="#id1" title="Link to this heading">#</a></h4>
+<section id="subsubsection">
+<h4>Subsubsection<a class="headerlink" href="#subsubsection" title="Link to this heading">#</a></h4>
 <p>Itemize</p>
 <div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="o">*</span> <span class="n">First</span> <span class="n">item</span>
 <span class="o">*</span> <span class="n">Second</span> <span class="n">item</span>
@@ -469,49 +469,97 @@
 <section id="latex">
 <h2>Latex<a class="headerlink" href="#latex" title="Link to this heading">#</a></h2>
 <p>Jupyter supports only a small subset of Latex.</p>
-<p>In line math is enclosed in dollars: <span class="math notranslate nohighlight">\(y = f(x)\)</span></p>
+<p>In line math is enclosed in dollars: <code class="docutils literal notranslate"><span class="pre">$y</span> <span class="pre">=</span> <span class="pre">f(x)$</span></code> gives <span class="math notranslate nohighlight">\(y = f(x)\)</span></p>
 <p>Equations are enclosed in double dollars</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span>$$
+y = f(x)
+$$
+</pre></div>
+</div>
 <div class="math notranslate nohighlight">
 \[
 y = f(x)
 \]</div>
 <p>Math functions: use <code class="docutils literal notranslate"><span class="pre">\sin</span></code>, <code class="docutils literal notranslate"><span class="pre">\cos</span></code>, etc.</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span>$$
+\sin(x), \qquad \cos(x), \qquad \log(x), \qquad \exp(x)
+$$
+</pre></div>
+</div>
 <div class="math notranslate nohighlight">
 \[
 \sin(x), \qquad \cos(x), \qquad \log(x), \qquad \exp(x)
 \]</div>
 <p>We can put space in math using <code class="docutils literal notranslate"><span class="pre">\quad</span></code> and <code class="docutils literal notranslate"><span class="pre">\qquad</span></code>.</p>
 <p>Greek symbols are obtained naturally by adding a forward slash</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span>$$
+\alpha, \qquad \beta, \qquad \gamma, \qquad \delta, \qquad \epsilon, \qquad \varepsilon
+$$
+</pre></div>
+</div>
 <div class="math notranslate nohighlight">
 \[
 \alpha, \qquad \beta, \qquad \gamma, \qquad \delta, \qquad \epsilon, \qquad \varepsilon
 \]</div>
 <p>Subscripts and superscripts</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span>$$
+a_m, \qquad a_{mn}, \qquad x^n, \qquad y^{n+1}
+$$
+</pre></div>
+</div>
 <div class="math notranslate nohighlight">
 \[
 a_m, \qquad a_{mn}, \qquad x^n, \qquad y^{n+1}
 \]</div>
 <p>Fractions using <code class="docutils literal notranslate"><span class="pre">\frac</span></code> and <code class="docutils literal notranslate"><span class="pre">\tfrac</span></code></p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span>$$
+\frac{x}{y}, \qquad \tfrac{x}{y}
+$$
+</pre></div>
+</div>
 <div class="math notranslate nohighlight">
 \[
 \frac{x}{y}, \qquad \tfrac{x}{y}
 \]</div>
 <p>Automatically adjusting brackets</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span>$$
+f(x) = \left( 1 + \frac{e^x}{1+x} \right) \left[ 1 - \frac{e^x}{1-x} \right]
+$$
+</pre></div>
+</div>
 <div class="math notranslate nohighlight">
 \[
 f(x) = \left( 1 + \frac{e^x}{1+x} \right) \left[ 1 - \frac{e^x}{1-x} \right]
 \]</div>
 <p>ODE</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span>$$
+\frac{d y}{d t} = f(t,y)
+$$
+</pre></div>
+</div>
 <div class="math notranslate nohighlight">
 \[
 \frac{d y}{d t} = f(t,y)
 \]</div>
 <p>PDE</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span>$$
+\frac{\partial u}{\partial t} + \frac{\partial f}{\partial x} = 0
+$$
+</pre></div>
+</div>
 <div class="math notranslate nohighlight">
 \[
 \frac{\partial u}{\partial t} + \frac{\partial f}{\partial x} = 0
 \]</div>
-<p>To reduce typing, we will define some aliases; to see them, double click on this block.</p>
+<p>To reduce typing, we will define some aliases</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span>$$
+\newcommand{\re}{\mathbb{R}}
+\newcommand{\mathd}{\textrm{d}}
+\newcommand{\od}[2]{\frac{\mathd #1}{\mathd #2}}
+\newcommand{\pd}[2]{\frac{\partial #1}{\partial #2}}
+$$
+</pre></div>
+</div>
 <div class="math notranslate nohighlight">
 \[
 \newcommand{\re}{\mathbb{R}}
@@ -520,11 +568,24 @@ f(x) = \left( 1 + \frac{e^x}{1+x} \right) \left[ 1 - \frac{e^x}{1-x} \right]
 \newcommand{\pd}[2]{\frac{\partial #1}{\partial #2}}
 \]</div>
 <p>We write the ODE and PDE again</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span>$$
+\od{y}{t} = f(t,y), \qquad \pd{u}{t} + \pd{f}{x} = 0
+$$
+</pre></div>
+</div>
 <div class="math notranslate nohighlight">
 \[
 \od{y}{t} = f(t,y), \qquad \pd{u}{t} + \pd{f}{x} = 0
 \]</div>
 <p>Heaviside function</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span>$$
+H(x) = \begin{cases}
+0, &amp; x &lt; 0 \\
+1, &amp; x &gt; 1
+\end{cases}
+$$
+</pre></div>
+</div>
 <div class="math notranslate nohighlight">
 \[\begin{split}
 H(x) = \begin{cases}
@@ -533,38 +594,77 @@ H(x) = \begin{cases}
 \end{cases}
 \end{split}\]</div>
 <p>Multi-line equation: <code class="docutils literal notranslate"><span class="pre">\eqnarray</span></code></p>
-<div class="amsmath math notranslate nohighlight" id="equation-c89c4af7-a111-40f1-8a0f-82e00ae25f0a">
-<span class="eqno">(1)<a class="headerlink" href="#equation-c89c4af7-a111-40f1-8a0f-82e00ae25f0a" title="Permalink to this equation">#</a></span>\[\begin{eqnarray}
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span>\<span class="n">begin</span><span class="p">{</span><span class="n">eqnarray</span><span class="p">}</span>
+<span class="n">y</span> <span class="o">&amp;=&amp;</span> <span class="p">(</span>\<span class="n">sin</span><span class="p">(</span><span class="n">x</span><span class="p">)</span> <span class="o">+</span> \<span class="n">cos</span><span class="p">(</span><span class="n">x</span><span class="p">))</span><span class="o">^</span><span class="mi">2</span> \\
+  <span class="o">&amp;=&amp;</span> \<span class="n">sin</span><span class="o">^</span><span class="mi">2</span><span class="p">(</span><span class="n">x</span><span class="p">)</span> <span class="o">+</span> \<span class="n">cos</span><span class="o">^</span><span class="mi">2</span><span class="p">(</span><span class="n">x</span><span class="p">)</span> <span class="o">+</span> <span class="mi">2</span> \<span class="n">sin</span><span class="p">(</span><span class="n">x</span><span class="p">)</span> \<span class="n">cos</span><span class="p">(</span><span class="n">x</span><span class="p">)</span> \\
+  <span class="o">&amp;=&amp;</span> <span class="mi">1</span> <span class="o">+</span> \<span class="n">sin</span><span class="p">(</span><span class="mi">2</span><span class="n">x</span><span class="p">)</span>
+\<span class="n">end</span><span class="p">{</span><span class="n">eqnarray</span><span class="p">}</span>
+</pre></div>
+</div>
+<div class="amsmath math notranslate nohighlight" id="equation-2b58a346-0567-4797-b4b2-db760383c3aa">
+<span class="eqno">(1)<a class="headerlink" href="#equation-2b58a346-0567-4797-b4b2-db760383c3aa" title="Permalink to this equation">#</a></span>\[\begin{eqnarray}
 y &amp;=&amp; (\sin(x) + \cos(x))^2 \\
   &amp;=&amp; \sin^2(x) + \cos^2(x) + 2 \sin(x) \cos(x) \\
   &amp;=&amp; 1 + \sin(2x)
 \end{eqnarray}\]</div>
 <p>Multi-line equation: <code class="docutils literal notranslate"><span class="pre">\align</span></code></p>
-<div class="amsmath math notranslate nohighlight" id="equation-7dd142fd-1227-4018-883c-a70e23a921bb">
-<span class="eqno">(2)<a class="headerlink" href="#equation-7dd142fd-1227-4018-883c-a70e23a921bb" title="Permalink to this equation">#</a></span>\[\begin{align}
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span>\<span class="n">begin</span><span class="p">{</span><span class="n">align</span><span class="p">}</span>
+<span class="n">y</span> <span class="o">&amp;=</span> <span class="p">(</span>\<span class="n">sin</span><span class="p">(</span><span class="n">x</span><span class="p">)</span> <span class="o">+</span> \<span class="n">cos</span><span class="p">(</span><span class="n">x</span><span class="p">))</span><span class="o">^</span><span class="mi">2</span> \\
+  <span class="o">&amp;=</span> \<span class="n">sin</span><span class="o">^</span><span class="mi">2</span><span class="p">(</span><span class="n">x</span><span class="p">)</span> <span class="o">+</span> \<span class="n">cos</span><span class="o">^</span><span class="mi">2</span><span class="p">(</span><span class="n">x</span><span class="p">)</span> <span class="o">+</span> <span class="mi">2</span> \<span class="n">sin</span><span class="p">(</span><span class="n">x</span><span class="p">)</span> \<span class="n">cos</span><span class="p">(</span><span class="n">x</span><span class="p">)</span> \\
+  <span class="o">&amp;=</span> <span class="mi">1</span> <span class="o">+</span> \<span class="n">sin</span><span class="p">(</span><span class="mi">2</span><span class="n">x</span><span class="p">)</span>
+\<span class="n">end</span><span class="p">{</span><span class="n">align</span><span class="p">}</span>
+</pre></div>
+</div>
+<div class="amsmath math notranslate nohighlight" id="equation-ff947b0b-441c-4e06-9365-dcdb4d393360">
+<span class="eqno">(2)<a class="headerlink" href="#equation-ff947b0b-441c-4e06-9365-dcdb4d393360" title="Permalink to this equation">#</a></span>\[\begin{align}
 y &amp;= (\sin(x) + \cos(x))^2 \\
   &amp;= \sin^2(x) + \cos^2(x) + 2 \sin(x) \cos(x) \\
   &amp;= 1 + \sin(2x)
 \end{align}\]</div>
 <p>which allows multiple alignments</p>
-<div class="amsmath math notranslate nohighlight" id="equation-01cb63c9-d7c0-449a-974a-313dff2ec2db">
-<span class="eqno">(3)<a class="headerlink" href="#equation-01cb63c9-d7c0-449a-974a-313dff2ec2db" title="Permalink to this equation">#</a></span>\[\begin{align}
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span>\<span class="n">begin</span><span class="p">{</span><span class="n">align</span><span class="p">}</span>
+<span class="n">y</span> <span class="o">&amp;=</span> <span class="p">(</span>\<span class="n">sin</span><span class="p">(</span><span class="n">x</span><span class="p">)</span> <span class="o">+</span> \<span class="n">cos</span><span class="p">(</span><span class="n">x</span><span class="p">))</span><span class="o">^</span><span class="mi">2</span> <span class="o">&amp;</span> \\
+  <span class="o">&amp;=</span> \<span class="n">sin</span><span class="o">^</span><span class="mi">2</span><span class="p">(</span><span class="n">x</span><span class="p">)</span> <span class="o">+</span> \<span class="n">cos</span><span class="o">^</span><span class="mi">2</span><span class="p">(</span><span class="n">x</span><span class="p">)</span> <span class="o">+</span> <span class="mi">2</span> \<span class="n">sin</span><span class="p">(</span><span class="n">x</span><span class="p">)</span> \<span class="n">cos</span><span class="p">(</span><span class="n">x</span><span class="p">)</span> <span class="o">&amp;</span> \\
+  <span class="o">&amp;=</span> <span class="mi">1</span> <span class="o">+</span> \<span class="n">sin</span><span class="p">(</span><span class="mi">2</span><span class="n">x</span><span class="p">),</span> <span class="o">&amp;</span> \<span class="n">textrm</span><span class="p">{</span><span class="n">since</span> <span class="p">}</span> \<span class="n">sin</span><span class="o">^</span><span class="mi">2</span><span class="p">(</span><span class="n">x</span><span class="p">)</span> <span class="o">+</span> \<span class="n">cos</span><span class="o">^</span><span class="mi">2</span><span class="p">(</span><span class="n">x</span><span class="p">)</span> <span class="o">=</span> <span class="mi">1</span>
+\<span class="n">end</span><span class="p">{</span><span class="n">align</span><span class="p">}</span>
+</pre></div>
+</div>
+<div class="amsmath math notranslate nohighlight" id="equation-1a62dc9a-8942-425d-91bc-1829940068b3">
+<span class="eqno">(3)<a class="headerlink" href="#equation-1a62dc9a-8942-425d-91bc-1829940068b3" title="Permalink to this equation">#</a></span>\[\begin{align}
 y &amp;= (\sin(x) + \cos(x))^2 &amp; \\
   &amp;= \sin^2(x) + \cos^2(x) + 2 \sin(x) \cos(x) &amp; \\
   &amp;= 1 + \sin(2x), &amp; \textrm{since } \sin^2(x) + \cos^2(x) = 1
 \end{align}\]</div>
 <p>Use <code class="docutils literal notranslate"><span class="pre">\gather</span></code> to stack many equations without alignment</p>
-<div class="amsmath math notranslate nohighlight" id="equation-5c5fa440-a1b2-4277-807a-863afb798c82">
-<span class="eqno">(4)<a class="headerlink" href="#equation-5c5fa440-a1b2-4277-807a-863afb798c82" title="Permalink to this equation">#</a></span>\[\begin{gather}
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span>\<span class="n">begin</span><span class="p">{</span><span class="n">gather</span><span class="p">}</span>
+<span class="n">y</span> <span class="o">=</span> <span class="n">x_1</span> <span class="o">+</span> <span class="n">x_2</span> <span class="o">+</span> <span class="n">x_3</span> <span class="o">+</span> <span class="n">x_4</span> \\
+<span class="n">z</span> <span class="o">=</span> <span class="n">x_1</span> <span class="o">+</span> <span class="n">x_2</span>
+\<span class="n">end</span><span class="p">{</span><span class="n">gather</span><span class="p">}</span>
+</pre></div>
+</div>
+<div class="amsmath math notranslate nohighlight" id="equation-af9c6481-8343-4b34-9a76-523a6a47da1b">
+<span class="eqno">(4)<a class="headerlink" href="#equation-af9c6481-8343-4b34-9a76-523a6a47da1b" title="Permalink to this equation">#</a></span>\[\begin{gather}
 y = x_1 + x_2 + x_3 + x_4 \\
 z = x_1 + x_2
 \end{gather}\]</div>
 <p>Equation numbering is not well supported in markdown, but we can put numbers by hard-coding them</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span>$$
+u_t + u \cdot \nabla u + \nabla p = \epsilon \Delta u \tag{1}
+$$
+</pre></div>
+</div>
 <div class="math notranslate nohighlight">
 \[
 u_t + u \cdot \nabla u + \nabla p = \epsilon \Delta u \tag{1}
 \]</div>
 <p>Linear Algebra:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span>&gt; Given $b \in R^m$ and $A \in R^{m \times m}$, find $x \in R^m$ such that
+&gt; 
+&gt; $$
+  A x = b
+  $$
+</pre></div>
+</div>
 <blockquote>
 <div><p>Given <span class="math notranslate nohighlight">\(b \in R^m\)</span> and <span class="math notranslate nohighlight">\(A \in R^{m \times m}\)</span>, find <span class="math notranslate nohighlight">\(x \in R^m\)</span> such that</p>
 <div class="math notranslate nohighlight">
@@ -573,6 +673,13 @@ u_t + u \cdot \nabla u + \nabla p = \epsilon \Delta u \tag{1}
   \]</div>
 </div></blockquote>
 <p>The set of reals and complex are usually denoted as: <span class="math notranslate nohighlight">\(\mathbb{R}\)</span> and <span class="math notranslate nohighlight">\(\mathbb{C}\)</span>. So if we are very strict, we should write:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span>&gt; Given $b \in \mathbb{R}^m$ and $A \in \mathbb{R}^{m \times m}$, find $x \in \mathbb{R}^m$ such that
+&gt; 
+&gt; $$
+  A x = b
+  $$
+</pre></div>
+</div>
 <blockquote>
 <div><p>Given <span class="math notranslate nohighlight">\(b \in \mathbb{R}^m\)</span> and <span class="math notranslate nohighlight">\(A \in \mathbb{R}^{m \times m}\)</span>, find <span class="math notranslate nohighlight">\(x \in \mathbb{R}^m\)</span> such that</p>
 <div class="math notranslate nohighlight">
@@ -581,6 +688,15 @@ u_t + u \cdot \nabla u + \nabla p = \epsilon \Delta u \tag{1}
   \]</div>
 </div></blockquote>
 <p>Matrix</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span>$$
+A = \begin{bmatrix}
+a_{11} &amp; a_{12} &amp; a_{13} \\
+a_{21} &amp; a_{22} &amp; a_{23} \\
+a_{31} &amp; a_{32} &amp; a_{33}
+\end{bmatrix}
+$$
+</pre></div>
+</div>
 <div class="math notranslate nohighlight">
 \[\begin{split}
 A = \begin{bmatrix}
@@ -590,6 +706,11 @@ a_{31} &amp; a_{32} &amp; a_{33}
 \end{bmatrix}
 \end{split}\]</div>
 <p>Condition number of matrix <span class="math notranslate nohighlight">\(A \in R^{m \times m}\)</span></p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span>$$
+\kappa = \| A \|  \| A^{-1} \|
+$$
+</pre></div>
+</div>
 <div class="math notranslate nohighlight">
 \[
 \kappa = \| A \|  \| A^{-1} \|
@@ -723,7 +844,7 @@ a_{31} &amp; a_{32} &amp; a_{33}
 <li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#main-title">Main title</a><ul class="visible nav section-nav flex-column">
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#section">Section</a><ul class="nav section-nav flex-column">
 <li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#subsection">Subsection</a><ul class="nav section-nav flex-column">
-<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#id1">Subsection</a></li>
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#subsubsection">Subsubsection</a></li>
 </ul>
 </li>
 </ul>
