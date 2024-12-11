@@ -173,6 +173,7 @@
         <ul class="current nav bd-sidenav">
 <li class="toctree-l1 current active"><a class="current reference internal" href="#">Markdown, Latex and programming tips</a></li>
 
+
 <li class="toctree-l1"><a class="reference internal" href="01_intro.html">Introduction</a></li>
 <li class="toctree-l1"><a class="reference internal" href="02_numpy.html">Numpy</a></li>
 <li class="toctree-l1"><a class="reference internal" href="03_functions.html">Functions</a></li>
@@ -366,7 +367,15 @@
             </div>
             <nav aria-label="Page">
                 <ul class="visible nav section-nav flex-column">
-<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#">Markdown, Latex and programming tips</a><ul class="visible nav section-nav flex-column">
+<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#">Markdown, Latex and programming tips</a></li>
+<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#main-title">Main title</a><ul class="visible nav section-nav flex-column">
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#section">Section</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#subsection">Subsection</a><ul class="nav section-nav flex-column">
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#id1">Subsection</a></li>
+</ul>
+</li>
+</ul>
+</li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#latex">Latex</a></li>
 </ul>
 </li>
@@ -392,7 +401,25 @@
 <span class="c1">#### Subsection</span>
 </pre></div>
 </div>
+<p>gives</p>
+</section>
+<section class="tex2jax_ignore mathjax_ignore" id="main-title">
+<h1>Main title<a class="headerlink" href="#main-title" title="Link to this heading">#</a></h1>
+<section id="section">
+<h2>Section<a class="headerlink" href="#section" title="Link to this heading">#</a></h2>
+<section id="subsection">
+<h3>Subsection<a class="headerlink" href="#subsection" title="Link to this heading">#</a></h3>
+<section id="id1">
+<h4>Subsection<a class="headerlink" href="#id1" title="Link to this heading">#</a></h4>
 <p>Itemize</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="o">*</span> <span class="n">First</span> <span class="n">item</span>
+<span class="o">*</span> <span class="n">Second</span> <span class="n">item</span>
+<span class="o">*</span> <span class="n">Third</span> <span class="n">item</span>
+  <span class="o">*</span> <span class="n">sub</span> <span class="n">item</span>
+  <span class="o">*</span> <span class="n">sub</span> <span class="n">item</span>
+</pre></div>
+</div>
+<p>gives</p>
 <ul class="simple">
 <li><p>First item</p></li>
 <li><p>Second item</p></li>
@@ -404,6 +431,14 @@
 </li>
 </ul>
 <p>Enumerate</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="mf">1.</span> <span class="n">First</span> <span class="n">item</span>
+<span class="mf">1.</span> <span class="n">Second</span> <span class="n">item</span>
+<span class="mf">1.</span> <span class="n">Third</span> <span class="n">item</span>
+   <span class="mf">1.</span> <span class="n">sub</span> <span class="n">item</span>
+   <span class="mf">1.</span> <span class="n">sub</span> <span class="n">item</span>
+</pre></div>
+</div>
+<p>gives</p>
 <ol class="arabic simple">
 <li><p>First item</p></li>
 <li><p>Second item</p></li>
@@ -428,6 +463,9 @@
 <p>In my opinion the answer to this question is, briefly, this:- As far as the laws of mathematics refer to reality, they are not certain; and as far as they are certain, they do not refer to reality.</p>
 <p>(Albert Einstein, “Geometry and Experience”, Prussian Academy of Science, Berlin, 27 January 1921)</p>
 </div></blockquote>
+</section>
+</section>
+</section>
 <section id="latex">
 <h2>Latex<a class="headerlink" href="#latex" title="Link to this heading">#</a></h2>
 <p>Jupyter supports only a small subset of Latex.</p>
@@ -495,29 +533,29 @@ H(x) = \begin{cases}
 \end{cases}
 \end{split}\]</div>
 <p>Multi-line equation: <code class="docutils literal notranslate"><span class="pre">\eqnarray</span></code></p>
-<div class="amsmath math notranslate nohighlight" id="equation-9fe8d61b-14e8-4af8-9a1a-e1d8df323a86">
-<span class="eqno">(1)<a class="headerlink" href="#equation-9fe8d61b-14e8-4af8-9a1a-e1d8df323a86" title="Permalink to this equation">#</a></span>\[\begin{eqnarray}
+<div class="amsmath math notranslate nohighlight" id="equation-c89c4af7-a111-40f1-8a0f-82e00ae25f0a">
+<span class="eqno">(1)<a class="headerlink" href="#equation-c89c4af7-a111-40f1-8a0f-82e00ae25f0a" title="Permalink to this equation">#</a></span>\[\begin{eqnarray}
 y &amp;=&amp; (\sin(x) + \cos(x))^2 \\
   &amp;=&amp; \sin^2(x) + \cos^2(x) + 2 \sin(x) \cos(x) \\
   &amp;=&amp; 1 + \sin(2x)
 \end{eqnarray}\]</div>
 <p>Multi-line equation: <code class="docutils literal notranslate"><span class="pre">\align</span></code></p>
-<div class="amsmath math notranslate nohighlight" id="equation-db1d6eb8-db30-40c8-80b6-2fae670d0bd0">
-<span class="eqno">(2)<a class="headerlink" href="#equation-db1d6eb8-db30-40c8-80b6-2fae670d0bd0" title="Permalink to this equation">#</a></span>\[\begin{align}
+<div class="amsmath math notranslate nohighlight" id="equation-7dd142fd-1227-4018-883c-a70e23a921bb">
+<span class="eqno">(2)<a class="headerlink" href="#equation-7dd142fd-1227-4018-883c-a70e23a921bb" title="Permalink to this equation">#</a></span>\[\begin{align}
 y &amp;= (\sin(x) + \cos(x))^2 \\
   &amp;= \sin^2(x) + \cos^2(x) + 2 \sin(x) \cos(x) \\
   &amp;= 1 + \sin(2x)
 \end{align}\]</div>
 <p>which allows multiple alignments</p>
-<div class="amsmath math notranslate nohighlight" id="equation-75ee462b-7a91-40d9-b280-c38e8773afff">
-<span class="eqno">(3)<a class="headerlink" href="#equation-75ee462b-7a91-40d9-b280-c38e8773afff" title="Permalink to this equation">#</a></span>\[\begin{align}
+<div class="amsmath math notranslate nohighlight" id="equation-01cb63c9-d7c0-449a-974a-313dff2ec2db">
+<span class="eqno">(3)<a class="headerlink" href="#equation-01cb63c9-d7c0-449a-974a-313dff2ec2db" title="Permalink to this equation">#</a></span>\[\begin{align}
 y &amp;= (\sin(x) + \cos(x))^2 &amp; \\
   &amp;= \sin^2(x) + \cos^2(x) + 2 \sin(x) \cos(x) &amp; \\
   &amp;= 1 + \sin(2x), &amp; \textrm{since } \sin^2(x) + \cos^2(x) = 1
 \end{align}\]</div>
 <p>Use <code class="docutils literal notranslate"><span class="pre">\gather</span></code> to stack many equations without alignment</p>
-<div class="amsmath math notranslate nohighlight" id="equation-c33937b7-9ded-467e-b6c7-f717731f09f9">
-<span class="eqno">(4)<a class="headerlink" href="#equation-c33937b7-9ded-467e-b6c7-f717731f09f9" title="Permalink to this equation">#</a></span>\[\begin{gather}
+<div class="amsmath math notranslate nohighlight" id="equation-5c5fa440-a1b2-4277-807a-863afb798c82">
+<span class="eqno">(4)<a class="headerlink" href="#equation-5c5fa440-a1b2-4277-807a-863afb798c82" title="Permalink to this equation">#</a></span>\[\begin{gather}
 y = x_1 + x_2 + x_3 + x_4 \\
 z = x_1 + x_2
 \end{gather}\]</div>
@@ -582,21 +620,26 @@ a_{31} &amp; a_{32} &amp; a_{33}
 </pre></div>
 </div>
 </li>
-<li><p>Use brackets in formulae where needed. E.g., <span class="math notranslate nohighlight">\(f = \frac{a}{b c}\)</span>
-$<span class="math notranslate nohighlight">\(
-\textrm{f = a / b * c} \qquad \textrm{wrong, this gives} \qquad f = \left(\frac{a}{b}\right) c
-\)</span><span class="math notranslate nohighlight">\(
-correct code is
-\)</span><span class="math notranslate nohighlight">\(
-\textrm{f = a / (b * c)}
-\)</span><span class="math notranslate nohighlight">\(
-Another example
-\)</span><span class="math notranslate nohighlight">\(
-\textrm{f = x + y + z * sin(a) * cos(b)} \qquad \textrm{gives} \qquad f = x + y + (z \sin(a) \cos(b)) 
-\)</span><span class="math notranslate nohighlight">\(
-\)</span><span class="math notranslate nohighlight">\(
-\textrm{f = (x + y + z) * sin(a) * cos(b)} \qquad \textrm{gives} \qquad f = (x + y + z) \sin(a) \cos(b)
-\)</span>$</p></li>
+<li><p>Use brackets in formulae where needed. E.g., <span class="math notranslate nohighlight">\(f = \frac{a}{b c}\)</span></p>
+<div class="math notranslate nohighlight">
+\[
+    \textrm{f = a / b * c} \qquad \textrm{wrong, this gives} \qquad f = \left(\frac{a}{b}\right) c
+    \]</div>
+<p>correct code is</p>
+<div class="math notranslate nohighlight">
+\[
+    \textrm{f = a / (b * c)}
+    \]</div>
+<p>Another example</p>
+<div class="math notranslate nohighlight">
+\[
+    \textrm{f = x + y + z * sin(a) * cos(b)} \qquad \textrm{gives} \qquad f = x + y + (z \sin(a) \cos(b)) 
+    \]</div>
+<div class="math notranslate nohighlight">
+\[
+    \textrm{f = (x + y + z) * sin(a) * cos(b)} \qquad \textrm{gives} \qquad f = (x + y + z) \sin(a) \cos(b)
+    \]</div>
+</li>
 <li><p>Put a decimal when assigning float values; note that Python infers type based on the value you assign.</p></li>
 <li><p>Avoid writing long lines; continue long lines to new line or break into multiple statements of smaller size.</p></li>
 <li><p>Print some values to see computations are correct, and to monitor progress of code.</p></li>
@@ -676,7 +719,15 @@ Another example
   </div>
   <nav class="bd-toc-nav page-toc">
     <ul class="visible nav section-nav flex-column">
-<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#">Markdown, Latex and programming tips</a><ul class="visible nav section-nav flex-column">
+<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#">Markdown, Latex and programming tips</a></li>
+<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#main-title">Main title</a><ul class="visible nav section-nav flex-column">
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#section">Section</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#subsection">Subsection</a><ul class="nav section-nav flex-column">
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#id1">Subsection</a></li>
+</ul>
+</li>
+</ul>
+</li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#latex">Latex</a></li>
 </ul>
 </li>
