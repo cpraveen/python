@@ -1,0 +1,956 @@
+
+<!DOCTYPE html>
+
+
+<html lang="en" data-content_root="./" >
+
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="viewport" content="width=device-width, initial-scale=1" />
+
+    <title>Sympy &#8212; Python for Scientific Computing</title>
+  
+  
+  
+  <script data-cfasync="false">
+    document.documentElement.dataset.mode = localStorage.getItem("mode") || "";
+    document.documentElement.dataset.theme = localStorage.getItem("theme") || "";
+  </script>
+  <!-- 
+    this give us a css class that will be invisible only if js is disabled 
+  -->
+  <noscript>
+    <style>
+      .pst-js-only { display: none !important; }
+
+    </style>
+  </noscript>
+  
+  <!-- Loaded before other Sphinx assets -->
+  <link href="_static/styles/theme.css?digest=26a4bc78f4c0ddb94549" rel="stylesheet" />
+<link href="_static/styles/pydata-sphinx-theme.css?digest=26a4bc78f4c0ddb94549" rel="stylesheet" />
+
+    <link rel="stylesheet" type="text/css" href="_static/pygments.css?v=fa44fd50" />
+    <link rel="stylesheet" type="text/css" href="_static/styles/sphinx-book-theme.css?v=a3416100" />
+    <link rel="stylesheet" type="text/css" href="_static/togglebutton.css?v=13237357" />
+    <link rel="stylesheet" type="text/css" href="_static/copybutton.css?v=76b2166b" />
+    <link rel="stylesheet" type="text/css" href="_static/mystnb.4510f1fc1dee50b3e5859aac5469c37c29e427902b24a333a5f9fcb2f0b3ac41.css?v=be8a1c11" />
+    <link rel="stylesheet" type="text/css" href="_static/sphinx-thebe.css?v=4fa983c6" />
+    <link rel="stylesheet" type="text/css" href="_static/sphinx-design.min.css?v=95c83b7e" />
+  
+  <!-- So that users can add custom icons -->
+  <script src="_static/scripts/fontawesome.js?digest=26a4bc78f4c0ddb94549"></script>
+  <!-- Pre-loaded scripts that we'll load fully later -->
+  <link rel="preload" as="script" href="_static/scripts/bootstrap.js?digest=26a4bc78f4c0ddb94549" />
+<link rel="preload" as="script" href="_static/scripts/pydata-sphinx-theme.js?digest=26a4bc78f4c0ddb94549" />
+
+    <script src="_static/documentation_options.js?v=9eb32ce0"></script>
+    <script src="_static/doctools.js?v=9a2dae69"></script>
+    <script src="_static/sphinx_highlight.js?v=dc90522c"></script>
+    <script src="_static/clipboard.min.js?v=a7894cd8"></script>
+    <script src="_static/copybutton.js?v=f281be69"></script>
+    <script src="_static/scripts/sphinx-book-theme.js?v=887ef09a"></script>
+    <script>let toggleHintShow = 'Click to show';</script>
+    <script>let toggleHintHide = 'Click to hide';</script>
+    <script>let toggleOpenOnPrint = 'true';</script>
+    <script src="_static/togglebutton.js?v=4a39c7ea"></script>
+    <script>var togglebuttonSelector = '.toggle, .admonition.dropdown';</script>
+    <script src="_static/design-tabs.js?v=f930bc37"></script>
+    <script>const THEBE_JS_URL = "https://unpkg.com/thebe@0.8.2/lib/index.js"; const thebe_selector = ".thebe,.cell"; const thebe_selector_input = "pre"; const thebe_selector_output = ".output, .cell_output"</script>
+    <script async="async" src="_static/sphinx-thebe.js?v=c100c467"></script>
+    <script>var togglebuttonSelector = '.toggle, .admonition.dropdown';</script>
+    <script>const THEBE_JS_URL = "https://unpkg.com/thebe@0.8.2/lib/index.js"; const thebe_selector = ".thebe,.cell"; const thebe_selector_input = "pre"; const thebe_selector_output = ".output, .cell_output"</script>
+    <script>window.MathJax = {"options": {"processHtmlClass": "tex2jax_process|mathjax_process|math|output_area"}}</script>
+    <script defer="defer" src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
+    <script>DOCUMENTATION_OPTIONS.pagename = '05_sympy';</script>
+    <link rel="index" title="Index" href="genindex.html" />
+    <link rel="search" title="Search" href="search.html" />
+    <link rel="next" title="Scipy" href="06_scipy.html" />
+    <link rel="prev" title="Matplotlib" href="04_matplotlib.html" />
+  <meta name="viewport" content="width=device-width, initial-scale=1"/>
+  <meta name="docsearch:language" content="en"/>
+  <meta name="docsearch:version" content="" />
+  </head>
+  
+  
+  <body data-bs-spy="scroll" data-bs-target=".bd-toc-nav" data-offset="180" data-bs-root-margin="0px 0px -60%" data-default-mode="">
+
+  
+  
+  <div id="pst-skip-link" class="skip-link d-print-none"><a href="#main-content">Skip to main content</a></div>
+  
+  <div id="pst-scroll-pixel-helper"></div>
+  
+  <button type="button" class="btn rounded-pill" id="pst-back-to-top">
+    <i class="fa-solid fa-arrow-up"></i>Back to top</button>
+
+  
+  <dialog id="pst-search-dialog">
+    
+<form class="bd-search d-flex align-items-center"
+      action="search.html"
+      method="get">
+  <i class="fa-solid fa-magnifying-glass"></i>
+  <input type="search"
+         class="form-control"
+         name="q"
+         placeholder="Search this book..."
+         aria-label="Search this book..."
+         autocomplete="off"
+         autocorrect="off"
+         autocapitalize="off"
+         spellcheck="false"/>
+  <span class="search-button__kbd-shortcut"><kbd class="kbd-shortcut__modifier">Ctrl</kbd>+<kbd>K</kbd></span>
+</form>
+  </dialog>
+
+  <div class="pst-async-banner-revealer d-none">
+  <aside id="bd-header-version-warning" class="d-none d-print-none" aria-label="Version warning"></aside>
+</div>
+
+  
+    <header class="bd-header navbar navbar-expand-lg bd-navbar d-print-none">
+    </header>
+  
+
+  <div class="bd-container">
+    <div class="bd-container__inner bd-page-width">
+      
+      
+      
+      <dialog id="pst-primary-sidebar-modal"></dialog>
+      <div id="pst-primary-sidebar" class="bd-sidebar-primary bd-sidebar">
+        
+
+  
+  <div class="sidebar-header-items sidebar-primary__section">
+    
+    
+    
+    
+  </div>
+  
+    <div class="sidebar-primary-items__start sidebar-primary__section">
+        <div class="sidebar-primary-item">
+
+  
+    
+  
+
+<a class="navbar-brand logo" href="front.html">
+  
+  
+  
+  
+  
+    
+    
+      
+    
+    
+    <img src="_static/logo.png" class="logo__image only-light" alt="Python for Scientific Computing - Home"/>
+    <img src="_static/logo.png" class="logo__image only-dark pst-js-only" alt="Python for Scientific Computing - Home"/>
+  
+  
+</a></div>
+        <div class="sidebar-primary-item">
+
+<button class="btn search-button-field search-button__button pst-js-only" title="Search" aria-label="Search" data-bs-placement="bottom" data-bs-toggle="tooltip">
+ <i class="fa-solid fa-magnifying-glass"></i>
+ <span class="search-button__default-text">Search</span>
+ <span class="search-button__kbd-shortcut"><kbd class="kbd-shortcut__modifier">Ctrl</kbd>+<kbd class="kbd-shortcut__modifier">K</kbd></span>
+</button></div>
+        <div class="sidebar-primary-item"><nav class="bd-links bd-docs-nav" aria-label="Main">
+    <div class="bd-toc-item navbar-nav active">
+        
+        <ul class="nav bd-sidenav bd-sidenav__home-link">
+            <li class="toctree-l1">
+                <a class="reference internal" href="front.html">
+                    Python
+                </a>
+            </li>
+        </ul>
+        <ul class="current nav bd-sidenav">
+<li class="toctree-l1"><a class="reference internal" href="00_tips.html">Markdown, Latex and programming tips</a></li>
+
+<li class="toctree-l1"><a class="reference internal" href="01_intro.html">Introduction</a></li>
+<li class="toctree-l1"><a class="reference internal" href="02_numpy.html">Numpy</a></li>
+<li class="toctree-l1"><a class="reference internal" href="03_functions.html">Functions</a></li>
+<li class="toctree-l1"><a class="reference internal" href="04_matplotlib.html">Matplotlib</a></li>
+<li class="toctree-l1 current active"><a class="current reference internal" href="#">Sympy</a></li>
+<li class="toctree-l1"><a class="reference internal" href="06_scipy.html">Scipy</a></li>
+</ul>
+
+    </div>
+</nav></div>
+    </div>
+  
+  
+  <div class="sidebar-primary-items__end sidebar-primary__section">
+  </div>
+  
+  <div id="rtd-footer-container"></div>
+
+
+      </div>
+      
+      <main id="main-content" class="bd-main" role="main">
+        
+        
+
+<div class="sbt-scroll-pixel-helper"></div>
+
+          <div class="bd-content">
+            <div class="bd-article-container">
+              
+              <div class="bd-header-article d-print-none">
+<div class="header-article-items header-article__inner">
+  
+    <div class="header-article-items__start">
+      
+        <div class="header-article-item"><button class="sidebar-toggle primary-toggle btn btn-sm" title="Toggle primary sidebar" data-bs-placement="bottom" data-bs-toggle="tooltip">
+  <span class="fa-solid fa-bars"></span>
+</button></div>
+      
+    </div>
+  
+  
+    <div class="header-article-items__end">
+      
+        <div class="header-article-item">
+
+<div class="article-header-buttons">
+
+
+
+
+
+<div class="dropdown dropdown-source-buttons">
+  <button class="btn dropdown-toggle" type="button" data-bs-toggle="dropdown" aria-expanded="false" aria-label="Source repositories">
+    <i class="fab fa-github"></i>
+  </button>
+  <ul class="dropdown-menu">
+      
+      
+      
+      <li><a href="https://github.com/cpraveen/python" target="_blank"
+   class="btn btn-sm btn-source-repository-button dropdown-item"
+   title="Source repository"
+   data-bs-placement="left" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fab fa-github"></i>
+  </span>
+<span class="btn__text-container">Repository</span>
+</a>
+</li>
+      
+      
+      
+      
+      <li><a href="https://github.com/cpraveen/python/issues/new?title=Issue%20on%20page%20%2F05_sympy.html&body=Your%20issue%20content%20here." target="_blank"
+   class="btn btn-sm btn-source-issues-button dropdown-item"
+   title="Open an issue"
+   data-bs-placement="left" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fas fa-lightbulb"></i>
+  </span>
+<span class="btn__text-container">Open issue</span>
+</a>
+</li>
+      
+  </ul>
+</div>
+
+
+
+
+
+
+<div class="dropdown dropdown-download-buttons">
+  <button class="btn dropdown-toggle" type="button" data-bs-toggle="dropdown" aria-expanded="false" aria-label="Download this page">
+    <i class="fas fa-download"></i>
+  </button>
+  <ul class="dropdown-menu">
+      
+      
+      
+      <li><a href="_sources/05_sympy.ipynb" target="_blank"
+   class="btn btn-sm btn-download-source-button dropdown-item"
+   title="Download source file"
+   data-bs-placement="left" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fas fa-file"></i>
+  </span>
+<span class="btn__text-container">.ipynb</span>
+</a>
+</li>
+      
+      
+      
+      
+      <li>
+<button onclick="window.print()"
+  class="btn btn-sm btn-download-pdf-button dropdown-item"
+  title="Print to PDF"
+  data-bs-placement="left" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fas fa-file-pdf"></i>
+  </span>
+<span class="btn__text-container">.pdf</span>
+</button>
+</li>
+      
+  </ul>
+</div>
+
+
+
+
+<button onclick="toggleFullScreen()"
+  class="btn btn-sm btn-fullscreen-button"
+  title="Fullscreen mode"
+  data-bs-placement="bottom" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fas fa-expand"></i>
+  </span>
+
+</button>
+
+
+
+<button class="btn btn-sm nav-link pst-navbar-icon theme-switch-button pst-js-only" aria-label="Color mode" data-bs-title="Color mode"  data-bs-placement="bottom" data-bs-toggle="tooltip">
+  <i class="theme-switch fa-solid fa-sun                fa-lg" data-mode="light" title="Light"></i>
+  <i class="theme-switch fa-solid fa-moon               fa-lg" data-mode="dark"  title="Dark"></i>
+  <i class="theme-switch fa-solid fa-circle-half-stroke fa-lg" data-mode="auto"  title="System Settings"></i>
+</button>
+
+
+<button class="btn btn-sm pst-navbar-icon search-button search-button__button pst-js-only" title="Search" aria-label="Search" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <i class="fa-solid fa-magnifying-glass fa-lg"></i>
+</button>
+<button class="sidebar-toggle secondary-toggle btn btn-sm" title="Toggle secondary sidebar" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <span class="fa-solid fa-list"></span>
+</button>
+</div></div>
+      
+    </div>
+  
+</div>
+</div>
+              
+              
+
+<div id="jb-print-docs-body" class="onlyprint">
+    <h1>Sympy</h1>
+    <!-- Table of contents -->
+    <div id="print-main-content">
+        <div id="jb-print-toc">
+            
+            <div>
+                <h2> Contents </h2>
+            </div>
+            <nav aria-label="Page">
+                <ul class="visible nav section-nav flex-column">
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#expression-is-not-a-function">Expression is not a function</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#compute-roots">Compute roots</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#expand-factor-simplify">Expand, factor, simplify</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#get-latex-code">Get Latex code</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#solve-a-linear-system">Solve a linear system</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#example-create-python-function-from-sympy-expression">Example: create Python function from sympy expression</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#example-truncation-error-of-fd-scheme">Example: Truncation error of FD scheme</a></li>
+</ul>
+            </nav>
+        </div>
+    </div>
+</div>
+
+              
+                
+<div id="searchbox"></div>
+                <article class="bd-article">
+                  
+  <section class="tex2jax_ignore mathjax_ignore" id="sympy">
+<h1>Sympy<a class="headerlink" href="#sympy" title="Link to this heading">#</a></h1>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="o">%</span><span class="k">config</span> InlineBackend.figure_format = &#39;svg&#39;
+<span class="kn">import</span> <span class="nn">numpy</span> <span class="k">as</span> <span class="nn">np</span>
+<span class="kn">import</span> <span class="nn">matplotlib.pyplot</span> <span class="k">as</span> <span class="nn">plt</span>
+</pre></div>
+</div>
+</div>
+</div>
+<p>Let us import everything from sympy. We will also enable pretty printing.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">from</span> <span class="nn">sympy</span> <span class="kn">import</span> <span class="o">*</span>
+<span class="n">init_printing</span><span class="p">()</span>
+</pre></div>
+</div>
+</div>
+</div>
+<p>We must define symbols which will be treated symbolically</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">x</span> <span class="o">=</span> <span class="n">symbols</span><span class="p">(</span><span class="s1">&#39;x&#39;</span><span class="p">)</span>
+<span class="nb">type</span><span class="p">(</span><span class="n">x</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>sympy.core.symbol.Symbol
+</pre></div>
+</div>
+</div>
+</div>
+<p>Let us define an expression</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">f</span> <span class="o">=</span> <span class="n">x</span><span class="o">*</span><span class="n">sin</span><span class="p">(</span><span class="n">pi</span><span class="o">*</span><span class="n">x</span><span class="p">)</span> <span class="o">+</span> <span class="n">tan</span><span class="p">(</span><span class="n">pi</span><span class="o">*</span><span class="n">x</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">f</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>x*sin(pi*x) + tan(pi*x)
+</pre></div>
+</div>
+</div>
+</div>
+<p><strong>Differentiation</strong>. We can perform symbolic differentiation.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">diff</span><span class="p">(</span><span class="n">f</span><span class="p">,</span><span class="n">x</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<img alt="_images/5ecb55dcaf22b9e49b3d6a26195f5731322a477f31f2a1917efe5e3c4b27c4f7.png" src="_images/5ecb55dcaf22b9e49b3d6a26195f5731322a477f31f2a1917efe5e3c4b27c4f7.png" />
+</div>
+</div>
+<p>Compute second derivative</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">diff</span><span class="p">(</span><span class="n">f</span><span class="p">,</span><span class="n">x</span><span class="p">,</span><span class="mi">2</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<img alt="_images/4d93b0926693625c998e35c695a3a56629d119e6c4b7f1d4a2373b12ca9a3271.png" src="_images/4d93b0926693625c998e35c695a3a56629d119e6c4b7f1d4a2373b12ca9a3271.png" />
+</div>
+</div>
+<p><strong>Product of two functions</strong>. Define a more complicated expression as product of two expressions
+$<span class="math notranslate nohighlight">\(
+h(x) = f(x) g(x)
+\)</span>$
+and differentiate it</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">g</span> <span class="o">=</span> <span class="n">exp</span><span class="p">(</span><span class="n">x</span><span class="p">)</span>
+<span class="n">h</span> <span class="o">=</span> <span class="n">f</span><span class="o">*</span><span class="n">g</span>
+<span class="n">diff</span><span class="p">(</span><span class="n">h</span><span class="p">,</span><span class="n">x</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<img alt="_images/d057dd9ef4039b79847c3e803a2e676a7b41929907f86f764a4d3eaeb0c462a6.png" src="_images/d057dd9ef4039b79847c3e803a2e676a7b41929907f86f764a4d3eaeb0c462a6.png" />
+</div>
+</div>
+<p><strong>Function composition</strong>. Composition of two functions
+$<span class="math notranslate nohighlight">\(
+h(x) = (f \circ g)(x) = f(g(x))
+\)</span><span class="math notranslate nohighlight">\(
+Apply this to the case \)</span>f(x) = \sin(x)<span class="math notranslate nohighlight">\(, \)</span>g(x) = \cos(x)$.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">g</span> <span class="o">=</span> <span class="n">cos</span><span class="p">(</span><span class="n">x</span><span class="p">)</span>
+<span class="n">h</span> <span class="o">=</span> <span class="n">sin</span><span class="p">(</span><span class="n">g</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="s1">&#39;h =&#39;</span><span class="p">,</span><span class="n">h</span><span class="p">)</span>
+<span class="n">diff</span><span class="p">(</span><span class="n">h</span><span class="p">,</span><span class="n">x</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>h = sin(cos(x))
+</pre></div>
+</div>
+<img alt="_images/2f0e52e743e8a194b9b72dce9f96bd4a0bc8671b98ee63b146eefee97ab41ef3.png" src="_images/2f0e52e743e8a194b9b72dce9f96bd4a0bc8671b98ee63b146eefee97ab41ef3.png" />
+</div>
+</div>
+<p>If the two functions <span class="math notranslate nohighlight">\(f,g\)</span> have already been defined and we want to compose, then we can use substitution,</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">f</span> <span class="o">=</span> <span class="n">sin</span><span class="p">(</span><span class="n">x</span><span class="p">)</span>
+<span class="n">g</span> <span class="o">=</span> <span class="n">cos</span><span class="p">(</span><span class="n">x</span><span class="p">)</span>
+<span class="n">h</span> <span class="o">=</span> <span class="n">f</span><span class="o">.</span><span class="n">subs</span><span class="p">({</span><span class="s1">&#39;x&#39;</span><span class="p">:</span><span class="n">g</span><span class="p">})</span>
+<span class="nb">print</span><span class="p">(</span><span class="s1">&#39;h =&#39;</span><span class="p">,</span><span class="n">h</span><span class="p">)</span>
+<span class="n">diff</span><span class="p">(</span><span class="n">h</span><span class="p">,</span><span class="n">x</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>h = sin(cos(x))
+</pre></div>
+</div>
+<img alt="_images/2f0e52e743e8a194b9b72dce9f96bd4a0bc8671b98ee63b146eefee97ab41ef3.png" src="_images/2f0e52e743e8a194b9b72dce9f96bd4a0bc8671b98ee63b146eefee97ab41ef3.png" />
+</div>
+</div>
+<p><strong>Integration</strong>. We can also compute indefinite integrals</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="nb">print</span><span class="p">(</span><span class="n">f</span><span class="p">)</span>
+<span class="n">integrate</span><span class="p">(</span><span class="n">f</span><span class="p">,</span><span class="n">x</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>sin(x)
+</pre></div>
+</div>
+<img alt="_images/8794a4f333c3b588125eff55ef0422f971ed09674bccd007c9acfd331e0eb631.png" src="_images/8794a4f333c3b588125eff55ef0422f971ed09674bccd007c9acfd331e0eb631.png" />
+</div>
+</div>
+<p>We can get definite integrals.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">integrate</span><span class="p">(</span><span class="n">f</span><span class="p">,(</span><span class="n">x</span><span class="p">,</span><span class="mi">0</span><span class="p">,</span><span class="mi">1</span><span class="p">))</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<img alt="_images/d855d3cc10be990a0bb8151ce3e8ba7da1556da8b305bd2206797086d199e977.png" src="_images/d855d3cc10be990a0bb8151ce3e8ba7da1556da8b305bd2206797086d199e977.png" />
+</div>
+</div>
+<p><strong>Taylor expansion</strong>. Compute Taylor expansion of <span class="math notranslate nohighlight">\(f(x)\)</span> around <span class="math notranslate nohighlight">\(x=0\)</span></p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="nb">print</span><span class="p">(</span><span class="n">f</span><span class="p">)</span>
+<span class="n">series</span><span class="p">(</span><span class="n">f</span><span class="p">,</span><span class="n">x</span><span class="p">,</span><span class="mi">0</span><span class="p">,</span><span class="mi">8</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>sin(x)
+</pre></div>
+</div>
+<img alt="_images/0490ee4cf9a4ff42ee3b3a9707389234353903f81ed0b006f45705f8aff1ea90.png" src="_images/0490ee4cf9a4ff42ee3b3a9707389234353903f81ed0b006f45705f8aff1ea90.png" />
+</div>
+</div>
+<p>Compute Taylor expansion of <span class="math notranslate nohighlight">\(h(x)\)</span> around <span class="math notranslate nohighlight">\(x=0\)</span></p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="nb">print</span><span class="p">(</span><span class="n">h</span><span class="p">)</span>
+<span class="n">series</span><span class="p">(</span><span class="n">h</span><span class="p">,</span><span class="n">x</span><span class="p">,</span><span class="mi">0</span><span class="p">,</span><span class="mi">8</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>sin(cos(x))
+</pre></div>
+</div>
+<img alt="_images/8fac84ac0b22d0be691eb82e586fddb5f6c6675d09d174856d0716833c300d58.png" src="_images/8fac84ac0b22d0be691eb82e586fddb5f6c6675d09d174856d0716833c300d58.png" />
+</div>
+</div>
+<section id="expression-is-not-a-function">
+<h2>Expression is not a function<a class="headerlink" href="#expression-is-not-a-function" title="Link to this heading">#</a></h2>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">p</span> <span class="o">=</span> <span class="p">(</span><span class="n">x</span> <span class="o">+</span> <span class="mi">1</span><span class="p">)</span><span class="o">/</span><span class="p">(</span><span class="n">x</span><span class="o">**</span><span class="mi">2</span> <span class="o">+</span> <span class="mi">2</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+</div>
+<p>We cannot evaluate <code class="docutils literal notranslate"><span class="pre">p</span></code> at a numerical value. To do that, we can substitute the symbol <code class="docutils literal notranslate"><span class="pre">x</span></code> with a numerical value.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">p</span><span class="o">.</span><span class="n">subs</span><span class="p">({</span><span class="s1">&#39;x&#39;</span><span class="p">:</span><span class="mi">1</span><span class="p">})</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<img alt="_images/7135433e2bb791c8de41d5753fa56b352a476c17577b932a2d9575893d5b5578.png" src="_images/7135433e2bb791c8de41d5753fa56b352a476c17577b932a2d9575893d5b5578.png" />
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">p</span><span class="o">.</span><span class="n">subs</span><span class="p">({</span><span class="s1">&#39;x&#39;</span><span class="p">:</span><span class="mf">1.0</span><span class="p">})</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<img alt="_images/6fc997c29f4ca0f496287a8f521da38e1d2d6af6da94b4cb6278f67021393397.png" src="_images/6fc997c29f4ca0f496287a8f521da38e1d2d6af6da94b4cb6278f67021393397.png" />
+</div>
+</div>
+<p>The result depends on whether we substitute with an integer or a float. You can substitute with a rational number like this</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">p</span><span class="o">.</span><span class="n">subs</span><span class="p">({</span><span class="s1">&#39;x&#39;</span><span class="p">:</span><span class="mi">1</span><span class="o">//</span><span class="mi">2</span><span class="p">})</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<img alt="_images/92a8cc03a63b4602487cd0a3e68f4018d1be5aac1c56f8a7882d575ba13f1793.png" src="_images/92a8cc03a63b4602487cd0a3e68f4018d1be5aac1c56f8a7882d575ba13f1793.png" />
+</div>
+</div>
+<p>For how to make python functions out of expressions, see below.</p>
+</section>
+<section id="compute-roots">
+<h2>Compute roots<a class="headerlink" href="#compute-roots" title="Link to this heading">#</a></h2>
+<p>Let us find roots of quadratic equation
+$<span class="math notranslate nohighlight">\(
+a x^2 + b x + c = 0
+\)</span>$</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">x</span><span class="p">,</span> <span class="n">a</span><span class="p">,</span> <span class="n">b</span><span class="p">,</span> <span class="n">c</span> <span class="o">=</span> <span class="n">symbols</span><span class="p">(</span><span class="s1">&#39;x a b c&#39;</span><span class="p">)</span>
+<span class="n">eq</span> <span class="o">=</span> <span class="n">a</span><span class="o">*</span><span class="n">x</span><span class="o">**</span><span class="mi">2</span> <span class="o">+</span> <span class="n">b</span><span class="o">*</span><span class="n">x</span> <span class="o">+</span> <span class="n">c</span>
+<span class="n">roots</span><span class="p">(</span><span class="n">eq</span><span class="p">,</span><span class="n">x</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<img alt="_images/ee1b06636f26dac0e386895c3cf776cd746af0ab7f1fc2c6cd97972d91389b9e.png" src="_images/ee1b06636f26dac0e386895c3cf776cd746af0ab7f1fc2c6cd97972d91389b9e.png" />
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">x</span><span class="p">,</span> <span class="n">a</span> <span class="o">=</span> <span class="n">symbols</span><span class="p">(</span><span class="s1">&#39;x a&#39;</span><span class="p">)</span>
+<span class="n">eq</span> <span class="o">=</span> <span class="p">(</span><span class="n">x</span> <span class="o">-</span> <span class="n">a</span><span class="p">)</span><span class="o">**</span><span class="mi">2</span>
+<span class="n">roots</span><span class="p">(</span><span class="n">eq</span><span class="p">,</span><span class="n">x</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<img alt="_images/51706dfff9efd1dd8c416772961733d73332cad8f9fc086b9ea924e80b668477.png" src="_images/51706dfff9efd1dd8c416772961733d73332cad8f9fc086b9ea924e80b668477.png" />
+</div>
+</div>
+</section>
+<section id="expand-factor-simplify">
+<h2>Expand, factor, simplify<a class="headerlink" href="#expand-factor-simplify" title="Link to this heading">#</a></h2>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">x</span><span class="p">,</span> <span class="n">a</span> <span class="o">=</span> <span class="n">symbols</span><span class="p">(</span><span class="s1">&#39;x a&#39;</span><span class="p">)</span>
+<span class="n">expand</span><span class="p">((</span><span class="n">x</span><span class="o">-</span><span class="n">a</span><span class="p">)</span><span class="o">**</span><span class="mi">2</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<img alt="_images/23a5922ab9e2f970aa7039d3d6a823e8f96ea11abb8f8e48347607436d6191c1.png" src="_images/23a5922ab9e2f970aa7039d3d6a823e8f96ea11abb8f8e48347607436d6191c1.png" />
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">factor</span><span class="p">(</span><span class="n">x</span><span class="o">**</span><span class="mi">2</span> <span class="o">-</span> <span class="mi">2</span><span class="o">*</span><span class="n">a</span><span class="o">*</span><span class="n">x</span> <span class="o">+</span> <span class="n">a</span><span class="o">**</span><span class="mi">2</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<img alt="_images/79927107d5ccc786a574b33b3a5012e0207794c9c38b9b1351c8800f07cf8b17.png" src="_images/79927107d5ccc786a574b33b3a5012e0207794c9c38b9b1351c8800f07cf8b17.png" />
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">f</span> <span class="o">=</span> <span class="p">(</span><span class="n">x</span> <span class="o">+</span> <span class="n">x</span><span class="o">**</span><span class="mi">2</span><span class="p">)</span><span class="o">/</span><span class="p">(</span><span class="n">x</span><span class="o">*</span><span class="n">sin</span><span class="p">(</span><span class="n">x</span><span class="p">)</span><span class="o">**</span><span class="mi">2</span> <span class="o">+</span> <span class="n">x</span><span class="o">*</span><span class="n">cos</span><span class="p">(</span><span class="n">x</span><span class="p">)</span><span class="o">**</span><span class="mi">2</span><span class="p">)</span>
+<span class="n">simplify</span><span class="p">(</span><span class="n">f</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<img alt="_images/61f3e8afdb0a5deb1c8271839c0cc5fc550a8a7315ea790e7c7b3eca80fdf692.png" src="_images/61f3e8afdb0a5deb1c8271839c0cc5fc550a8a7315ea790e7c7b3eca80fdf692.png" />
+</div>
+</div>
+</section>
+<section id="get-latex-code">
+<h2>Get Latex code<a class="headerlink" href="#get-latex-code" title="Link to this heading">#</a></h2>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">x</span> <span class="o">=</span> <span class="n">symbols</span><span class="p">(</span><span class="s1">&#39;x&#39;</span><span class="p">)</span>
+<span class="n">p</span> <span class="o">=</span> <span class="p">(</span><span class="n">cos</span><span class="p">(</span><span class="n">x</span><span class="p">)</span><span class="o">-</span><span class="n">sin</span><span class="p">(</span><span class="n">x</span><span class="p">))</span><span class="o">**</span><span class="mi">3</span>
+<span class="n">expand</span><span class="p">(</span><span class="n">p</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<img alt="_images/963b4d00a9731873399b28c0416d1c1ddab83f75bae0916c04ad4748c27a9aeb.png" src="_images/963b4d00a9731873399b28c0416d1c1ddab83f75bae0916c04ad4748c27a9aeb.png" />
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">print_latex</span><span class="p">(</span><span class="n">expand</span><span class="p">(</span><span class="n">p</span><span class="p">))</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>- \sin^{3}{\left(x \right)} + 3 \sin^{2}{\left(x \right)} \cos{\left(x \right)} - 3 \sin{\left(x \right)} \cos^{2}{\left(x \right)} + \cos^{3}{\left(x \right)}
+</pre></div>
+</div>
+</div>
+</div>
+</section>
+<section id="solve-a-linear-system">
+<h2>Solve a linear system<a class="headerlink" href="#solve-a-linear-system" title="Link to this heading">#</a></h2>
+<div class="math notranslate nohighlight">
+\[
+x_1 + x_2 = a, \qquad x_1 - x_2 = b
+\]</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">x1</span><span class="p">,</span> <span class="n">x2</span><span class="p">,</span> <span class="n">a</span><span class="p">,</span> <span class="n">b</span> <span class="o">=</span> <span class="n">symbols</span><span class="p">(</span><span class="s1">&#39;x1 x2 a b&#39;</span><span class="p">)</span>
+<span class="n">e1</span> <span class="o">=</span> <span class="n">x1</span> <span class="o">+</span> <span class="n">x2</span> <span class="o">-</span> <span class="n">a</span>
+<span class="n">e2</span> <span class="o">=</span> <span class="n">x1</span> <span class="o">-</span> <span class="n">x2</span> <span class="o">-</span> <span class="n">b</span>
+<span class="n">solve</span><span class="p">([</span><span class="n">e1</span><span class="p">,</span> <span class="n">e2</span><span class="p">],[</span><span class="n">x1</span><span class="p">,</span><span class="n">x2</span><span class="p">])</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<img alt="_images/252fda8353bdaad778634ae5140941fca5ad2e92543c129b9fec46b9464aeab5.png" src="_images/252fda8353bdaad778634ae5140941fca5ad2e92543c129b9fec46b9464aeab5.png" />
+</div>
+</div>
+<p>We can capture the result as a dictionary.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">r</span> <span class="o">=</span> <span class="n">solve</span><span class="p">([</span><span class="n">e1</span><span class="p">,</span> <span class="n">e2</span><span class="p">],[</span><span class="n">x1</span><span class="p">,</span><span class="n">x2</span><span class="p">])</span>
+<span class="nb">print</span><span class="p">(</span><span class="s1">&#39;x1 = &#39;</span><span class="p">,</span> <span class="n">r</span><span class="p">[</span><span class="n">x1</span><span class="p">])</span>
+<span class="nb">print</span><span class="p">(</span><span class="s1">&#39;x2 = &#39;</span><span class="p">,</span> <span class="n">r</span><span class="p">[</span><span class="n">x2</span><span class="p">])</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>x1 =  a/2 + b/2
+x2 =  a/2 - b/2
+</pre></div>
+</div>
+</div>
+</div>
+</section>
+<section id="example-create-python-function-from-sympy-expression">
+<h2>Example: create Python function from sympy expression<a class="headerlink" href="#example-create-python-function-from-sympy-expression" title="Link to this heading">#</a></h2>
+<p>Lets first define a function and get its derivative.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">x</span> <span class="o">=</span> <span class="n">symbols</span><span class="p">(</span><span class="s1">&#39;x&#39;</span><span class="p">)</span>
+<span class="n">f</span> <span class="o">=</span> <span class="n">x</span> <span class="o">*</span> <span class="n">sin</span><span class="p">(</span><span class="mi">50</span><span class="o">*</span><span class="n">x</span><span class="p">)</span> <span class="o">*</span> <span class="n">exp</span><span class="p">(</span><span class="n">x</span><span class="p">)</span>
+<span class="n">g</span> <span class="o">=</span> <span class="n">diff</span><span class="p">(</span><span class="n">f</span><span class="p">,</span><span class="n">x</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+</div>
+<p>We cannot evaluate <code class="docutils literal notranslate"><span class="pre">f</span></code> and <code class="docutils literal notranslate"><span class="pre">g</span></code> since they are not python functions. We first create Python functions out of the symbolic expressions and then plot them.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">ffun</span> <span class="o">=</span> <span class="n">lambdify</span><span class="p">(</span><span class="n">x</span><span class="p">,</span><span class="n">f</span><span class="p">)</span>
+<span class="n">gfun</span> <span class="o">=</span> <span class="n">lambdify</span><span class="p">(</span><span class="n">x</span><span class="p">,</span><span class="n">g</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+</div>
+<p>We can now evaluate these functions at some argument</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="nb">print</span><span class="p">(</span><span class="s1">&#39;f(1) =&#39;</span><span class="p">,</span><span class="n">ffun</span><span class="p">(</span><span class="mf">1.0</span><span class="p">))</span>
+<span class="nb">print</span><span class="p">(</span><span class="s1">&#39;g(1) =&#39;</span><span class="p">,</span><span class="n">gfun</span><span class="p">(</span><span class="mf">1.0</span><span class="p">))</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>f(1) = -0.7132087970679899
+g(1) = 129.72606342238427
+</pre></div>
+</div>
+</div>
+</div>
+<p>We can now use these to plot graphs of the functions</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">xx</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">linspace</span><span class="p">(</span><span class="mf">0.0</span><span class="p">,</span><span class="mf">1.0</span><span class="p">,</span><span class="mi">200</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">figure</span><span class="p">(</span><span class="n">figsize</span><span class="o">=</span><span class="p">(</span><span class="mi">9</span><span class="p">,</span><span class="mi">4</span><span class="p">))</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">subplot</span><span class="p">(</span><span class="mi">121</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="n">xx</span><span class="p">,</span><span class="n">ffun</span><span class="p">(</span><span class="n">xx</span><span class="p">))</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">grid</span><span class="p">(</span><span class="kc">True</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">title</span><span class="p">(</span><span class="s1">&#39;f(x) = &#39;</span><span class="o">+</span><span class="nb">str</span><span class="p">(</span><span class="n">f</span><span class="p">))</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">subplot</span><span class="p">(</span><span class="mi">122</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="n">xx</span><span class="p">,</span><span class="n">gfun</span><span class="p">(</span><span class="n">xx</span><span class="p">))</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">grid</span><span class="p">(</span><span class="kc">True</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">title</span><span class="p">(</span><span class="s1">&#39;Derivative of f(x)&#39;</span><span class="p">);</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<img alt="_images/8ca7dcae641bfa0f211aa691625280b64370d6fa65a7321e3e6a25b8d536e7b0.svg" src="_images/8ca7dcae641bfa0f211aa691625280b64370d6fa65a7321e3e6a25b8d536e7b0.svg" />
+</div>
+</div>
+</section>
+<section id="example-truncation-error-of-fd-scheme">
+<h2>Example: Truncation error of FD scheme<a class="headerlink" href="#example-truncation-error-of-fd-scheme" title="Link to this heading">#</a></h2>
+<p>Approximate second derivative using finite difference scheme
+$<span class="math notranslate nohighlight">\(
+f''(x) \approx \frac{f(x-h) - 2 f(x) + f(x+h)}{h^2}
+\)</span><span class="math notranslate nohighlight">\(
+We perform Taylor expansion around \)</span>x$ to find the error in this approximation</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">x</span><span class="p">,</span> <span class="n">h</span> <span class="o">=</span> <span class="n">symbols</span><span class="p">(</span><span class="s2">&quot;x,h&quot;</span><span class="p">)</span>
+<span class="n">f</span> <span class="o">=</span> <span class="n">Function</span><span class="p">(</span><span class="s2">&quot;f&quot;</span><span class="p">)</span>
+<span class="n">T</span> <span class="o">=</span> <span class="k">lambda</span> <span class="n">h</span><span class="p">:</span> <span class="p">(</span><span class="n">f</span><span class="p">(</span><span class="n">x</span><span class="o">-</span><span class="n">h</span><span class="p">)</span> <span class="o">-</span> <span class="mi">2</span><span class="o">*</span><span class="n">f</span><span class="p">(</span><span class="n">x</span><span class="p">)</span> <span class="o">+</span> <span class="n">f</span><span class="p">(</span><span class="n">x</span><span class="o">+</span><span class="n">h</span><span class="p">))</span><span class="o">/</span><span class="p">(</span><span class="n">h</span><span class="o">**</span><span class="mi">2</span><span class="p">)</span>
+<span class="n">series</span><span class="p">(</span><span class="n">T</span><span class="p">(</span><span class="n">h</span><span class="p">),</span> <span class="n">h</span><span class="p">,</span> <span class="n">x0</span><span class="o">=</span><span class="mi">0</span><span class="p">,</span> <span class="n">n</span><span class="o">=</span><span class="mi">6</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<img alt="_images/5f96950fcf63815ebd93a41d38132046ab15eba3e2364cfeb6ba78f6b9ec5662.png" src="_images/5f96950fcf63815ebd93a41d38132046ab15eba3e2364cfeb6ba78f6b9ec5662.png" />
+</div>
+</div>
+<p>The above result shows that the FD formula is equal to
+$<span class="math notranslate nohighlight">\(
+\frac{f(x-h) - 2 f(x) + f(x+h)}{h^2} = f''(x) + \frac{h^2}{12} f^{(4)}(x) + \frac{h^4}{360} f^{(6)}(x) + O(h^6)
+\)</span><span class="math notranslate nohighlight">\(
+The leading error term is \)</span>O(h^2)<span class="math notranslate nohighlight">\( 
+\)</span><span class="math notranslate nohighlight">\(
+\frac{f(x-h) - 2 f(x) + f(x+h)}{h^2} - f''(x) = \frac{h^2}{12} f^{(4)}(x) + \frac{h^4}{360} f^{(6)}(x) + O(h^6)
+\)</span>$
+so that the formula is second order accurate.</p>
+</section>
+</section>
+
+    <script type="text/x-thebe-config">
+    {
+        requestKernel: true,
+        binderOptions: {
+            repo: "binder-examples/jupyter-stacks-datascience",
+            ref: "master",
+        },
+        codeMirrorConfig: {
+            theme: "abcdef",
+            mode: "python"
+        },
+        kernelOptions: {
+            name: "python3",
+            path: "./."
+        },
+        predefinedOutput: true
+    }
+    </script>
+    <script>kernelName = 'python3'</script>
+
+                </article>
+              
+
+              
+              
+              
+              
+                <footer class="prev-next-footer d-print-none">
+                  
+<div class="prev-next-area">
+    <a class="left-prev"
+       href="04_matplotlib.html"
+       title="previous page">
+      <i class="fa-solid fa-angle-left"></i>
+      <div class="prev-next-info">
+        <p class="prev-next-subtitle">previous</p>
+        <p class="prev-next-title">Matplotlib</p>
+      </div>
+    </a>
+    <a class="right-next"
+       href="06_scipy.html"
+       title="next page">
+      <div class="prev-next-info">
+        <p class="prev-next-subtitle">next</p>
+        <p class="prev-next-title">Scipy</p>
+      </div>
+      <i class="fa-solid fa-angle-right"></i>
+    </a>
+</div>
+                </footer>
+              
+            </div>
+            
+            
+              
+                <dialog id="pst-secondary-sidebar-modal"></dialog>
+                <div id="pst-secondary-sidebar" class="bd-sidebar-secondary bd-toc"><div class="sidebar-secondary-items sidebar-secondary__inner">
+
+
+  <div class="sidebar-secondary-item">
+  <div class="page-toc tocsection onthispage">
+    <i class="fa-solid fa-list"></i> Contents
+  </div>
+  <nav class="bd-toc-nav page-toc">
+    <ul class="visible nav section-nav flex-column">
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#expression-is-not-a-function">Expression is not a function</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#compute-roots">Compute roots</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#expand-factor-simplify">Expand, factor, simplify</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#get-latex-code">Get Latex code</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#solve-a-linear-system">Solve a linear system</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#example-create-python-function-from-sympy-expression">Example: create Python function from sympy expression</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#example-truncation-error-of-fd-scheme">Example: Truncation error of FD scheme</a></li>
+</ul>
+  </nav></div>
+
+</div></div>
+              
+            
+          </div>
+          <footer class="bd-footer-content">
+            
+<div class="bd-footer-content__inner container">
+  
+  <div class="footer-item">
+    
+<p class="component-author">
+By Praveen Chandrashekar
+</p>
+
+  </div>
+  
+  <div class="footer-item">
+    
+
+  <p class="copyright">
+    
+      © Copyright 2024.
+      <br/>
+    
+  </p>
+
+  </div>
+  
+  <div class="footer-item">
+    
+  </div>
+  
+  <div class="footer-item">
+    
+  </div>
+  
+</div>
+          </footer>
+        
+
+      </main>
+    </div>
+  </div>
+  
+  <!-- Scripts loaded after <body> so the DOM is not blocked -->
+  <script defer src="_static/scripts/bootstrap.js?digest=26a4bc78f4c0ddb94549"></script>
+<script defer src="_static/scripts/pydata-sphinx-theme.js?digest=26a4bc78f4c0ddb94549"></script>
+
+  <footer class="bd-footer">
+  </footer>
+  </body>
+</html>

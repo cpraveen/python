@@ -1,0 +1,739 @@
+
+<!DOCTYPE html>
+
+
+<html lang="en" data-content_root="./" >
+
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="viewport" content="width=device-width, initial-scale=1" />
+
+    <title>Markdown, Latex and programming tips &#8212; Python for Scientific Computing</title>
+  
+  
+  
+  <script data-cfasync="false">
+    document.documentElement.dataset.mode = localStorage.getItem("mode") || "";
+    document.documentElement.dataset.theme = localStorage.getItem("theme") || "";
+  </script>
+  <!-- 
+    this give us a css class that will be invisible only if js is disabled 
+  -->
+  <noscript>
+    <style>
+      .pst-js-only { display: none !important; }
+
+    </style>
+  </noscript>
+  
+  <!-- Loaded before other Sphinx assets -->
+  <link href="_static/styles/theme.css?digest=26a4bc78f4c0ddb94549" rel="stylesheet" />
+<link href="_static/styles/pydata-sphinx-theme.css?digest=26a4bc78f4c0ddb94549" rel="stylesheet" />
+
+    <link rel="stylesheet" type="text/css" href="_static/pygments.css?v=fa44fd50" />
+    <link rel="stylesheet" type="text/css" href="_static/styles/sphinx-book-theme.css?v=a3416100" />
+    <link rel="stylesheet" type="text/css" href="_static/togglebutton.css?v=13237357" />
+    <link rel="stylesheet" type="text/css" href="_static/copybutton.css?v=76b2166b" />
+    <link rel="stylesheet" type="text/css" href="_static/mystnb.4510f1fc1dee50b3e5859aac5469c37c29e427902b24a333a5f9fcb2f0b3ac41.css?v=be8a1c11" />
+    <link rel="stylesheet" type="text/css" href="_static/sphinx-thebe.css?v=4fa983c6" />
+    <link rel="stylesheet" type="text/css" href="_static/sphinx-design.min.css?v=95c83b7e" />
+  
+  <!-- So that users can add custom icons -->
+  <script src="_static/scripts/fontawesome.js?digest=26a4bc78f4c0ddb94549"></script>
+  <!-- Pre-loaded scripts that we'll load fully later -->
+  <link rel="preload" as="script" href="_static/scripts/bootstrap.js?digest=26a4bc78f4c0ddb94549" />
+<link rel="preload" as="script" href="_static/scripts/pydata-sphinx-theme.js?digest=26a4bc78f4c0ddb94549" />
+
+    <script src="_static/documentation_options.js?v=9eb32ce0"></script>
+    <script src="_static/doctools.js?v=9a2dae69"></script>
+    <script src="_static/sphinx_highlight.js?v=dc90522c"></script>
+    <script src="_static/clipboard.min.js?v=a7894cd8"></script>
+    <script src="_static/copybutton.js?v=f281be69"></script>
+    <script src="_static/scripts/sphinx-book-theme.js?v=887ef09a"></script>
+    <script>let toggleHintShow = 'Click to show';</script>
+    <script>let toggleHintHide = 'Click to hide';</script>
+    <script>let toggleOpenOnPrint = 'true';</script>
+    <script src="_static/togglebutton.js?v=4a39c7ea"></script>
+    <script>var togglebuttonSelector = '.toggle, .admonition.dropdown';</script>
+    <script src="_static/design-tabs.js?v=f930bc37"></script>
+    <script>const THEBE_JS_URL = "https://unpkg.com/thebe@0.8.2/lib/index.js"; const thebe_selector = ".thebe,.cell"; const thebe_selector_input = "pre"; const thebe_selector_output = ".output, .cell_output"</script>
+    <script async="async" src="_static/sphinx-thebe.js?v=c100c467"></script>
+    <script>var togglebuttonSelector = '.toggle, .admonition.dropdown';</script>
+    <script>const THEBE_JS_URL = "https://unpkg.com/thebe@0.8.2/lib/index.js"; const thebe_selector = ".thebe,.cell"; const thebe_selector_input = "pre"; const thebe_selector_output = ".output, .cell_output"</script>
+    <script>window.MathJax = {"options": {"processHtmlClass": "tex2jax_process|mathjax_process|math|output_area"}}</script>
+    <script defer="defer" src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
+    <script>DOCUMENTATION_OPTIONS.pagename = '00_tips';</script>
+    <link rel="index" title="Index" href="genindex.html" />
+    <link rel="search" title="Search" href="search.html" />
+    <link rel="next" title="Introduction" href="01_intro.html" />
+    <link rel="prev" title="Python" href="front.html" />
+  <meta name="viewport" content="width=device-width, initial-scale=1"/>
+  <meta name="docsearch:language" content="en"/>
+  <meta name="docsearch:version" content="" />
+  </head>
+  
+  
+  <body data-bs-spy="scroll" data-bs-target=".bd-toc-nav" data-offset="180" data-bs-root-margin="0px 0px -60%" data-default-mode="">
+
+  
+  
+  <div id="pst-skip-link" class="skip-link d-print-none"><a href="#main-content">Skip to main content</a></div>
+  
+  <div id="pst-scroll-pixel-helper"></div>
+  
+  <button type="button" class="btn rounded-pill" id="pst-back-to-top">
+    <i class="fa-solid fa-arrow-up"></i>Back to top</button>
+
+  
+  <dialog id="pst-search-dialog">
+    
+<form class="bd-search d-flex align-items-center"
+      action="search.html"
+      method="get">
+  <i class="fa-solid fa-magnifying-glass"></i>
+  <input type="search"
+         class="form-control"
+         name="q"
+         placeholder="Search this book..."
+         aria-label="Search this book..."
+         autocomplete="off"
+         autocorrect="off"
+         autocapitalize="off"
+         spellcheck="false"/>
+  <span class="search-button__kbd-shortcut"><kbd class="kbd-shortcut__modifier">Ctrl</kbd>+<kbd>K</kbd></span>
+</form>
+  </dialog>
+
+  <div class="pst-async-banner-revealer d-none">
+  <aside id="bd-header-version-warning" class="d-none d-print-none" aria-label="Version warning"></aside>
+</div>
+
+  
+    <header class="bd-header navbar navbar-expand-lg bd-navbar d-print-none">
+    </header>
+  
+
+  <div class="bd-container">
+    <div class="bd-container__inner bd-page-width">
+      
+      
+      
+      <dialog id="pst-primary-sidebar-modal"></dialog>
+      <div id="pst-primary-sidebar" class="bd-sidebar-primary bd-sidebar">
+        
+
+  
+  <div class="sidebar-header-items sidebar-primary__section">
+    
+    
+    
+    
+  </div>
+  
+    <div class="sidebar-primary-items__start sidebar-primary__section">
+        <div class="sidebar-primary-item">
+
+  
+    
+  
+
+<a class="navbar-brand logo" href="front.html">
+  
+  
+  
+  
+  
+    
+    
+      
+    
+    
+    <img src="_static/logo.png" class="logo__image only-light" alt="Python for Scientific Computing - Home"/>
+    <img src="_static/logo.png" class="logo__image only-dark pst-js-only" alt="Python for Scientific Computing - Home"/>
+  
+  
+</a></div>
+        <div class="sidebar-primary-item">
+
+<button class="btn search-button-field search-button__button pst-js-only" title="Search" aria-label="Search" data-bs-placement="bottom" data-bs-toggle="tooltip">
+ <i class="fa-solid fa-magnifying-glass"></i>
+ <span class="search-button__default-text">Search</span>
+ <span class="search-button__kbd-shortcut"><kbd class="kbd-shortcut__modifier">Ctrl</kbd>+<kbd class="kbd-shortcut__modifier">K</kbd></span>
+</button></div>
+        <div class="sidebar-primary-item"><nav class="bd-links bd-docs-nav" aria-label="Main">
+    <div class="bd-toc-item navbar-nav active">
+        
+        <ul class="nav bd-sidenav bd-sidenav__home-link">
+            <li class="toctree-l1">
+                <a class="reference internal" href="front.html">
+                    Python
+                </a>
+            </li>
+        </ul>
+        <ul class="current nav bd-sidenav">
+<li class="toctree-l1 current active"><a class="current reference internal" href="#">Markdown, Latex and programming tips</a></li>
+
+<li class="toctree-l1"><a class="reference internal" href="01_intro.html">Introduction</a></li>
+<li class="toctree-l1"><a class="reference internal" href="02_numpy.html">Numpy</a></li>
+<li class="toctree-l1"><a class="reference internal" href="03_functions.html">Functions</a></li>
+<li class="toctree-l1"><a class="reference internal" href="04_matplotlib.html">Matplotlib</a></li>
+<li class="toctree-l1"><a class="reference internal" href="05_sympy.html">Sympy</a></li>
+<li class="toctree-l1"><a class="reference internal" href="06_scipy.html">Scipy</a></li>
+</ul>
+
+    </div>
+</nav></div>
+    </div>
+  
+  
+  <div class="sidebar-primary-items__end sidebar-primary__section">
+  </div>
+  
+  <div id="rtd-footer-container"></div>
+
+
+      </div>
+      
+      <main id="main-content" class="bd-main" role="main">
+        
+        
+
+<div class="sbt-scroll-pixel-helper"></div>
+
+          <div class="bd-content">
+            <div class="bd-article-container">
+              
+              <div class="bd-header-article d-print-none">
+<div class="header-article-items header-article__inner">
+  
+    <div class="header-article-items__start">
+      
+        <div class="header-article-item"><button class="sidebar-toggle primary-toggle btn btn-sm" title="Toggle primary sidebar" data-bs-placement="bottom" data-bs-toggle="tooltip">
+  <span class="fa-solid fa-bars"></span>
+</button></div>
+      
+    </div>
+  
+  
+    <div class="header-article-items__end">
+      
+        <div class="header-article-item">
+
+<div class="article-header-buttons">
+
+
+
+
+
+<div class="dropdown dropdown-source-buttons">
+  <button class="btn dropdown-toggle" type="button" data-bs-toggle="dropdown" aria-expanded="false" aria-label="Source repositories">
+    <i class="fab fa-github"></i>
+  </button>
+  <ul class="dropdown-menu">
+      
+      
+      
+      <li><a href="https://github.com/cpraveen/python" target="_blank"
+   class="btn btn-sm btn-source-repository-button dropdown-item"
+   title="Source repository"
+   data-bs-placement="left" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fab fa-github"></i>
+  </span>
+<span class="btn__text-container">Repository</span>
+</a>
+</li>
+      
+      
+      
+      
+      <li><a href="https://github.com/cpraveen/python/issues/new?title=Issue%20on%20page%20%2F00_tips.html&body=Your%20issue%20content%20here." target="_blank"
+   class="btn btn-sm btn-source-issues-button dropdown-item"
+   title="Open an issue"
+   data-bs-placement="left" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fas fa-lightbulb"></i>
+  </span>
+<span class="btn__text-container">Open issue</span>
+</a>
+</li>
+      
+  </ul>
+</div>
+
+
+
+
+
+
+<div class="dropdown dropdown-download-buttons">
+  <button class="btn dropdown-toggle" type="button" data-bs-toggle="dropdown" aria-expanded="false" aria-label="Download this page">
+    <i class="fas fa-download"></i>
+  </button>
+  <ul class="dropdown-menu">
+      
+      
+      
+      <li><a href="_sources/00_tips.ipynb" target="_blank"
+   class="btn btn-sm btn-download-source-button dropdown-item"
+   title="Download source file"
+   data-bs-placement="left" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fas fa-file"></i>
+  </span>
+<span class="btn__text-container">.ipynb</span>
+</a>
+</li>
+      
+      
+      
+      
+      <li>
+<button onclick="window.print()"
+  class="btn btn-sm btn-download-pdf-button dropdown-item"
+  title="Print to PDF"
+  data-bs-placement="left" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fas fa-file-pdf"></i>
+  </span>
+<span class="btn__text-container">.pdf</span>
+</button>
+</li>
+      
+  </ul>
+</div>
+
+
+
+
+<button onclick="toggleFullScreen()"
+  class="btn btn-sm btn-fullscreen-button"
+  title="Fullscreen mode"
+  data-bs-placement="bottom" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fas fa-expand"></i>
+  </span>
+
+</button>
+
+
+
+<button class="btn btn-sm nav-link pst-navbar-icon theme-switch-button pst-js-only" aria-label="Color mode" data-bs-title="Color mode"  data-bs-placement="bottom" data-bs-toggle="tooltip">
+  <i class="theme-switch fa-solid fa-sun                fa-lg" data-mode="light" title="Light"></i>
+  <i class="theme-switch fa-solid fa-moon               fa-lg" data-mode="dark"  title="Dark"></i>
+  <i class="theme-switch fa-solid fa-circle-half-stroke fa-lg" data-mode="auto"  title="System Settings"></i>
+</button>
+
+
+<button class="btn btn-sm pst-navbar-icon search-button search-button__button pst-js-only" title="Search" aria-label="Search" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <i class="fa-solid fa-magnifying-glass fa-lg"></i>
+</button>
+<button class="sidebar-toggle secondary-toggle btn btn-sm" title="Toggle secondary sidebar" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <span class="fa-solid fa-list"></span>
+</button>
+</div></div>
+      
+    </div>
+  
+</div>
+</div>
+              
+              
+
+<div id="jb-print-docs-body" class="onlyprint">
+    <h1>Markdown, Latex and programming tips</h1>
+    <!-- Table of contents -->
+    <div id="print-main-content">
+        <div id="jb-print-toc">
+            
+            <div>
+                <h2> Contents </h2>
+            </div>
+            <nav aria-label="Page">
+                <ul class="visible nav section-nav flex-column">
+<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#">Markdown, Latex and programming tips</a><ul class="visible nav section-nav flex-column">
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#latex">Latex</a></li>
+</ul>
+</li>
+<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#tips-for-programming">Tips for programming</a></li>
+</ul>
+
+            </nav>
+        </div>
+    </div>
+</div>
+
+              
+                
+<div id="searchbox"></div>
+                <article class="bd-article">
+                  
+  <section class="tex2jax_ignore mathjax_ignore" id="markdown-latex-and-programming-tips">
+<h1>Markdown, Latex and programming tips<a class="headerlink" href="#markdown-latex-and-programming-tips" title="Link to this heading">#</a></h1>
+<p>There are two types of blocks in a Jupyter notebook: code and markdown. Code is for entering Python code while markdown is for markdown and Latex.</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="c1"># Main title</span>
+<span class="c1">## Section</span>
+<span class="c1">### Subsection</span>
+<span class="c1">#### Subsection</span>
+</pre></div>
+</div>
+<p>Itemize</p>
+<ul class="simple">
+<li><p>First item</p></li>
+<li><p>Second item</p></li>
+<li><p>Third item</p>
+<ul>
+<li><p>sub item</p></li>
+<li><p>sub item</p></li>
+</ul>
+</li>
+</ul>
+<p>Enumerate</p>
+<ol class="arabic simple">
+<li><p>First item</p></li>
+<li><p>Second item</p></li>
+<li><p>Third item</p>
+<ol class="arabic simple">
+<li><p>sub item</p></li>
+<li><p>sub item</p></li>
+</ol>
+</li>
+</ol>
+<p>Verbatim text can be put inline like this: <code class="docutils literal notranslate"><span class="pre">Python</span></code> and as a code block like this</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">x</span> <span class="o">=</span> <span class="mi">0</span>
+<span class="k">while</span> <span class="nb">abs</span><span class="p">(</span><span class="n">f</span><span class="p">(</span><span class="n">x</span><span class="p">))</span> <span class="o">&lt;</span> <span class="n">eps</span><span class="p">:</span>
+   <span class="n">x</span> <span class="o">=</span> <span class="n">x</span> <span class="o">-</span> <span class="n">f</span><span class="p">(</span><span class="n">x</span><span class="p">)</span><span class="o">/</span><span class="n">df</span><span class="p">(</span><span class="n">x</span><span class="p">)</span>
+</pre></div>
+</div>
+<p>Quoted text</p>
+<blockquote>
+<div><p>One reason why mathematics enjoys special esteem, above all other sciences, is that its laws are absolutely certain and indisputable, while those of all other sciences are to some extent debatable and in constant danger of being overthrown by newly discovered facts.</p>
+<p>In spite of this, the investigator in another department of science would not need to envy the mathematician if the laws of mathematics referred to objects of our mere imagination, and not to objects of reality. For it cannot occasion surprise that different persons should arrive at the same logical conclusions when they have already agreed upon the fundamental laws (axioms), as well as the methods by which other laws are to be deduced therefrom. But there is another reason for the high repute of mathematics, in that it is mathematics which affords the exact natural sciences a certain measure of security, to which without mathematics they could not attain.</p>
+<p>At this point an enigma presents itself which in all ages has agitated inquiring minds. How can it be that mathematics, being after all a product of human thought which is independent of experience, is so admirably appropriate to the objects of reality? Is human reason, then, without experience, merely by taking thought, able to fathom the properties of real things.</p>
+<p>In my opinion the answer to this question is, briefly, this:- As far as the laws of mathematics refer to reality, they are not certain; and as far as they are certain, they do not refer to reality.</p>
+<p>(Albert Einstein, “Geometry and Experience”, Prussian Academy of Science, Berlin, 27 January 1921)</p>
+</div></blockquote>
+<section id="latex">
+<h2>Latex<a class="headerlink" href="#latex" title="Link to this heading">#</a></h2>
+<p>Jupyter supports only a small subset of Latex.</p>
+<p>In line math is enclosed in dollars: <span class="math notranslate nohighlight">\(y = f(x)\)</span></p>
+<p>Equations are enclosed in double dollars</p>
+<div class="math notranslate nohighlight">
+\[
+y = f(x)
+\]</div>
+<p>Math functions: use <code class="docutils literal notranslate"><span class="pre">\sin</span></code>, <code class="docutils literal notranslate"><span class="pre">\cos</span></code>, etc.</p>
+<div class="math notranslate nohighlight">
+\[
+\sin(x), \qquad \cos(x), \qquad \log(x), \qquad \exp(x)
+\]</div>
+<p>We can put space in math using <code class="docutils literal notranslate"><span class="pre">\quad</span></code> and <code class="docutils literal notranslate"><span class="pre">\qquad</span></code>.</p>
+<p>Greek symbols are obtained naturally by adding a forward slash</p>
+<div class="math notranslate nohighlight">
+\[
+\alpha, \qquad \beta, \qquad \gamma, \qquad \delta, \qquad \epsilon, \qquad \varepsilon
+\]</div>
+<p>Subscripts and superscripts</p>
+<div class="math notranslate nohighlight">
+\[
+a_m, \qquad a_{mn}, \qquad x^n, \qquad y^{n+1}
+\]</div>
+<p>Fractions using <code class="docutils literal notranslate"><span class="pre">\frac</span></code> and <code class="docutils literal notranslate"><span class="pre">\tfrac</span></code></p>
+<div class="math notranslate nohighlight">
+\[
+\frac{x}{y}, \qquad \tfrac{x}{y}
+\]</div>
+<p>Automatically adjusting brackets</p>
+<div class="math notranslate nohighlight">
+\[
+f(x) = \left( 1 + \frac{e^x}{1+x} \right) \left[ 1 - \frac{e^x}{1-x} \right]
+\]</div>
+<p>ODE</p>
+<div class="math notranslate nohighlight">
+\[
+\frac{d y}{d t} = f(t,y)
+\]</div>
+<p>PDE</p>
+<div class="math notranslate nohighlight">
+\[
+\frac{\partial u}{\partial t} + \frac{\partial f}{\partial x} = 0
+\]</div>
+<p>To reduce typing, we will define some aliases; to see them, double click on this block.</p>
+<div class="math notranslate nohighlight">
+\[
+\newcommand{\re}{\mathbb{R}}
+\newcommand{\mathd}{\textrm{d}}
+\newcommand{\od}[2]{\frac{\mathd #1}{\mathd #2}}
+\newcommand{\pd}[2]{\frac{\partial #1}{\partial #2}}
+\]</div>
+<p>We write the ODE and PDE again</p>
+<div class="math notranslate nohighlight">
+\[
+\od{y}{t} = f(t,y), \qquad \pd{u}{t} + \pd{f}{x} = 0
+\]</div>
+<p>Heaviside function</p>
+<div class="math notranslate nohighlight">
+\[\begin{split}
+H(x) = \begin{cases}
+0, &amp; x &lt; 0 \\
+1, &amp; x &gt; 1
+\end{cases}
+\end{split}\]</div>
+<p>Multi-line equation: <code class="docutils literal notranslate"><span class="pre">\eqnarray</span></code></p>
+<div class="amsmath math notranslate nohighlight" id="equation-e76b85e6-748a-4bc0-8590-307567322848">
+<span class="eqno">(1)<a class="headerlink" href="#equation-e76b85e6-748a-4bc0-8590-307567322848" title="Permalink to this equation">#</a></span>\[\begin{eqnarray}
+y &amp;=&amp; (\sin(x) + \cos(x))^2 \\
+  &amp;=&amp; \sin^2(x) + \cos^2(x) + 2 \sin(x) \cos(x) \\
+  &amp;=&amp; 1 + \sin(2x)
+\end{eqnarray}\]</div>
+<p>Multi-line equation: <code class="docutils literal notranslate"><span class="pre">\align</span></code></p>
+<div class="amsmath math notranslate nohighlight" id="equation-232ec4b5-5578-4f80-9314-e69bf9ad272a">
+<span class="eqno">(2)<a class="headerlink" href="#equation-232ec4b5-5578-4f80-9314-e69bf9ad272a" title="Permalink to this equation">#</a></span>\[\begin{align}
+y &amp;= (\sin(x) + \cos(x))^2 \\
+  &amp;= \sin^2(x) + \cos^2(x) + 2 \sin(x) \cos(x) \\
+  &amp;= 1 + \sin(2x)
+\end{align}\]</div>
+<p>which allows multiple alignments</p>
+<div class="amsmath math notranslate nohighlight" id="equation-3f846b70-3f06-40f5-ba5f-01649daa4712">
+<span class="eqno">(3)<a class="headerlink" href="#equation-3f846b70-3f06-40f5-ba5f-01649daa4712" title="Permalink to this equation">#</a></span>\[\begin{align}
+y &amp;= (\sin(x) + \cos(x))^2 &amp; \\
+  &amp;= \sin^2(x) + \cos^2(x) + 2 \sin(x) \cos(x) &amp; \\
+  &amp;= 1 + \sin(2x), &amp; \textrm{since } \sin^2(x) + \cos^2(x) = 1
+\end{align}\]</div>
+<p>Use <code class="docutils literal notranslate"><span class="pre">\gather</span></code> to stack many equations without alignment</p>
+<div class="amsmath math notranslate nohighlight" id="equation-041e1918-a4b2-45da-86e3-112b2073ff34">
+<span class="eqno">(4)<a class="headerlink" href="#equation-041e1918-a4b2-45da-86e3-112b2073ff34" title="Permalink to this equation">#</a></span>\[\begin{gather}
+y = x_1 + x_2 + x_3 + x_4 \\
+z = x_1 + x_2
+\end{gather}\]</div>
+<p>Equation numbering is not well supported in markdown, but we can put numbers by hard-coding them</p>
+<div class="math notranslate nohighlight">
+\[
+u_t + u \cdot \nabla u + \nabla p = \epsilon \Delta u \tag{1}
+\]</div>
+<p>Linear Algebra:</p>
+<blockquote>
+<div><p>Given <span class="math notranslate nohighlight">\(b \in R^m\)</span> and <span class="math notranslate nohighlight">\(A \in R^{m \times m}\)</span>, find <span class="math notranslate nohighlight">\(x \in R^m\)</span> such that</p>
+<div class="math notranslate nohighlight">
+\[
+  A x = b
+  \]</div>
+</div></blockquote>
+<p>The set of reals and complex are usually denoted as: <span class="math notranslate nohighlight">\(\mathbb{R}\)</span> and <span class="math notranslate nohighlight">\(\mathbb{C}\)</span>. So if we are very strict, we should write:</p>
+<blockquote>
+<div><p>Given <span class="math notranslate nohighlight">\(b \in \mathbb{R}^m\)</span> and <span class="math notranslate nohighlight">\(A \in \mathbb{R}^{m \times m}\)</span>, find <span class="math notranslate nohighlight">\(x \in \mathbb{R}^m\)</span> such that</p>
+<div class="math notranslate nohighlight">
+\[
+  A x = b
+  \]</div>
+</div></blockquote>
+<p>Matrix</p>
+<div class="math notranslate nohighlight">
+\[\begin{split}
+A = \begin{bmatrix}
+a_{11} &amp; a_{12} &amp; a_{13} \\
+a_{21} &amp; a_{22} &amp; a_{23} \\
+a_{31} &amp; a_{32} &amp; a_{33}
+\end{bmatrix}
+\end{split}\]</div>
+<p>Condition number of matrix <span class="math notranslate nohighlight">\(A \in R^{m \times m}\)</span></p>
+<div class="math notranslate nohighlight">
+\[
+\kappa = \| A \|  \| A^{-1} \|
+\]</div>
+</section>
+</section>
+<section class="tex2jax_ignore mathjax_ignore" id="tips-for-programming">
+<h1>Tips for programming<a class="headerlink" href="#tips-for-programming" title="Link to this heading">#</a></h1>
+<ol class="arabic">
+<li><p>Always</p>
+<ol class="arabic simple">
+<li><p>Think about your problem, write it down mathematically.</p></li>
+<li><p>Write down the algorithm on paper.</p></li>
+<li><p>Now start implementing it in code.</p></li>
+</ol>
+</li>
+<li><p>Possibly break the code down into some functions, so that you avoid repeating the same code in multiple places.</p></li>
+<li><p>Put checks for array sizes, etc.</p></li>
+<li><p>Be careful while dividing (denominator should not be zero), taking square roots (should be non-negative), etc.</p></li>
+<li><p>Test the code on some inputs to see it is working correctly. Also test individual functions that they are correct.</p></li>
+<li><p>If code crashes with some error, read the error message and fix the mistake. Cut and paste the error in a search engine to find solution.</p></li>
+<li><p>Do not hard code values, define some variables and use them. This way, if you change the value, you only need to change it in one place.</p></li>
+<li><p>Write comments in code to explain what you are doing.</p></li>
+<li><p>Indent code for better readability. This is essential for Python and the notebook editor automatically does this.</p></li>
+<li><p>Put spaces in formulae for better readability.</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">f</span> <span class="o">=</span> <span class="n">x</span><span class="o">+</span><span class="n">y</span><span class="o">+</span><span class="n">z</span><span class="o">*</span><span class="n">sin</span><span class="p">(</span><span class="n">a</span><span class="p">)</span><span class="o">*</span><span class="n">cos</span><span class="p">(</span><span class="n">b</span><span class="p">)</span>
+<span class="n">f</span> <span class="o">=</span> <span class="n">x</span> <span class="o">+</span> <span class="n">y</span> <span class="o">+</span> <span class="n">z</span> <span class="o">*</span> <span class="n">sin</span><span class="p">(</span><span class="n">a</span><span class="p">)</span> <span class="o">*</span> <span class="n">cos</span><span class="p">(</span><span class="n">b</span><span class="p">)</span>   <span class="o">&lt;==</span> <span class="n">Better</span>
+</pre></div>
+</div>
+</li>
+<li><p>Use brackets in formulae where needed. E.g., <span class="math notranslate nohighlight">\(f = \frac{a}{b c}\)</span>
+$<span class="math notranslate nohighlight">\(
+\textrm{f = a / b * c} \qquad \textrm{wrong, this gives} \qquad f = \left(\frac{a}{b}\right) c
+\)</span><span class="math notranslate nohighlight">\(
+correct code is
+\)</span><span class="math notranslate nohighlight">\(
+\textrm{f = a / (b * c)}
+\)</span><span class="math notranslate nohighlight">\(
+Another example
+\)</span><span class="math notranslate nohighlight">\(
+\textrm{f = x + y + z * sin(a) * cos(b)} \qquad \textrm{gives} \qquad f = x + y + (z \sin(a) \cos(b)) 
+\)</span><span class="math notranslate nohighlight">\(
+\)</span><span class="math notranslate nohighlight">\(
+\textrm{f = (x + y + z) * sin(a) * cos(b)} \qquad \textrm{gives} \qquad f = (x + y + z) \sin(a) \cos(b)
+\)</span>$</p></li>
+<li><p>Put a decimal when assigning float values; note that Python infers type based on the value you assign.</p></li>
+<li><p>Avoid writing long lines; continue long lines to new line or break into multiple statements of smaller size.</p></li>
+<li><p>Print some values to see computations are correct, and to monitor progress of code.</p></li>
+<li><p>In figures,</p>
+<ol class="arabic simple">
+<li><p>put axes labels, legend if there is more than one graph, title if needed.</p></li>
+<li><p>Draw grid lines for better readability, <code class="docutils literal notranslate"><span class="pre">plt.grid(True)</span></code>.</p></li>
+<li><p>Use different line style or symbols style to distinguish multiple graphs in same figure.</p></li>
+<li><p>Choose appropriate axis scale; linear scale is not always optimal.</p></li>
+</ol>
+</li>
+</ol>
+</section>
+
+    <script type="text/x-thebe-config">
+    {
+        requestKernel: true,
+        binderOptions: {
+            repo: "binder-examples/jupyter-stacks-datascience",
+            ref: "master",
+        },
+        codeMirrorConfig: {
+            theme: "abcdef",
+            mode: "python"
+        },
+        kernelOptions: {
+            name: "python3",
+            path: "./."
+        },
+        predefinedOutput: true
+    }
+    </script>
+    <script>kernelName = 'python3'</script>
+
+                </article>
+              
+
+              
+              
+              
+              
+                <footer class="prev-next-footer d-print-none">
+                  
+<div class="prev-next-area">
+    <a class="left-prev"
+       href="front.html"
+       title="previous page">
+      <i class="fa-solid fa-angle-left"></i>
+      <div class="prev-next-info">
+        <p class="prev-next-subtitle">previous</p>
+        <p class="prev-next-title">Python</p>
+      </div>
+    </a>
+    <a class="right-next"
+       href="01_intro.html"
+       title="next page">
+      <div class="prev-next-info">
+        <p class="prev-next-subtitle">next</p>
+        <p class="prev-next-title">Introduction</p>
+      </div>
+      <i class="fa-solid fa-angle-right"></i>
+    </a>
+</div>
+                </footer>
+              
+            </div>
+            
+            
+              
+                <dialog id="pst-secondary-sidebar-modal"></dialog>
+                <div id="pst-secondary-sidebar" class="bd-sidebar-secondary bd-toc"><div class="sidebar-secondary-items sidebar-secondary__inner">
+
+
+  <div class="sidebar-secondary-item">
+  <div class="page-toc tocsection onthispage">
+    <i class="fa-solid fa-list"></i> Contents
+  </div>
+  <nav class="bd-toc-nav page-toc">
+    <ul class="visible nav section-nav flex-column">
+<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#">Markdown, Latex and programming tips</a><ul class="visible nav section-nav flex-column">
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#latex">Latex</a></li>
+</ul>
+</li>
+<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#tips-for-programming">Tips for programming</a></li>
+</ul>
+
+  </nav></div>
+
+</div></div>
+              
+            
+          </div>
+          <footer class="bd-footer-content">
+            
+<div class="bd-footer-content__inner container">
+  
+  <div class="footer-item">
+    
+<p class="component-author">
+By Praveen Chandrashekar
+</p>
+
+  </div>
+  
+  <div class="footer-item">
+    
+
+  <p class="copyright">
+    
+      © Copyright 2024.
+      <br/>
+    
+  </p>
+
+  </div>
+  
+  <div class="footer-item">
+    
+  </div>
+  
+  <div class="footer-item">
+    
+  </div>
+  
+</div>
+          </footer>
+        
+
+      </main>
+    </div>
+  </div>
+  
+  <!-- Scripts loaded after <body> so the DOM is not blocked -->
+  <script defer src="_static/scripts/bootstrap.js?digest=26a4bc78f4c0ddb94549"></script>
+<script defer src="_static/scripts/pydata-sphinx-theme.js?digest=26a4bc78f4c0ddb94549"></script>
+
+  <footer class="bd-footer">
+  </footer>
+  </body>
+</html>
