@@ -173,6 +173,7 @@
         <ul class="current nav bd-sidenav">
 <li class="toctree-l1"><a class="reference internal" href="00_tips.html">Markdown, Latex and programming tips</a></li>
 
+
 <li class="toctree-l1 current active"><a class="current reference internal" href="#">Introduction</a></li>
 <li class="toctree-l1"><a class="reference internal" href="02_numpy.html">Numpy</a></li>
 <li class="toctree-l1"><a class="reference internal" href="03_functions.html">Functions</a></li>
@@ -589,11 +590,12 @@ $ jupyter-lab      (new way)
 </div>
 </div>
 <p>The result is rounded down to the integer value.</p>
-<p><strong>Raising to some power</strong>
-$<span class="math notranslate nohighlight">\(
+<p><strong>Raising to some power</strong></p>
+<div class="math notranslate nohighlight">
+\[
 c = a^b
-\)</span>$
-is done like this</p>
+\]</div>
+<p>is done like this</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">a</span><span class="p">,</span> <span class="n">b</span> <span class="o">=</span> <span class="mi">3</span><span class="p">,</span> <span class="mi">2</span>
@@ -608,11 +610,12 @@ is done like this</p>
 </div>
 </div>
 </div>
-<p>If the power <span class="math notranslate nohighlight">\(n\)</span> in
-$<span class="math notranslate nohighlight">\(
+<p>If the power <span class="math notranslate nohighlight">\(n\)</span> in</p>
+<div class="math notranslate nohighlight">
+\[
 y = x^n
-\)</span><span class="math notranslate nohighlight">\(
-is an integer, declare \)</span>n$ as integer 2 which will be faster than if you declare it as 2.0.</p>
+\]</div>
+<p>is an integer, declare <span class="math notranslate nohighlight">\(n\)</span> as integer 2 which will be faster than if you declare it as 2.0.</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">x</span><span class="p">,</span> <span class="n">n</span> <span class="o">=</span> <span class="mf">1.234</span><span class="p">,</span> <span class="mi">2</span>
@@ -702,12 +705,12 @@ is an integer, declare \)</span>n$ as integer 2 which will be faster than if you
 <section id="on-import">
 <h2>On import<a class="headerlink" href="#on-import" title="Link to this heading">#</a></h2>
 <p>We can also import everything into the current workspace and then we can use it without prepending <code class="docutils literal notranslate"><span class="pre">math</span></code></p>
-<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="o">&gt;&gt;</span> <span class="kn">from</span> <span class="nn">math</span> <span class="kn">import</span> <span class="o">*</span>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="o">&gt;&gt;</span> <span class="kn">from</span> <span class="nn">math</span> <span class="kn">import</span> <span class="o">*</span>
 <span class="o">&gt;&gt;</span> <span class="n">x</span> <span class="o">=</span> <span class="n">sin</span><span class="p">(</span><span class="mf">1.5</span><span class="o">*</span><span class="n">pi</span><span class="p">)</span>
 </pre></div>
 </div>
 <p>but this is not recommended usage since there may exist functions with same name in different modules. We can also import only what we need, e.g.,</p>
-<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="kn">from</span> <span class="nn">math</span> <span class="kn">import</span> <span class="n">sin</span><span class="p">,</span><span class="n">cos</span><span class="p">,</span><span class="n">pi</span>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="kn">from</span> <span class="nn">math</span> <span class="kn">import</span> <span class="n">sin</span><span class="p">,</span><span class="n">cos</span><span class="p">,</span><span class="n">pi</span>
 </pre></div>
 </div>
 </section>
@@ -884,7 +887,7 @@ x[2] = 3
 </div>
 </div>
 <p>Try to modify some element, for example</p>
-<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">x</span><span class="p">[</span><span class="mi">1</span><span class="p">]</span> <span class="o">=</span> <span class="mi">0</span>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">x</span><span class="p">[</span><span class="mi">1</span><span class="p">]</span> <span class="o">=</span> <span class="mi">0</span>
 </pre></div>
 </div>
 </section>
@@ -898,7 +901,7 @@ x[2] = 3
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>{1, 2, 3, &#39;a&#39;, &#39;c&#39;, &#39;b&#39;}
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>{1, 2, 3, &#39;b&#39;, &#39;a&#39;, &#39;c&#39;}
 </pre></div>
 </div>
 </div>
@@ -1026,21 +1029,22 @@ set()
 <section id="in-built-manual-help">
 <h2>In built manual/help<a class="headerlink" href="#in-built-manual-help" title="Link to this heading">#</a></h2>
 <p>See the inbuilt manual</p>
-<div class="highlight-default notranslate"><div class="highlight"><pre><span></span>&gt;&gt;&gt; range?
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="nb">range</span><span class="err">?</span>
 </pre></div>
 </div>
 <p>This works for all functions, etc.</p>
-<div class="highlight-default notranslate"><div class="highlight"><pre><span></span>&gt;&gt;&gt; import math
-&gt;&gt;&gt; math.sin?
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="kn">import</span> <span class="nn">math</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">math</span><span class="o">.</span><span class="n">sin</span><span class="err">?</span>
 </pre></div>
 </div>
 <section id="example-sum-a-list-of-integers">
 <h3>Example: Sum a list of integers<a class="headerlink" href="#example-sum-a-list-of-integers" title="Link to this heading">#</a></h3>
-<p>Given <span class="math notranslate nohighlight">\(a \in \re^n\)</span> compute
-$<span class="math notranslate nohighlight">\(
+<p>Given <span class="math notranslate nohighlight">\(a \in \re^n\)</span> compute</p>
+<div class="math notranslate nohighlight">
+\[
 s = \sum_{i=0}^{n-1} a_i
-\)</span>$
-We will need some mechanism to iterate over the elements to compute the sum, and we can use a <code class="docutils literal notranslate"><span class="pre">for</span></code> loop.</p>
+\]</div>
+<p>We will need some mechanism to iterate over the elements to compute the sum, and we can use a <code class="docutils literal notranslate"><span class="pre">for</span></code> loop.</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">a</span> <span class="o">=</span> <span class="p">[</span><span class="mi">1</span><span class="p">,</span><span class="mi">2</span><span class="p">,</span><span class="mi">3</span><span class="p">,</span><span class="mi">4</span><span class="p">,</span><span class="mi">5</span><span class="p">,</span><span class="mi">6</span><span class="p">,</span><span class="mi">7</span><span class="p">,</span><span class="mi">8</span><span class="p">,</span><span class="mi">9</span><span class="p">,</span><span class="mi">10</span><span class="p">]</span>
@@ -1098,26 +1102,26 @@ We will need some mechanism to iterate over the elements to compute the sum, and
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>    1         0.7193845265
-    2         1.1393298589
-    3         1.7578094244
-    4         1.8689210467
-    5         2.2035800206
-    6         2.3693734099
-    7         3.2763931124
-    8         3.7478780866
-    9         4.0058485852
-   10         4.3623534064
-   11         4.8972893900
-   12         5.4220884497
-   13         5.4284739819
-   14         5.9354247349
-   15         6.7130101517
-   16         7.3935471567
-   17         8.2966008253
-   18         9.1991958646
-   19         9.4553684980
-   20        10.4450845072
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>    1         0.4825086222
+    2         1.0784890306
+    3         1.6347052867
+    4         1.8798942211
+    5         2.4496442718
+    6         3.2139446670
+    7         3.4099403084
+    8         3.5812086957
+    9         4.3373943588
+   10         5.1737093303
+   11         5.8070485693
+   12         5.9345152649
+   13         6.3099415367
+   14         7.0233370171
+   15         7.6887733730
+   16         7.7601008304
+   17         8.5728221712
+   18         9.0409087854
+   19         9.5400516415
+   20        10.0226316431
 </pre></div>
 </div>
 </div>

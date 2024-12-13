@@ -173,6 +173,7 @@
         <ul class="current nav bd-sidenav">
 <li class="toctree-l1"><a class="reference internal" href="00_tips.html">Markdown, Latex and programming tips</a></li>
 
+
 <li class="toctree-l1"><a class="reference internal" href="01_intro.html">Introduction</a></li>
 <li class="toctree-l1"><a class="reference internal" href="02_numpy.html">Numpy</a></li>
 <li class="toctree-l1"><a class="reference internal" href="03_functions.html">Functions</a></li>
@@ -454,11 +455,12 @@
 <img alt="_images/4d93b0926693625c998e35c695a3a56629d119e6c4b7f1d4a2373b12ca9a3271.png" src="_images/4d93b0926693625c998e35c695a3a56629d119e6c4b7f1d4a2373b12ca9a3271.png" />
 </div>
 </div>
-<p><strong>Product of two functions</strong>. Define a more complicated expression as product of two expressions
-$<span class="math notranslate nohighlight">\(
+<p><strong>Product of two functions</strong>. Define a more complicated expression as product of two expressions</p>
+<div class="math notranslate nohighlight">
+\[
 h(x) = f(x) g(x)
-\)</span>$
-and differentiate it</p>
+\]</div>
+<p>and differentiate it</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">g</span> <span class="o">=</span> <span class="n">exp</span><span class="p">(</span><span class="n">x</span><span class="p">)</span>
@@ -471,11 +473,12 @@ and differentiate it</p>
 <img alt="_images/d057dd9ef4039b79847c3e803a2e676a7b41929907f86f764a4d3eaeb0c462a6.png" src="_images/d057dd9ef4039b79847c3e803a2e676a7b41929907f86f764a4d3eaeb0c462a6.png" />
 </div>
 </div>
-<p><strong>Function composition</strong>. Composition of two functions
-$<span class="math notranslate nohighlight">\(
+<p><strong>Function composition</strong>. Composition of two functions</p>
+<div class="math notranslate nohighlight">
+\[
 h(x) = (f \circ g)(x) = f(g(x))
-\)</span><span class="math notranslate nohighlight">\(
-Apply this to the case \)</span>f(x) = \sin(x)<span class="math notranslate nohighlight">\(, \)</span>g(x) = \cos(x)$.</p>
+\]</div>
+<p>Apply this to the case <span class="math notranslate nohighlight">\(f(x) = \sin(x)\)</span>, <span class="math notranslate nohighlight">\(g(x) = \cos(x)\)</span>.</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">g</span> <span class="o">=</span> <span class="n">cos</span><span class="p">(</span><span class="n">x</span><span class="p">)</span>
@@ -611,10 +614,11 @@ Apply this to the case \)</span>f(x) = \sin(x)<span class="math notranslate nohi
 </section>
 <section id="compute-roots">
 <h2>Compute roots<a class="headerlink" href="#compute-roots" title="Link to this heading">#</a></h2>
-<p>Let us find roots of quadratic equation
-$<span class="math notranslate nohighlight">\(
+<p>Let us find roots of quadratic equation</p>
+<div class="math notranslate nohighlight">
+\[
 a x^2 + b x + c = 0
-\)</span>$</p>
+\]</div>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">x</span><span class="p">,</span> <span class="n">a</span><span class="p">,</span> <span class="n">b</span><span class="p">,</span> <span class="n">c</span> <span class="o">=</span> <span class="n">symbols</span><span class="p">(</span><span class="s1">&#39;x a b c&#39;</span><span class="p">)</span>
@@ -791,17 +795,18 @@ g(1) = 129.72606342238427
 </div>
 </div>
 <div class="cell_output docutils container">
-<img alt="_images/8ca7dcae641bfa0f211aa691625280b64370d6fa65a7321e3e6a25b8d536e7b0.svg" src="_images/8ca7dcae641bfa0f211aa691625280b64370d6fa65a7321e3e6a25b8d536e7b0.svg" />
+<img alt="_images/c0c05e92f0890e65be9b69f454bf8fdb3e2172f7078879aed4a471199dc67cd2.svg" src="_images/c0c05e92f0890e65be9b69f454bf8fdb3e2172f7078879aed4a471199dc67cd2.svg" />
 </div>
 </div>
 </section>
 <section id="example-truncation-error-of-fd-scheme">
 <h2>Example: Truncation error of FD scheme<a class="headerlink" href="#example-truncation-error-of-fd-scheme" title="Link to this heading">#</a></h2>
-<p>Approximate second derivative using finite difference scheme
-$<span class="math notranslate nohighlight">\(
+<p>Approximate second derivative using finite difference scheme</p>
+<div class="math notranslate nohighlight">
+\[
 f''(x) \approx \frac{f(x-h) - 2 f(x) + f(x+h)}{h^2}
-\)</span><span class="math notranslate nohighlight">\(
-We perform Taylor expansion around \)</span>x$ to find the error in this approximation</p>
+\]</div>
+<p>We perform Taylor expansion around <span class="math notranslate nohighlight">\(x\)</span> to find the error in this approximation</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">x</span><span class="p">,</span> <span class="n">h</span> <span class="o">=</span> <span class="n">symbols</span><span class="p">(</span><span class="s2">&quot;x,h&quot;</span><span class="p">)</span>
@@ -815,15 +820,17 @@ We perform Taylor expansion around \)</span>x$ to find the error in this approxi
 <img alt="_images/5f96950fcf63815ebd93a41d38132046ab15eba3e2364cfeb6ba78f6b9ec5662.png" src="_images/5f96950fcf63815ebd93a41d38132046ab15eba3e2364cfeb6ba78f6b9ec5662.png" />
 </div>
 </div>
-<p>The above result shows that the FD formula is equal to
-$<span class="math notranslate nohighlight">\(
+<p>The above result shows that the FD formula is equal to</p>
+<div class="math notranslate nohighlight">
+\[
 \frac{f(x-h) - 2 f(x) + f(x+h)}{h^2} = f''(x) + \frac{h^2}{12} f^{(4)}(x) + \frac{h^4}{360} f^{(6)}(x) + O(h^6)
-\)</span><span class="math notranslate nohighlight">\(
-The leading error term is \)</span>O(h^2)<span class="math notranslate nohighlight">\( 
-\)</span><span class="math notranslate nohighlight">\(
+\]</div>
+<p>The leading error term is <span class="math notranslate nohighlight">\(O(h^2)\)</span></p>
+<div class="math notranslate nohighlight">
+\[
 \frac{f(x-h) - 2 f(x) + f(x+h)}{h^2} - f''(x) = \frac{h^2}{12} f^{(4)}(x) + \frac{h^4}{360} f^{(6)}(x) + O(h^6)
-\)</span>$
-so that the formula is second order accurate.</p>
+\]</div>
+<p>so that the formula is second order accurate.</p>
 </section>
 </section>
 

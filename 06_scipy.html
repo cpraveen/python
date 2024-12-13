@@ -172,6 +172,7 @@
         <ul class="current nav bd-sidenav">
 <li class="toctree-l1"><a class="reference internal" href="00_tips.html">Markdown, Latex and programming tips</a></li>
 
+
 <li class="toctree-l1"><a class="reference internal" href="01_intro.html">Introduction</a></li>
 <li class="toctree-l1"><a class="reference internal" href="02_numpy.html">Numpy</a></li>
 <li class="toctree-l1"><a class="reference internal" href="03_functions.html">Functions</a></li>
@@ -404,16 +405,11 @@
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>[[6.17271651e-02 9.34897199e-01 7.55708142e-01 5.71953756e-01
-  3.37257102e-01]
- [9.07674575e-01 4.36288645e-01 3.05924189e-01 8.42176799e-01
-  6.63579471e-02]
- [6.24252400e-01 2.96200394e-04 7.23328165e-01 4.54509771e-01
-  4.98628357e-01]
- [5.14983971e-01 3.42529675e-02 2.36365171e-01 8.39478402e-01
-  1.06292016e-01]
- [6.95055819e-01 9.34518925e-02 2.58472197e-01 9.40161892e-01
-  5.54175865e-01]]
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>[[0.87111821 0.31187189 0.73385661 0.72677295 0.07240477]
+ [0.44226267 0.59105743 0.09242915 0.68903363 0.11738665]
+ [0.78506291 0.96707229 0.91154786 0.90142869 0.43679561]
+ [0.8422057  0.44554821 0.92483793 0.56105259 0.72655769]
+ [0.18180581 0.95439448 0.02457123 0.35919562 0.99608076]]
 </pre></div>
 </div>
 </div>
@@ -444,7 +440,7 @@
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>[ 0.3221926  -0.54724639  0.8426752   0.69385005 -0.28313086]
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>[ 7.90123934  4.70416407 -2.73678701 -7.54381747 -2.67843186]
 </pre></div>
 </div>
 </div>
@@ -457,8 +453,8 @@
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>[ 5.55111512e-17  0.00000000e+00  0.00000000e+00  0.00000000e+00
- -1.11022302e-16]
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>[-8.88178420e-16 -8.88178420e-16 -2.16493490e-15 -2.01227923e-16
+ -3.33066907e-16]
 </pre></div>
 </div>
 </div>
@@ -472,7 +468,7 @@
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>[ 0.3221926  -0.54724639  0.8426752   0.69385005 -0.28313086]
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>[ 7.90123934  4.70416407 -2.73678701 -7.54381747 -2.67843186]
 </pre></div>
 </div>
 </div>
@@ -577,15 +573,17 @@
 </section>
 <section id="curve-fitting">
 <h2>Curve fitting<a class="headerlink" href="#curve-fitting" title="Link to this heading">#</a></h2>
-<p>Suppose we are given some data set
-$<span class="math notranslate nohighlight">\(
+<p>Suppose we are given some data set</p>
+<div class="math notranslate nohighlight">
+\[
 (x_i,y_i), \qquad i=0,1,...,n-1
-\)</span><span class="math notranslate nohighlight">\(
-and we suspect there is a linear relation ship between them
-\)</span><span class="math notranslate nohighlight">\(
+\]</div>
+<p>and we suspect there is a linear relation ship between them</p>
+<div class="math notranslate nohighlight">
+\[
 y = a + b x
-\)</span>$
-But possibly the data also has some noise. Let us generate such a data set.</p>
+\]</div>
+<p>But possibly the data also has some noise. Let us generate such a data set.</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># Sample points</span>
@@ -606,7 +604,7 @@ But possibly the data also has some noise. Let us generate such a data set.</p>
 </div>
 </div>
 <div class="cell_output docutils container">
-<img alt="_images/b9220b895f90be56d465b8297f661e687f4f7fa468e9420ced2ec6b06187790e.svg" src="_images/b9220b895f90be56d465b8297f661e687f4f7fa468e9420ced2ec6b06187790e.svg" />
+<img alt="_images/4693c89e57a1ebfbed1f15bf22376ad922775258713a61c7924b06cdda8c82b8.svg" src="_images/4693c89e57a1ebfbed1f15bf22376ad922775258713a61c7924b06cdda8c82b8.svg" />
 </div>
 </div>
 <p>Define the function we want to fit. The first argument is the independent variable, and remaining are the parameters that we want to find.</p>
@@ -632,10 +630,10 @@ But possibly the data also has some noise. Let us generate such a data set.</p>
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Fitted parameters =  1.0054798378791703 1.9687906854914827
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Fitted parameters =  1.0261373850198612 1.9635261663379917
 </pre></div>
 </div>
-<img alt="_images/2849e36acce1df9277e8c26f83e776967a554f7f9a5ee8cf100af73b2b406270.svg" src="_images/2849e36acce1df9277e8c26f83e776967a554f7f9a5ee8cf100af73b2b406270.svg" />
+<img alt="_images/398ca4fae8a1bc21525f415cd54400b68a4107fbd52035e0a85e19552ed958d5.svg" src="_images/398ca4fae8a1bc21525f415cd54400b68a4107fbd52035e0a85e19552ed958d5.svg" />
 </div>
 </div>
 <p>We can also use the <a class="reference external" href="https://numpy.org/doc/stable/reference/generated/numpy.polyfit.html">polyfit</a> function or <a class="reference external" href="https://numpy.org/doc/stable/reference/generated/numpy.polynomial.polynomial.Polynomial.fit.html#numpy.polynomial.polynomial.Polynomial.fit">fit</a> function from numpy to do this.</p>
@@ -647,15 +645,16 @@ But possibly the data also has some noise. Let us generate such a data set.</p>
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Polynomial coefficients =  [1.96879068 1.00547984]
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Polynomial coefficients =  [1.96352617 1.02613739]
 </pre></div>
 </div>
 </div>
 </div>
-<p>The polynomials coefficients are returned in <span class="math notranslate nohighlight">\(c\)</span> in the following order
-$<span class="math notranslate nohighlight">\(
+<p>The polynomials coefficients are returned in <span class="math notranslate nohighlight">\(c\)</span> in the following order</p>
+<div class="math notranslate nohighlight">
+\[
 p(x) = c[0] * x^{deg} + c[1] * x^{deg-1} + \ldots + c[-1]
-\)</span>$</p>
+\]</div>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">p</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">poly1d</span><span class="p">(</span><span class="n">c</span><span class="p">)</span>
@@ -667,7 +666,7 @@ p(x) = c[0] * x^{deg} + c[1] * x^{deg-1} + \ldots + c[-1]
 </div>
 </div>
 <div class="cell_output docutils container">
-<img alt="_images/fb73a15ca7a1bcc885f6c2a04cf20a619c86e5c29ffab97b9ffbcaae3ab3d56a.svg" src="_images/fb73a15ca7a1bcc885f6c2a04cf20a619c86e5c29ffab97b9ffbcaae3ab3d56a.svg" />
+<img alt="_images/fdddcdccebdc874946e525076a34fbfd6006ee486d8c7fe26dbd8111f90471ea.svg" src="_images/fdddcdccebdc874946e525076a34fbfd6006ee486d8c7fe26dbd8111f90471ea.svg" />
 </div>
 </div>
 </section>

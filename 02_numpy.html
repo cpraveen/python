@@ -173,6 +173,7 @@
         <ul class="current nav bd-sidenav">
 <li class="toctree-l1"><a class="reference internal" href="00_tips.html">Markdown, Latex and programming tips</a></li>
 
+
 <li class="toctree-l1"><a class="reference internal" href="01_intro.html">Introduction</a></li>
 <li class="toctree-l1 current active"><a class="current reference internal" href="#">Numpy</a></li>
 <li class="toctree-l1"><a class="reference internal" href="03_functions.html">Functions</a></li>
@@ -598,11 +599,12 @@ Numpy provides many useful facilities to perform numerical computations includin
 </div>
 </div>
 </div>
-<p>For <span class="math notranslate nohighlight">\(m &lt; n\)</span>, <code class="docutils literal notranslate"><span class="pre">arange(m,n)</span></code> returns
-$<span class="math notranslate nohighlight">\(
+<p>For <span class="math notranslate nohighlight">\(m &lt; n\)</span>, <code class="docutils literal notranslate"><span class="pre">arange(m,n)</span></code> returns</p>
+<div class="math notranslate nohighlight">
+\[
 m, m+1, \ldots, n-1
-\)</span><span class="math notranslate nohighlight">\(
-Note the last value \)</span>n$ is not included.</p>
+\]</div>
+<p>Note the last value <span class="math notranslate nohighlight">\(n\)</span> is not included.</p>
 <p>We can specify a step size</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
@@ -837,8 +839,8 @@ Note the last value \)</span>n$ is not included.</p>
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>[[0.08929663 0.46461609 0.78218208]
- [0.04276372 0.5312186  0.22523227]]
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>[[0.94371577 0.9925024  0.59651145]
+ [0.29680161 0.95820067 0.41797043]]
 A.size = 6
 A.shape = (2, 3)
 A.shape[0] = 2  (number of rows)
@@ -857,12 +859,12 @@ A.shape[1] = 3  (number of columns)
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>0 0 0.08929663470754146
-0 1 0.4646160858302828
-0 2 0.7821820753878597
-1 0 0.042763717650793565
-1 1 0.5312185984002419
-1 2 0.2252322701784516
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>0 0 0.9437157731776047
+0 1 0.9925023982734942
+0 2 0.5965114451795118
+1 0 0.2968016125453209
+1 1 0.958200672732616
+1 2 0.4179704288378332
 </pre></div>
 </div>
 </div>
@@ -1246,9 +1248,9 @@ Element in first row = 1.0 &lt;class &#39;numpy.float64&#39;&gt;
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>[[0.98692299 0.23129346 0.34640406 0.71151791]
- [0.86153676 0.83270771 0.78869438 0.51927645]
- [0.09631488 0.69012845 0.90721264 0.81596633]]
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>[[0.48956074 0.89724503 0.41977408 0.93761569]
+ [0.78471653 0.67717621 0.67339549 0.54371589]
+ [0.07208878 0.63774647 0.89159543 0.19811399]]
 </pre></div>
 </div>
 </div>
@@ -1260,7 +1262,7 @@ Element in first row = 1.0 &lt;class &#39;numpy.float64&#39;&gt;
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>[0.98692299 0.23129346 0.34640406 0.71151791]
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>[0.48956074 0.89724503 0.41977408 0.93761569]
 </pre></div>
 </div>
 </div>
@@ -1272,7 +1274,7 @@ Element in first row = 1.0 &lt;class &#39;numpy.float64&#39;&gt;
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>[0.98692299 0.86153676 0.09631488]
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>[0.48956074 0.78471653 0.07208878]
 </pre></div>
 </div>
 </div>
@@ -1284,8 +1286,8 @@ Element in first row = 1.0 &lt;class &#39;numpy.float64&#39;&gt;
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>[[0.98692299 0.23129346 0.34640406]
- [0.86153676 0.83270771 0.78869438]]
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>[[0.48956074 0.89724503 0.41977408]
+ [0.78471653 0.67717621 0.67339549]]
 </pre></div>
 </div>
 </div>
@@ -1299,8 +1301,8 @@ Element in first row = 1.0 &lt;class &#39;numpy.float64&#39;&gt;
 </div>
 <div class="cell_output docutils container">
 <div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>[[0.         0.         0.         0.        ]
- [0.86153676 0.83270771 0.78869438 0.51927645]
- [0.09631488 0.69012845 0.90721264 0.81596633]]
+ [0.78471653 0.67717621 0.67339549 0.54371589]
+ [0.07208878 0.63774647 0.89159543 0.19811399]]
 </pre></div>
 </div>
 </div>
@@ -1530,18 +1532,18 @@ dot     =  28
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>[[-0.55463196  0.36738964 -0.95364233]
- [ 0.3206634   0.48744441  0.5423381 ]
- [ 0.13514109  0.14902746  0.28273808]]
-min       =  -0.9536423324239818
-max       =  0.542338103249147
-abs min   =  0.13514109349888592
-abs max   =  0.9536423324239818
-sum       =  0.7764679045433625
-Frob norm =  1.4515496105276033
-L1 norm   =  1.77871851838396
-L2 norm   =  1.3090399175648466
-Linf norm =  1.8756639334656688
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>[[ 0.54284224 -0.85908376 -0.25355711]
+ [ 0.69124948  0.81059314 -0.41529578]
+ [ 0.48896781 -0.79449903  0.72875746]]
+min       =  -0.8590837569851053
+max       =  0.8105931370114077
+abs min   =  0.2535571062054871
+abs max   =  0.8590837569851053
+sum       =  0.9399744461075568
+Frob norm =  1.9508349842887713
+L1 norm   =  2.464175926833584
+L2 norm   =  1.542658006569714
+Linf norm =  2.0122243006714498
 </pre></div>
 </div>
 </div>
@@ -1549,14 +1551,16 @@ Linf norm =  1.8756639334656688
 </section>
 <section id="example-matrix-vector-product">
 <h2>Example: Matrix-vector product<a class="headerlink" href="#example-matrix-vector-product" title="Link to this heading">#</a></h2>
-<p>Let
-$<span class="math notranslate nohighlight">\(
+<p>Let</p>
+<div class="math notranslate nohighlight">
+\[
 x, y \in \re^n, \qquad A \in \re^{n \times n}
-\)</span><span class="math notranslate nohighlight">\(
-To compute the matrix-vector product \)</span>y=Ax<span class="math notranslate nohighlight">\(, we can do it element-wise
-\)</span><span class="math notranslate nohighlight">\(
+\]</div>
+<p>To compute the matrix-vector product <span class="math notranslate nohighlight">\(y=Ax\)</span>, we can do it element-wise</p>
+<div class="math notranslate nohighlight">
+\[
 y_i = \sum_{j=0}^{n-1} A_{ij} x_j, \qquad 0 \le i \le n-1
-\)</span>$</p>
+\]</div>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">n</span> <span class="o">=</span> <span class="mi">10</span>
@@ -1578,20 +1582,22 @@ y_i = \sum_{j=0}^{n-1} A_{ij} x_j, \qquad 0 \le i \le n-1
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>8.308148362110449e-16
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>6.280369834735101e-16
 </pre></div>
 </div>
 </div>
 </div>
-<p>We can also compute the product column-wise. Let
-$<span class="math notranslate nohighlight">\(
+<p>We can also compute the product column-wise. Let</p>
+<div class="math notranslate nohighlight">
+\[
 A_{:,j} = \textrm{j'th column of A}
-\)</span><span class="math notranslate nohighlight">\(
-Then the matrix-vector product can also be written as
-\)</span><span class="math notranslate nohighlight">\(
+\]</div>
+<p>Then the matrix-vector product can also be written as</p>
+<div class="math notranslate nohighlight">
+\[
 y = \sum_{j=0}^{n-1} A_{:,j} x_j
-\)</span>$
-<strong>Warning</strong>: This may have inefficient memory access since by default, numpy arrays have column-major ordering, see below.</p>
+\]</div>
+<p><strong>Warning</strong>: This may have inefficient memory access since by default, numpy arrays have column-major ordering, see below.</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">y</span><span class="p">[:]</span> <span class="o">=</span> <span class="mf">0.0</span>
@@ -1604,7 +1610,7 @@ y = \sum_{j=0}^{n-1} A_{:,j} x_j
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>8.308148362110449e-16
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>6.280369834735101e-16
 </pre></div>
 </div>
 </div>
@@ -1612,10 +1618,11 @@ y = \sum_{j=0}^{n-1} A_{:,j} x_j
 </section>
 <section id="example-matrix-matrix-product">
 <h2>Example: Matrix-Matrix product<a class="headerlink" href="#example-matrix-matrix-product" title="Link to this heading">#</a></h2>
-<p>If <span class="math notranslate nohighlight">\(A \in \re^{m\times n}\)</span> and <span class="math notranslate nohighlight">\(B \in \re^{n \times p}\)</span> then <span class="math notranslate nohighlight">\(C = AB \in \re^{m \times p}\)</span> is given by
-$<span class="math notranslate nohighlight">\(
+<p>If <span class="math notranslate nohighlight">\(A \in \re^{m\times n}\)</span> and <span class="math notranslate nohighlight">\(B \in \re^{n \times p}\)</span> then <span class="math notranslate nohighlight">\(C = AB \in \re^{m \times p}\)</span> is given by</p>
+<div class="math notranslate nohighlight">
+\[
 C_{ij} = \sum_{k=0}^{n-1} A_{ik} B_{kj}, \qquad 0 \le i \le m-1, \quad 0 \le j \le p-1
-\)</span>$</p>
+\]</div>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">m</span><span class="p">,</span><span class="n">n</span><span class="p">,</span><span class="n">p</span> <span class="o">=</span> <span class="mi">10</span><span class="p">,</span><span class="mi">8</span><span class="p">,</span><span class="mi">6</span>
@@ -1638,15 +1645,16 @@ C_{ij} = \sum_{k=0}^{n-1} A_{ik} B_{kj}, \qquad 0 \le i \le m-1, \quad 0 \le j \
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>1.7055569729570692e-15
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>1.5543122344752192e-15
 </pre></div>
 </div>
 </div>
 </div>
-<p>Another view-point is the following
-$<span class="math notranslate nohighlight">\(
+<p>Another view-point is the following</p>
+<div class="math notranslate nohighlight">
+\[
 C_{ij} = (\textrm{i'th row of A}) \cdot (\textrm{j'th column of B})
-\)</span>$</p>
+\]</div>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="n">m</span><span class="p">):</span>
@@ -1732,17 +1740,17 @@ y = [ 0.0000000e+00  1.0000000e+00  1.2246468e-16 -1.0000000e+00
 </div>
 <div class="cell_output docutils container">
 <div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>A =
- [[0.2620271  0.84260067 0.72775566 0.47628408 0.56673453]
- [0.6440843  0.98425596 0.61140648 0.73848218 0.81593055]
- [0.8840603  0.44240569 0.91575043 0.79520766 0.43014262]
- [0.92300054 0.7437113  0.97688499 0.72815907 0.76048473]
- [0.97140652 0.20185676 0.55464519 0.07298398 0.48657105]]
+ [[0.53888393 0.10550039 0.15225272 0.6733487  0.16851922]
+ [0.58557542 0.48227482 0.03921813 0.96901872 0.0702246 ]
+ [0.25144398 0.96560745 0.52793687 0.38628429 0.21178682]
+ [0.07857037 0.52669655 0.28358284 0.05989545 0.82586757]
+ [0.83176071 0.38479834 0.02880786 0.2231203  0.1185901 ]]
 Y =
- [[0.259039   0.74637645 0.66519553 0.45848    0.53687998]
- [0.60046645 0.83286051 0.57401971 0.67316627 0.72836352]
- [0.77331954 0.42811478 0.79301997 0.71400901 0.41700043]
- [0.79741582 0.67702394 0.82875821 0.66549669 0.68927271]
- [0.82568    0.20048874 0.52664172 0.0729192  0.46759765]]
+ [[0.51317841 0.10530479 0.15166518 0.62360728 0.16772273]
+ [0.55267903 0.46379574 0.03920808 0.8243306  0.0701669 ]
+ [0.24880279 0.82239466 0.50375219 0.37674911 0.21020713]
+ [0.07848955 0.50268035 0.27979717 0.05985965 0.7351362 ]
+ [0.73911848 0.37537223 0.02880388 0.22127365 0.11831233]]
 </pre></div>
 </div>
 </div>
@@ -1843,10 +1851,7 @@ Col contiguous = True
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>len(x) = 
-</pre></div>
-</div>
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span> 4
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>len(x) =  4
 len(y) =  3
 shape X=  (3, 4)
 shape Y=  (3, 4)
@@ -1864,17 +1869,19 @@ Y =
 </div>
 </div>
 </div>
-<p>If <span class="math notranslate nohighlight">\(x \in \re^m\)</span> and <span class="math notranslate nohighlight">\(y \in \re^n\)</span>, then the output is arranged like this
-$<span class="math notranslate nohighlight">\(
+<p>If <span class="math notranslate nohighlight">\(x \in \re^m\)</span> and <span class="math notranslate nohighlight">\(y \in \re^n\)</span>, then the output is arranged like this</p>
+<div class="math notranslate nohighlight">
+\[
 X[i,j] = x[j], \qquad
 Y[i,j] = y[i], \qquad 0 \le i \le n-1, \quad 0 \le j \le m-1
-\)</span><span class="math notranslate nohighlight">\(
-If we want the following arrangement
-\)</span><span class="math notranslate nohighlight">\(
+\]</div>
+<p>If we want the following arrangement</p>
+<div class="math notranslate nohighlight">
+\[
 X[i,j] = x[i], \qquad
 Y[i,j] = y[j], \qquad 0 \le i \le m-1, \quad 0 \le j \le n-1
-\)</span>$
-we have to do the following</p>
+\]</div>
+<p>we have to do the following</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">X</span><span class="p">,</span> <span class="n">Y</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">meshgrid</span><span class="p">(</span><span class="n">x</span><span class="p">,</span><span class="n">y</span><span class="p">,</span><span class="n">indexing</span><span class="o">=</span><span class="s1">&#39;ij&#39;</span><span class="p">)</span>
@@ -1980,9 +1987,9 @@ shape Y=  (4, 3)
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>[[0.67684346 0.03136263 0.50068425]
- [0.97359226 0.8016902  0.88608508]
- [0.37061963 0.10692757 0.27429745]]
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>[[0.54758522 0.69482685 0.08960239]
+ [0.61177917 0.60311822 0.48990177]
+ [0.79763454 0.91295451 0.13116034]]
 </pre></div>
 </div>
 </div>
@@ -1999,9 +2006,9 @@ shape Y=  (4, 3)
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>6.768434612297529185e-01 3.136263066506150832e-02 5.006842548906387247e-01
-9.735922568031095681e-01 8.016902037024952188e-01 8.860850772827069122e-01
-3.706196324350353732e-01 1.069275653508622304e-01 2.742974492800529518e-01
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>5.475852155984719527e-01 6.948268508848476355e-01 8.960239463229446866e-02
+6.117791678495625440e-01 6.031182152031291377e-01 4.899017720654146313e-01
+7.976345425209886431e-01 9.129545126270155464e-01 1.311603420038041090e-01
 </pre></div>
 </div>
 </div>
@@ -2088,7 +2095,7 @@ y = [2. 4. 6. 8.]
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>232 ms ± 2.09 ms per loop (mean ± std. dev. of 10 runs, 10 loops each)
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>237 ms ± 2.93 ms per loop (mean ± std. dev. of 10 runs, 10 loops each)
 </pre></div>
 </div>
 </div>
@@ -2102,7 +2109,7 @@ y = [2. 4. 6. 8.]
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>847 μs ± 43.6 μs per loop (mean ± std. dev. of 10 runs, 10 loops each)
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>781 μs ± 21.4 μs per loop (mean ± std. dev. of 10 runs, 10 loops each)
 </pre></div>
 </div>
 </div>

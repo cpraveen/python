@@ -173,6 +173,7 @@
         <ul class="current nav bd-sidenav">
 <li class="toctree-l1"><a class="reference internal" href="00_tips.html">Markdown, Latex and programming tips</a></li>
 
+
 <li class="toctree-l1"><a class="reference internal" href="01_intro.html">Introduction</a></li>
 <li class="toctree-l1"><a class="reference internal" href="02_numpy.html">Numpy</a></li>
 <li class="toctree-l1 current active"><a class="current reference internal" href="#">Functions</a></li>
@@ -405,10 +406,11 @@ A function is something which takes some input arguments and returns one or more
 </div>
 <section id="sum-two-vectors">
 <h2>Sum two vectors<a class="headerlink" href="#sum-two-vectors" title="Link to this heading">#</a></h2>
-<p>For <span class="math notranslate nohighlight">\(x, y \in \re^n\)</span>, compute <span class="math notranslate nohighlight">\(z \in \re^n\)</span> by
-$<span class="math notranslate nohighlight">\(
+<p>For <span class="math notranslate nohighlight">\(x, y \in \re^n\)</span>, compute <span class="math notranslate nohighlight">\(z \in \re^n\)</span> by</p>
+<div class="math notranslate nohighlight">
+\[
 z_i = x_i + y_i, \qquad 0 \le i \le n-1
-\)</span>$</p>
+\]</div>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="k">def</span> <span class="nf">sum1</span><span class="p">(</span><span class="n">x</span><span class="p">,</span><span class="n">y</span><span class="p">):</span>
@@ -481,10 +483,11 @@ z_i = x_i + y_i, \qquad 0 \le i \le n-1
 </section>
 <section id="minimum-value-of-an-array">
 <h2>Minimum value of an array<a class="headerlink" href="#minimum-value-of-an-array" title="Link to this heading">#</a></h2>
-<p>Given <span class="math notranslate nohighlight">\(x \in \re^n\)</span>, compute
-$<span class="math notranslate nohighlight">\(
+<p>Given <span class="math notranslate nohighlight">\(x \in \re^n\)</span>, compute</p>
+<div class="math notranslate nohighlight">
+\[
 m = \min_{0 \le i \le n-1} x_i
-\)</span>$</p>
+\]</div>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="k">def</span> <span class="nf">minval</span><span class="p">(</span><span class="n">x</span><span class="p">):</span>
@@ -509,10 +512,10 @@ m = \min_{0 \le i \le n-1} x_i
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>[0.88168169 0.83044794 0.79044325 0.69806572 0.49232398 0.84422407
- 0.1586658  0.51877632 0.25530119 0.48360613]
-Minimum =  0.15866580353256887
-Numpy   =  0.15866580353256887
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>[0.44388247 0.15174139 0.44638798 0.79792342 0.20362793 0.4046779
+ 0.44507456 0.38308954 0.07225424 0.51187216]
+Minimum =  0.07225423811134302
+Numpy   =  0.07225423811134302
 </pre></div>
 </div>
 </div>
@@ -520,11 +523,12 @@ Numpy   =  0.15866580353256887
 </section>
 <section id="min-and-max-of-an-array">
 <h2>Min and max of an array<a class="headerlink" href="#min-and-max-of-an-array" title="Link to this heading">#</a></h2>
-<p>Given <span class="math notranslate nohighlight">\(x \in \re^n\)</span>, compute
-$<span class="math notranslate nohighlight">\(
+<p>Given <span class="math notranslate nohighlight">\(x \in \re^n\)</span>, compute</p>
+<div class="math notranslate nohighlight">
+\[
 m = \min_{0 \le i \le n-1} x_i, \qquad
 M = \max_{0 \le i \le n-1} x_i
-\)</span>$</p>
+\]</div>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="k">def</span> <span class="nf">minmax</span><span class="p">(</span><span class="n">x</span><span class="p">):</span>
@@ -552,9 +556,9 @@ M = \max_{0 \le i \le n-1} x_i
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>[0.23546805 0.50431437 0.95081514 0.37372482 0.25587224]
-Minimum = 0.23546805451627806 0.23546805451627806
-Maximum = 0.9508151394944435 0.9508151394944435
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>[0.50538213 0.62361489 0.54914781 0.73870979 0.5730733 ]
+Minimum = 0.505382125678984 0.505382125678984
+Maximum = 0.7387097853568603 0.7387097853568603
 </pre></div>
 </div>
 </div>
@@ -562,10 +566,11 @@ Maximum = 0.9508151394944435 0.9508151394944435
 </section>
 <section id="lambda-for-simple-functions">
 <h2>lambda: for simple functions<a class="headerlink" href="#lambda-for-simple-functions" title="Link to this heading">#</a></h2>
-<p>If the function definition is simple we can define them using lambda
-$<span class="math notranslate nohighlight">\(
+<p>If the function definition is simple we can define them using lambda</p>
+<div class="math notranslate nohighlight">
+\[
 f(x) = \sin(2\pi x)
-\)</span>$</p>
+\]</div>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">f</span> <span class="o">=</span> <span class="k">lambda</span> <span class="n">x</span><span class="p">:</span> <span class="n">np</span><span class="o">.</span><span class="n">sin</span><span class="p">(</span><span class="mi">2</span><span class="o">*</span><span class="n">np</span><span class="o">.</span><span class="n">pi</span><span class="o">*</span><span class="n">x</span><span class="p">)</span>
