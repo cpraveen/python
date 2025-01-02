@@ -66,7 +66,7 @@
     <link rel="index" title="Index" href="genindex.html" />
     <link rel="search" title="Search" href="search.html" />
     <link rel="next" title="Numpy" href="02_numpy.html" />
-    <link rel="prev" title="Markdown, Latex and programming tips" href="00_tips.html" />
+    <link rel="prev" title="Markdown, Latex, programming tips" href="00_tips.html" />
   <meta name="viewport" content="width=device-width, initial-scale=1"/>
   <meta name="docsearch:language" content="en"/>
   <meta name="docsearch:version" content="" />
@@ -171,8 +171,7 @@
             </li>
         </ul>
         <ul class="current nav bd-sidenav">
-<li class="toctree-l1"><a class="reference internal" href="00_tips.html">Markdown, Latex and programming tips</a></li>
-
+<li class="toctree-l1"><a class="reference internal" href="00_tips.html">Markdown, Latex, programming tips</a></li>
 
 <li class="toctree-l1 current active"><a class="current reference internal" href="#">Introduction</a></li>
 <li class="toctree-l1"><a class="reference internal" href="02_numpy.html">Numpy</a></li>
@@ -892,9 +891,26 @@ x[2] = 3
 </div>
 </div>
 </div>
-<p>Try to modify some element, for example</p>
+<p>Try to modify some element of a tuple, for example</p>
 <div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">x</span><span class="p">[</span><span class="mi">1</span><span class="p">]</span> <span class="o">=</span> <span class="mi">0</span>
 </pre></div>
+</div>
+<p><strong>NOTE</strong>: Lists and tuples can contain elements of different types</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">a</span> <span class="o">=</span> <span class="p">[</span><span class="mi">1</span><span class="p">,</span><span class="mi">2</span><span class="p">,</span><span class="s1">&#39;a&#39;</span><span class="p">]</span>
+<span class="n">b</span> <span class="o">=</span> <span class="p">(</span><span class="mi">1</span><span class="p">,</span><span class="mi">2</span><span class="p">,</span><span class="s1">&#39;a&#39;</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="s2">&quot;a = &quot;</span><span class="p">,</span> <span class="n">a</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="s2">&quot;b = &quot;</span><span class="p">,</span> <span class="n">b</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>a =  [1, 2, &#39;a&#39;]
+b =  (1, 2, &#39;a&#39;)
+</pre></div>
+</div>
+</div>
 </div>
 </section>
 <section id="sets">
@@ -908,7 +924,7 @@ x[2] = 3
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>{1, 2, 3, &#39;a&#39;, &#39;b&#39;, &#39;c&#39;}
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>{1, 2, 3, &#39;b&#39;, &#39;a&#39;, &#39;c&#39;}
 </pre></div>
 </div>
 </div>
@@ -1051,6 +1067,7 @@ set()
 </div>
 </div>
 </div>
+<p>Again, the last element, here 0, is not included.</p>
 </section>
 <section id="in-built-manual-help">
 <h2>In built manual/help<a class="headerlink" href="#in-built-manual-help" title="Link to this heading">#</a></h2>
@@ -1064,13 +1081,13 @@ set()
 </pre></div>
 </div>
 <p>In a notebook, type this in a code cell</p>
-<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="nb">range</span><span class="err">?</span>
+<div class="highlight-text notranslate"><div class="highlight"><pre><span></span>range?
 </pre></div>
 </div>
 <p>get the help documentation.</p>
 <section id="example-sum-a-list-of-integers">
 <h3>Example: Sum a list of integers<a class="headerlink" href="#example-sum-a-list-of-integers" title="Link to this heading">#</a></h3>
-<p>Given <span class="math notranslate nohighlight">\(a \in \re^n\)</span> compute</p>
+<p>Given a vector <span class="math notranslate nohighlight">\(a \in \re^n\)</span>, compute the sum of its element</p>
 <div class="math notranslate nohighlight">
 \[
 s = \sum_{i=0}^{n-1} a_i
@@ -1123,8 +1140,7 @@ s = \sum_{i=0}^{n-1} a_i
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">random</span>
-<span class="n">s</span> <span class="o">=</span> <span class="mf">0.0</span>
-<span class="n">i</span> <span class="o">=</span> <span class="mi">0</span>
+<span class="n">s</span><span class="p">,</span> <span class="n">i</span> <span class="o">=</span> <span class="mf">0.0</span><span class="p">,</span> <span class="mi">0</span>
 <span class="k">while</span> <span class="n">s</span> <span class="o">&lt;</span> <span class="mf">10.0</span><span class="p">:</span>
     <span class="n">s</span> <span class="o">+=</span> <span class="n">random</span><span class="o">.</span><span class="n">random</span><span class="p">()</span>
     <span class="n">i</span> <span class="o">+=</span> <span class="mi">1</span>
@@ -1133,29 +1149,33 @@ s = \sum_{i=0}^{n-1} a_i
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>    1         0.4759820940
-    2         0.7054785942
-    3         0.7540546114
-    4         1.6769200064
-    5         2.3875169445
-    6         3.0737215006
-    7         3.9453557846
-    8         3.9512816677
-    9         4.7092352245
-   10         5.0545912954
-   11         5.4449763521
-   12         5.6735044719
-   13         6.6729847182
-   14         7.0348412747
-   15         7.8699395021
-   16         8.5298177272
-   17         9.2775564353
-   18         9.9530904230
-   19        10.4775689487
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>    1         0.5175089480
+    2         1.4758433538
+    3         1.7551928618
+    4         2.4161996852
+    5         2.6497907023
+    6         2.8003330364
+    7         3.2936950812
+    8         3.9207505664
+    9         4.2156820919
+   10         4.7127656097
+   11         4.9929300182
+   12         5.2066495859
+   13         5.2468555085
+   14         5.3820061215
+   15         6.1282346222
+   16         7.0712783279
+   17         7.6497427184
+   18         8.2895910558
+   19         8.7198246220
+   20         9.4446619963
+   21         9.7282495954
+   22        10.2410729222
 </pre></div>
 </div>
 </div>
 </div>
+<p>Note how we controlled the printing of numbers: <code class="docutils literal notranslate"><span class="pre">d</span></code> is for integers, <code class="docutils literal notranslate"><span class="pre">f</span></code> is for floating point numbers. You can also use <code class="docutils literal notranslate"><span class="pre">e</span></code> for scientific notation.</p>
 </section>
 <section id="enumerate">
 <h2>enumerate<a class="headerlink" href="#enumerate" title="Link to this heading">#</a></h2>
@@ -1164,16 +1184,16 @@ s = \sum_{i=0}^{n-1} a_i
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">values</span> <span class="o">=</span> <span class="p">[</span><span class="mf">1.2</span><span class="p">,</span> <span class="mf">2.3</span><span class="p">,</span> <span class="mf">3.4</span><span class="p">,</span> <span class="mf">4.5</span><span class="p">,</span> <span class="mf">5.6</span><span class="p">]</span>
 <span class="k">for</span> <span class="n">i</span><span class="p">,</span><span class="n">val</span> <span class="ow">in</span> <span class="nb">enumerate</span><span class="p">(</span><span class="n">values</span><span class="p">):</span>
-    <span class="nb">print</span><span class="p">(</span><span class="n">i</span><span class="p">,</span><span class="n">val</span><span class="p">)</span>
+    <span class="nb">print</span><span class="p">(</span><span class="n">i</span><span class="p">,</span><span class="s2">&quot;   &quot;</span><span class="p">,</span><span class="n">val</span><span class="p">)</span>
 </pre></div>
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>0 1.2
-1 2.3
-2 3.4
-3 4.5
-4 5.6
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>0     1.2
+1     2.3
+2     3.4
+3     4.5
+4     5.6
 </pre></div>
 </div>
 </div>
@@ -1236,7 +1256,7 @@ a =  2 , b =  1
       <i class="fa-solid fa-angle-left"></i>
       <div class="prev-next-info">
         <p class="prev-next-subtitle">previous</p>
-        <p class="prev-next-title">Markdown, Latex and programming tips</p>
+        <p class="prev-next-title">Markdown, Latex, programming tips</p>
       </div>
     </a>
     <a class="right-next"

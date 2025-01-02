@@ -8,7 +8,7 @@
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="viewport" content="width=device-width, initial-scale=1" />
 
-    <title>Markdown, Latex and programming tips &#8212; Python for Scientific Computing</title>
+    <title>Markdown, Latex, programming tips &#8212; Python for Scientific Computing</title>
   
   
   
@@ -171,8 +171,7 @@
             </li>
         </ul>
         <ul class="current nav bd-sidenav">
-<li class="toctree-l1 current active"><a class="current reference internal" href="#">Markdown, Latex and programming tips</a></li>
-
+<li class="toctree-l1 current active"><a class="current reference internal" href="#">Markdown, Latex, programming tips</a></li>
 
 <li class="toctree-l1"><a class="reference internal" href="01_intro.html">Introduction</a></li>
 <li class="toctree-l1"><a class="reference internal" href="02_numpy.html">Numpy</a></li>
@@ -362,7 +361,7 @@
               
 
 <div id="jb-print-docs-body" class="onlyprint">
-    <h1>Markdown, Latex and programming tips</h1>
+    <h1>Markdown, Latex, programming tips</h1>
     <!-- Table of contents -->
     <div id="print-main-content">
         <div id="jb-print-toc">
@@ -372,7 +371,7 @@
             </div>
             <nav aria-label="Page">
                 <ul class="visible nav section-nav flex-column">
-<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#">Markdown, Latex and programming tips</a></li>
+<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#">Markdown, Latex, programming tips</a></li>
 <li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#main-title">Main title</a><ul class="visible nav section-nav flex-column">
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#section">Section</a><ul class="nav section-nav flex-column">
 <li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#subsection">Subsection</a><ul class="nav section-nav flex-column">
@@ -382,9 +381,9 @@
 </ul>
 </li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#latex">Latex</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#tips-for-programming">Tips for programming</a></li>
 </ul>
 </li>
-<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#tips-for-programming">Tips for programming</a></li>
 </ul>
 
             </nav>
@@ -397,9 +396,11 @@
 <div id="searchbox"></div>
                 <article class="bd-article">
                   
-  <section class="tex2jax_ignore mathjax_ignore" id="markdown-latex-and-programming-tips">
-<h1>Markdown, Latex and programming tips<a class="headerlink" href="#markdown-latex-and-programming-tips" title="Link to this heading">#</a></h1>
+  <section class="tex2jax_ignore mathjax_ignore" id="markdown-latex-programming-tips">
+<h1>Markdown, Latex, programming tips<a class="headerlink" href="#markdown-latex-programming-tips" title="Link to this heading">#</a></h1>
 <p>There are two types of blocks in a Jupyter notebook: code and markdown. Code is for entering Python code while markdown is for markdown and Latex.</p>
+<p>To execute a block, press shift+enter key.</p>
+<p>Title and sections are made by</p>
 <div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="c1"># Main title</span>
 <span class="c1">## Section</span>
 <span class="c1">### Subsection</span>
@@ -454,13 +455,16 @@
 </ol>
 </li>
 </ol>
-<p>Verbatim text can be put inline like this: <code class="docutils literal notranslate"><span class="pre">Python</span></code> and as a code block like this</p>
+<p>Verbatim text can be put inline like this: <code class="docutils literal notranslate"><span class="pre">Python</span></code> and as a code block like this (double click to see the code)</p>
 <div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">x</span> <span class="o">=</span> <span class="mi">0</span>
 <span class="k">while</span> <span class="nb">abs</span><span class="p">(</span><span class="n">f</span><span class="p">(</span><span class="n">x</span><span class="p">))</span> <span class="o">&lt;</span> <span class="n">eps</span><span class="p">:</span>
    <span class="n">x</span> <span class="o">=</span> <span class="n">x</span> <span class="o">-</span> <span class="n">f</span><span class="p">(</span><span class="n">x</span><span class="p">)</span><span class="o">/</span><span class="n">df</span><span class="p">(</span><span class="n">x</span><span class="p">)</span>
 </pre></div>
 </div>
-<p>Quoted text</p>
+<p>Quoted text: begin with a greater than symbol</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="o">&gt;</span> <span class="n">One</span> <span class="n">reason</span> <span class="n">why</span> <span class="n">mathematics</span> <span class="n">enjoys</span> <span class="n">special</span> <span class="n">esteem</span><span class="p">,</span> <span class="n">above</span> <span class="nb">all</span> <span class="n">other</span> <span class="n">sciences</span><span class="p">,</span> <span class="ow">is</span> <span class="n">that</span> <span class="n">its</span> <span class="n">laws</span> <span class="n">are</span> <span class="n">absolutely</span> <span class="n">certain</span> <span class="ow">and</span> <span class="n">indisputable</span><span class="p">,</span> <span class="k">while</span> <span class="n">those</span> <span class="n">of</span> <span class="nb">all</span> <span class="n">other</span> <span class="n">sciences</span> <span class="n">are</span> <span class="n">to</span> <span class="n">some</span> <span class="n">extent</span> <span class="n">debatable</span> <span class="ow">and</span> <span class="ow">in</span> <span class="n">constant</span> <span class="n">danger</span> <span class="n">of</span> <span class="n">being</span> <span class="n">overthrown</span> <span class="n">by</span> <span class="n">newly</span> <span class="n">discovered</span> <span class="n">facts</span><span class="o">.</span>
+</pre></div>
+</div>
 <blockquote>
 <div><p>One reason why mathematics enjoys special esteem, above all other sciences, is that its laws are absolutely certain and indisputable, while those of all other sciences are to some extent debatable and in constant danger of being overthrown by newly discovered facts.</p>
 <p>In spite of this, the investigator in another department of science would not need to envy the mathematician if the laws of mathematics referred to objects of our mere imagination, and not to objects of reality. For it cannot occasion surprise that different persons should arrive at the same logical conclusions when they have already agreed upon the fundamental laws (axioms), as well as the methods by which other laws are to be deduced therefrom. But there is another reason for the high repute of mathematics, in that it is mathematics which affords the exact natural sciences a certain measure of security, to which without mathematics they could not attain.</p>
@@ -474,7 +478,7 @@
 <section id="latex">
 <h2>Latex<a class="headerlink" href="#latex" title="Link to this heading">#</a></h2>
 <p>Jupyter supports only a small subset of Latex.</p>
-<p>In line math is enclosed in dollars: <code class="docutils literal notranslate"><span class="pre">$y</span> <span class="pre">=</span> <span class="pre">f(x)$</span></code> gives <span class="math notranslate nohighlight">\(y = f(x)\)</span></p>
+<p>Inline math is enclosed in dollars: <code class="docutils literal notranslate"><span class="pre">$y</span> <span class="pre">=</span> <span class="pre">f(x)$</span></code> gives <span class="math notranslate nohighlight">\(y = f(x)\)</span></p>
 <p>Equations are enclosed in double dollars</p>
 <div class="highlight-default notranslate"><div class="highlight"><pre><span></span>$$
 y = f(x)
@@ -606,8 +610,8 @@ H(x) = \begin{cases}
 \<span class="n">end</span><span class="p">{</span><span class="n">eqnarray</span><span class="p">}</span>
 </pre></div>
 </div>
-<div class="amsmath math notranslate nohighlight" id="equation-50d71cf7-ccb4-49c7-8514-dd9d2eeb582b">
-<span class="eqno">(1)<a class="headerlink" href="#equation-50d71cf7-ccb4-49c7-8514-dd9d2eeb582b" title="Permalink to this equation">#</a></span>\[\begin{eqnarray}
+<div class="amsmath math notranslate nohighlight" id="equation-180e5e12-f314-409a-833a-9cfc9b309979">
+<span class="eqno">(1)<a class="headerlink" href="#equation-180e5e12-f314-409a-833a-9cfc9b309979" title="Permalink to this equation">#</a></span>\[\begin{eqnarray}
 y &amp;=&amp; (\sin(x) + \cos(x))^2 \\
   &amp;=&amp; \sin^2(x) + \cos^2(x) + 2 \sin(x) \cos(x) \\
   &amp;=&amp; 1 + \sin(2x)
@@ -620,22 +624,22 @@ y &amp;=&amp; (\sin(x) + \cos(x))^2 \\
 \<span class="n">end</span><span class="p">{</span><span class="n">align</span><span class="p">}</span>
 </pre></div>
 </div>
-<div class="amsmath math notranslate nohighlight" id="equation-5d352b04-486b-4a6b-8daa-8ac4803c6b7a">
-<span class="eqno">(2)<a class="headerlink" href="#equation-5d352b04-486b-4a6b-8daa-8ac4803c6b7a" title="Permalink to this equation">#</a></span>\[\begin{align}
+<div class="amsmath math notranslate nohighlight" id="equation-b6dbbd1d-fc20-41eb-8a15-01be4398134b">
+<span class="eqno">(2)<a class="headerlink" href="#equation-b6dbbd1d-fc20-41eb-8a15-01be4398134b" title="Permalink to this equation">#</a></span>\[\begin{align}
 y &amp;= (\sin(x) + \cos(x))^2 \\
   &amp;= \sin^2(x) + \cos^2(x) + 2 \sin(x) \cos(x) \\
   &amp;= 1 + \sin(2x)
 \end{align}\]</div>
 <p>which allows multiple alignments</p>
 <div class="highlight-default notranslate"><div class="highlight"><pre><span></span>\<span class="n">begin</span><span class="p">{</span><span class="n">align</span><span class="p">}</span>
-<span class="n">y</span> <span class="o">&amp;=</span> <span class="p">(</span>\<span class="n">sin</span><span class="p">(</span><span class="n">x</span><span class="p">)</span> <span class="o">+</span> \<span class="n">cos</span><span class="p">(</span><span class="n">x</span><span class="p">))</span><span class="o">^</span><span class="mi">2</span> <span class="o">&amp;</span> \\
+<span class="n">y</span> <span class="o">&amp;=</span> <span class="p">(</span>\<span class="n">sin</span><span class="p">(</span><span class="n">x</span><span class="p">)</span> <span class="o">+</span> \<span class="n">cos</span><span class="p">(</span><span class="n">x</span><span class="p">))</span><span class="o">^</span><span class="mi">2</span>                     <span class="o">&amp;</span> \\
   <span class="o">&amp;=</span> \<span class="n">sin</span><span class="o">^</span><span class="mi">2</span><span class="p">(</span><span class="n">x</span><span class="p">)</span> <span class="o">+</span> \<span class="n">cos</span><span class="o">^</span><span class="mi">2</span><span class="p">(</span><span class="n">x</span><span class="p">)</span> <span class="o">+</span> <span class="mi">2</span> \<span class="n">sin</span><span class="p">(</span><span class="n">x</span><span class="p">)</span> \<span class="n">cos</span><span class="p">(</span><span class="n">x</span><span class="p">)</span> <span class="o">&amp;</span> \\
-  <span class="o">&amp;=</span> <span class="mi">1</span> <span class="o">+</span> \<span class="n">sin</span><span class="p">(</span><span class="mi">2</span><span class="n">x</span><span class="p">),</span> <span class="o">&amp;</span> \<span class="n">textrm</span><span class="p">{</span><span class="n">since</span> <span class="p">}</span> \<span class="n">sin</span><span class="o">^</span><span class="mi">2</span><span class="p">(</span><span class="n">x</span><span class="p">)</span> <span class="o">+</span> \<span class="n">cos</span><span class="o">^</span><span class="mi">2</span><span class="p">(</span><span class="n">x</span><span class="p">)</span> <span class="o">=</span> <span class="mi">1</span>
+  <span class="o">&amp;=</span> <span class="mi">1</span> <span class="o">+</span> \<span class="n">sin</span><span class="p">(</span><span class="mi">2</span><span class="n">x</span><span class="p">),</span>                             <span class="o">&amp;</span> \<span class="n">textrm</span><span class="p">{</span><span class="n">since</span> <span class="p">}</span> \<span class="n">sin</span><span class="o">^</span><span class="mi">2</span><span class="p">(</span><span class="n">x</span><span class="p">)</span> <span class="o">+</span> \<span class="n">cos</span><span class="o">^</span><span class="mi">2</span><span class="p">(</span><span class="n">x</span><span class="p">)</span> <span class="o">=</span> <span class="mi">1</span>
 \<span class="n">end</span><span class="p">{</span><span class="n">align</span><span class="p">}</span>
 </pre></div>
 </div>
-<div class="amsmath math notranslate nohighlight" id="equation-0c21cacd-a0fd-4578-9995-95f23408ed43">
-<span class="eqno">(3)<a class="headerlink" href="#equation-0c21cacd-a0fd-4578-9995-95f23408ed43" title="Permalink to this equation">#</a></span>\[\begin{align}
+<div class="amsmath math notranslate nohighlight" id="equation-4a9e662d-6b36-4f66-ba30-179ea1c43589">
+<span class="eqno">(3)<a class="headerlink" href="#equation-4a9e662d-6b36-4f66-ba30-179ea1c43589" title="Permalink to this equation">#</a></span>\[\begin{align}
 y &amp;= (\sin(x) + \cos(x))^2 &amp; \\
   &amp;= \sin^2(x) + \cos^2(x) + 2 \sin(x) \cos(x) &amp; \\
   &amp;= 1 + \sin(2x), &amp; \textrm{since } \sin^2(x) + \cos^2(x) = 1
@@ -647,11 +651,25 @@ y &amp;= (\sin(x) + \cos(x))^2 &amp; \\
 \<span class="n">end</span><span class="p">{</span><span class="n">gather</span><span class="p">}</span>
 </pre></div>
 </div>
-<div class="amsmath math notranslate nohighlight" id="equation-0be98523-88d2-438e-9889-41e1ec88e2c0">
-<span class="eqno">(4)<a class="headerlink" href="#equation-0be98523-88d2-438e-9889-41e1ec88e2c0" title="Permalink to this equation">#</a></span>\[\begin{gather}
+<div class="amsmath math notranslate nohighlight" id="equation-837fc53f-4c2d-426b-a579-255de0ce5d9c">
+<span class="eqno">(4)<a class="headerlink" href="#equation-837fc53f-4c2d-426b-a579-255de0ce5d9c" title="Permalink to this equation">#</a></span>\[\begin{gather}
 y = x_1 + x_2 + x_3 + x_4 \\
 z = x_1 + x_2
 \end{gather}\]</div>
+<p>Use <code class="docutils literal notranslate"><span class="pre">\underbrace</span></code> to add extra information</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span>\<span class="n">begin</span><span class="p">{</span><span class="n">align</span><span class="p">}</span>
+<span class="n">y</span> <span class="o">&amp;=</span> <span class="p">(</span>\<span class="n">sin</span><span class="p">(</span><span class="n">x</span><span class="p">)</span> <span class="o">+</span> \<span class="n">cos</span><span class="p">(</span><span class="n">x</span><span class="p">))</span><span class="o">^</span><span class="mi">2</span> \\
+  <span class="o">&amp;=</span> \<span class="n">underbrace</span><span class="p">{</span>\<span class="n">sin</span><span class="o">^</span><span class="mi">2</span><span class="p">(</span><span class="n">x</span><span class="p">)</span> <span class="o">+</span> \<span class="n">cos</span><span class="o">^</span><span class="mi">2</span><span class="p">(</span><span class="n">x</span><span class="p">)}</span><span class="n">_</span><span class="p">{</span><span class="o">=</span><span class="mi">1</span><span class="p">}</span> <span class="o">+</span> <span class="mi">2</span> \<span class="n">sin</span><span class="p">(</span><span class="n">x</span><span class="p">)</span> \<span class="n">cos</span><span class="p">(</span><span class="n">x</span><span class="p">)</span> \\
+  <span class="o">&amp;=</span> <span class="mi">1</span> <span class="o">+</span> \<span class="n">sin</span><span class="p">(</span><span class="mi">2</span><span class="n">x</span><span class="p">)</span>
+\<span class="n">end</span><span class="p">{</span><span class="n">align</span><span class="p">}</span>
+</pre></div>
+</div>
+<div class="amsmath math notranslate nohighlight" id="equation-38645335-e534-4165-b0ce-c35611e42e0e">
+<span class="eqno">(5)<a class="headerlink" href="#equation-38645335-e534-4165-b0ce-c35611e42e0e" title="Permalink to this equation">#</a></span>\[\begin{align}
+y &amp;= (\sin(x) + \cos(x))^2 \\
+  &amp;= \underbrace{\sin^2(x) + \cos^2(x)}_{=1} + 2 \sin(x) \cos(x) \\
+  &amp;= 1 + \sin(2x)
+\end{align}\]</div>
 <p>Equation numbering is not well supported in markdown, but we can put numbers by hard-coding them</p>
 <div class="highlight-default notranslate"><div class="highlight"><pre><span></span>$$
 u_t + u \cdot \nabla u + \nabla p = \epsilon \Delta u \tag{1}
@@ -710,7 +728,7 @@ a_{21} &amp; a_{22} &amp; a_{23} \\
 a_{31} &amp; a_{32} &amp; a_{33}
 \end{bmatrix}
 \end{split}\]</div>
-<p>Condition number of matrix <span class="math notranslate nohighlight">\(A \in R^{m \times m}\)</span></p>
+<p>Condition number of matrix <span class="math notranslate nohighlight">\(A \in \re^{m \times m}\)</span> with respect to some norm</p>
 <div class="highlight-default notranslate"><div class="highlight"><pre><span></span>$$
 \kappa = \| A \|  \| A^{-1} \|
 $$
@@ -721,13 +739,12 @@ $$
 \kappa = \| A \|  \| A^{-1} \|
 \]</div>
 </section>
-</section>
-<section class="tex2jax_ignore mathjax_ignore" id="tips-for-programming">
-<h1>Tips for programming<a class="headerlink" href="#tips-for-programming" title="Link to this heading">#</a></h1>
+<section id="tips-for-programming">
+<h2>Tips for programming<a class="headerlink" href="#tips-for-programming" title="Link to this heading">#</a></h2>
 <ol class="arabic">
 <li><p>Always</p>
 <ol class="arabic simple">
-<li><p>Think about your problem, write it down mathematically.</p></li>
+<li><p>Think about your problem first, write it down mathematically in terms of equations.</p></li>
 <li><p>Write down the algorithm on paper.</p></li>
 <li><p>Now start implementing it in code.</p></li>
 </ol>
@@ -778,6 +795,7 @@ $$
 </ol>
 </li>
 </ol>
+</section>
 </section>
 
     <script type="text/x-thebe-config">
@@ -845,7 +863,7 @@ $$
   </div>
   <nav class="bd-toc-nav page-toc">
     <ul class="visible nav section-nav flex-column">
-<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#">Markdown, Latex and programming tips</a></li>
+<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#">Markdown, Latex, programming tips</a></li>
 <li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#main-title">Main title</a><ul class="visible nav section-nav flex-column">
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#section">Section</a><ul class="nav section-nav flex-column">
 <li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#subsection">Subsection</a><ul class="nav section-nav flex-column">
@@ -855,9 +873,9 @@ $$
 </ul>
 </li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#latex">Latex</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#tips-for-programming">Tips for programming</a></li>
 </ul>
 </li>
-<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#tips-for-programming">Tips for programming</a></li>
 </ul>
 
   </nav></div>

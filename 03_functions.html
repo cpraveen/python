@@ -171,8 +171,7 @@
             </li>
         </ul>
         <ul class="current nav bd-sidenav">
-<li class="toctree-l1"><a class="reference internal" href="00_tips.html">Markdown, Latex and programming tips</a></li>
-
+<li class="toctree-l1"><a class="reference internal" href="00_tips.html">Markdown, Latex, programming tips</a></li>
 
 <li class="toctree-l1"><a class="reference internal" href="01_intro.html">Introduction</a></li>
 <li class="toctree-l1"><a class="reference internal" href="02_numpy.html">Numpy</a></li>
@@ -517,10 +516,10 @@ m = \min_{0 \le i \le n-1} x_i
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>[0.44388247 0.15174139 0.44638798 0.79792342 0.20362793 0.4046779
- 0.44507456 0.38308954 0.07225424 0.51187216]
-Minimum =  0.07225423811134302
-Numpy   =  0.07225423811134302
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>[0.84278684 0.42048189 0.46521409 0.55018627 0.9550992  0.7748146
+ 0.73879645 0.28154078 0.88497173 0.92230036]
+Minimum =  0.2815407761026262
+Numpy   =  0.2815407761026262
 </pre></div>
 </div>
 </div>
@@ -561,9 +560,9 @@ M = \max_{0 \le i \le n-1} x_i
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>[0.50538213 0.62361489 0.54914781 0.73870979 0.5730733 ]
-Minimum = 0.505382125678984 0.505382125678984
-Maximum = 0.7387097853568603 0.7387097853568603
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>[0.4277368  0.62624436 0.0851047  0.49055919 0.9702497 ]
+Minimum = 0.08510470127550984 0.08510470127550984
+Maximum = 0.9702497034557188 0.9702497034557188
 </pre></div>
 </div>
 </div>
@@ -664,14 +663,14 @@ Maximum = 0.9998741276738751
 <h2>Beware of global variables<a class="headerlink" href="#beware-of-global-variables" title="Link to this heading">#</a></h2>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">p</span> <span class="o">=</span> <span class="mf">1.234</span>
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">p</span> <span class="o">=</span> <span class="mf">1.234</span> <span class="c1"># Global variable, visible inside all functions.</span>
 
 <span class="k">def</span> <span class="nf">fun4</span><span class="p">(</span><span class="n">x</span><span class="p">):</span>
-    <span class="n">p</span> <span class="o">=</span> <span class="mf">1.0</span>
+    <span class="n">p</span> <span class="o">=</span> <span class="mf">1.0</span> <span class="c1"># Local variable of same name</span>
     <span class="nb">print</span><span class="p">(</span><span class="n">x</span> <span class="o">+</span> <span class="n">p</span><span class="p">)</span>
 
 <span class="k">def</span> <span class="nf">fun5</span><span class="p">(</span><span class="n">x</span><span class="p">):</span>
-    <span class="nb">print</span><span class="p">(</span><span class="n">x</span> <span class="o">+</span> <span class="n">p</span><span class="p">)</span>
+    <span class="nb">print</span><span class="p">(</span><span class="n">x</span> <span class="o">+</span> <span class="n">p</span><span class="p">)</span> <span class="c1"># Here the global variable p is used</span>
 </pre></div>
 </div>
 </div>
