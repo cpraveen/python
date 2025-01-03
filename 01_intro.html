@@ -997,7 +997,9 @@ set()
 </div>
 </div>
 </div>
-<p>range(n) produces the integers: <span class="math notranslate nohighlight">\(0,1,2,\ldots,n-1\)</span>. <strong>Note</strong>: <span class="math notranslate nohighlight">\(n\)</span> is not included.</p>
+<blockquote>
+<div><p><code class="docutils literal notranslate"><span class="pre">range(n)</span></code> produces the integers: <span class="math notranslate nohighlight">\(0,1,2,\ldots,n-1\)</span>. <strong>Note</strong>: <span class="math notranslate nohighlight">\(n\)</span> is not included.</p>
+</div></blockquote>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="nb">print</span><span class="p">(</span><span class="nb">range</span><span class="p">(</span><span class="mi">5</span><span class="p">))</span>
@@ -1030,7 +1032,9 @@ set()
 </div>
 </div>
 </div>
-<p>range(m,n) produces the integers: <span class="math notranslate nohighlight">\(m,m+1,\ldots,n-1\)</span> provided <span class="math notranslate nohighlight">\(m &lt; n\)</span>.</p>
+<blockquote>
+<div><p><code class="docutils literal notranslate"><span class="pre">range(m,n)</span></code> produces the integers: <span class="math notranslate nohighlight">\(m,m+1,\ldots,n-1\)</span> provided <span class="math notranslate nohighlight">\(m &lt; n\)</span>.</p>
+</div></blockquote>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span><span class="mi">10</span><span class="p">,</span><span class="mi">2</span><span class="p">):</span>
@@ -1048,7 +1052,9 @@ set()
 </div>
 </div>
 </div>
-<p>range(m,n,s) produces the integers: <span class="math notranslate nohighlight">\(m,m+s,m+2s,\ldots\)</span> until <span class="math notranslate nohighlight">\(n\)</span>, but excluding <span class="math notranslate nohighlight">\(n\)</span>.</p>
+<blockquote>
+<div><p><code class="docutils literal notranslate"><span class="pre">range(m,n,s)</span></code> produces the integers: <span class="math notranslate nohighlight">\(m,m+s,m+2s,\ldots\)</span> until <span class="math notranslate nohighlight">\(n\)</span>, but excluding <span class="math notranslate nohighlight">\(n\)</span>.</p>
+</div></blockquote>
 <p>We can have a negative step size.</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
@@ -1072,16 +1078,16 @@ set()
 <section id="in-built-manual-help">
 <h2>In built manual/help<a class="headerlink" href="#in-built-manual-help" title="Link to this heading">#</a></h2>
 <p>To see the inbuilt manual in terminal</p>
-<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="nb">range</span><span class="err">?</span>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span>&gt;&gt;&gt; range?
 </pre></div>
 </div>
 <p>This works for all functions, etc.</p>
-<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="kn">import</span> <span class="nn">math</span>
-<span class="gp">&gt;&gt;&gt; </span><span class="n">math</span><span class="o">.</span><span class="n">sin</span><span class="err">?</span>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span>&gt;&gt;&gt; import math
+&gt;&gt;&gt; math.sin?
 </pre></div>
 </div>
 <p>In a notebook, type this in a code cell</p>
-<div class="highlight-text notranslate"><div class="highlight"><pre><span></span>range?
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span>range?
 </pre></div>
 </div>
 <p>get the help documentation.</p>
@@ -1149,28 +1155,26 @@ s = \sum_{i=0}^{n-1} a_i
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>    1         0.5175089480
-    2         1.4758433538
-    3         1.7551928618
-    4         2.4161996852
-    5         2.6497907023
-    6         2.8003330364
-    7         3.2936950812
-    8         3.9207505664
-    9         4.2156820919
-   10         4.7127656097
-   11         4.9929300182
-   12         5.2066495859
-   13         5.2468555085
-   14         5.3820061215
-   15         6.1282346222
-   16         7.0712783279
-   17         7.6497427184
-   18         8.2895910558
-   19         8.7198246220
-   20         9.4446619963
-   21         9.7282495954
-   22        10.2410729222
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>    1         0.9472273784
+    2         1.5092446371
+    3         1.5185405694
+    4         2.3464658847
+    5         2.9879014842
+    6         3.2628982703
+    7         4.0994415748
+    8         4.2677055418
+    9         4.7582979632
+   10         4.8939667634
+   11         5.5767818277
+   12         5.9035071011
+   13         6.4155809856
+   14         6.9056009871
+   15         7.2479835204
+   16         7.5653280258
+   17         7.7822034001
+   18         8.4020717770
+   19         9.2774334323
+   20        10.0617349416
 </pre></div>
 </div>
 </div>
@@ -1204,15 +1208,34 @@ s = \sum_{i=0}^{n-1} a_i
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">a</span><span class="p">,</span> <span class="n">b</span> <span class="o">=</span> <span class="mi">1</span><span class="p">,</span> <span class="mi">2</span>
-<span class="nb">print</span><span class="p">(</span><span class="s1">&#39;a = &#39;</span><span class="p">,</span><span class="n">a</span><span class="p">,</span><span class="s1">&#39;, b = &#39;</span><span class="p">,</span><span class="n">b</span><span class="p">)</span>
-<span class="n">a</span><span class="p">,</span> <span class="n">b</span> <span class="o">=</span> <span class="n">b</span><span class="p">,</span> <span class="n">a</span>
-<span class="nb">print</span><span class="p">(</span><span class="s1">&#39;a = &#39;</span><span class="p">,</span><span class="n">a</span><span class="p">,</span><span class="s1">&#39;, b = &#39;</span><span class="p">,</span><span class="n">b</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="s1">&#39;Before: a = &#39;</span><span class="p">,</span><span class="n">a</span><span class="p">,</span><span class="s1">&#39;, b = &#39;</span><span class="p">,</span><span class="n">b</span><span class="p">)</span>
+<span class="n">tmp</span> <span class="o">=</span> <span class="n">a</span>
+<span class="n">a</span>   <span class="o">=</span> <span class="n">b</span>
+<span class="n">b</span>   <span class="o">=</span> <span class="n">tmp</span>
+<span class="nb">print</span><span class="p">(</span><span class="s1">&#39;After : a = &#39;</span><span class="p">,</span><span class="n">a</span><span class="p">,</span><span class="s1">&#39;, b = &#39;</span><span class="p">,</span><span class="n">b</span><span class="p">)</span>
 </pre></div>
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>a =  1 , b =  2
-a =  2 , b =  1
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Before: a =  1 , b =  2
+After : a =  2 , b =  1
+</pre></div>
+</div>
+</div>
+</div>
+<p>In Python, swapping can be done as</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">a</span><span class="p">,</span> <span class="n">b</span> <span class="o">=</span> <span class="mi">1</span><span class="p">,</span> <span class="mi">2</span>
+<span class="nb">print</span><span class="p">(</span><span class="s1">&#39;Before: a = &#39;</span><span class="p">,</span><span class="n">a</span><span class="p">,</span><span class="s1">&#39;, b = &#39;</span><span class="p">,</span><span class="n">b</span><span class="p">)</span>
+<span class="n">a</span><span class="p">,</span> <span class="n">b</span> <span class="o">=</span> <span class="n">b</span><span class="p">,</span> <span class="n">a</span>
+<span class="nb">print</span><span class="p">(</span><span class="s1">&#39;After : a = &#39;</span><span class="p">,</span><span class="n">a</span><span class="p">,</span><span class="s1">&#39;, b = &#39;</span><span class="p">,</span><span class="n">b</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Before: a =  1 , b =  2
+After : a =  2 , b =  1
 </pre></div>
 </div>
 </div>
