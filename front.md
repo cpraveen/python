@@ -20,6 +20,7 @@ You can see a listing of all the notebooks on colab [![Colab](https://colab.rese
 
 or import the individual notebooks into colab using the following links
 
+* [Markdown,Latex](http://colab.research.google.com/github/cpraveen/python/blob/master/00_tips.ipynb)
 * [Introduction](http://colab.research.google.com/github/cpraveen/python/blob/master/01_intro.ipynb)
 * [Numpy](http://colab.research.google.com/github/cpraveen/python/blob/master/02_numpy.ipynb)
 * [Functions](http://colab.research.google.com/github/cpraveen/python/blob/master/03_functions.ipynb)
