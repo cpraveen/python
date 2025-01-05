@@ -371,12 +371,12 @@
             </div>
             <nav aria-label="Page">
                 <ul class="visible nav section-nav flex-column">
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#d-arrays">1-d Arrays</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#d-arrays">1-d arrays</a></li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#linspace">linspace</a></li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#arange">arange</a></li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#beware-of-pitfalls-1">Beware of pitfalls - 1</a></li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#beware-of-pitfalls-2">Beware of pitfalls - 2</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#id1">2-d Arrays</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#id1">2-d arrays</a></li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#diagonal-matrix">Diagonal matrix</a></li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#empty-like-etc">empty_like, etc.</a></li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#d-array-is-neither-row-nor-column-vector">1-D array is neither row nor column vector</a></li>
@@ -406,11 +406,20 @@
   <section class="tex2jax_ignore mathjax_ignore" id="numpy">
 <h1>Numpy<a class="headerlink" href="#numpy" title="Link to this heading">#</a></h1>
 <p><span class="math notranslate nohighlight">\(\newcommand{\re}{\mathbb{R}}\)</span>
-Numpy provides many useful types and methods to perform numerical computations including vectors, matrices and linear algebra.</p>
+<a class="reference external" href="https://numpy.org/doc/stable/user/index.html">Numpy</a> provides many useful types and methods to perform numerical computations including vectors, matrices and linear algebra.</p>
+<p>First import the numpy module.</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">numpy</span>
-<span class="nb">print</span><span class="p">(</span><span class="n">numpy</span><span class="o">.</span><span class="n">pi</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+</div>
+<p>You only need to do this once, usually at the beginning of your code.</p>
+<p>To access methods, etc. inside this module, use dot operator.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="nb">print</span><span class="p">(</span><span class="n">numpy</span><span class="o">.</span><span class="n">pi</span><span class="p">)</span>
 <span class="nb">print</span><span class="p">(</span><span class="n">numpy</span><span class="o">.</span><span class="n">sin</span><span class="p">(</span><span class="n">numpy</span><span class="o">.</span><span class="n">pi</span><span class="o">/</span><span class="mi">2</span><span class="p">))</span>
 </pre></div>
 </div>
@@ -446,7 +455,7 @@ Numpy provides many useful types and methods to perform numerical computations i
 </div>
 </div>
 <section id="d-arrays">
-<h2>1-d Arrays<a class="headerlink" href="#d-arrays" title="Link to this heading">#</a></h2>
+<h2>1-d <a class="reference external" href="https://numpy.org/doc/stable/reference/generated/numpy.array.html">arrays</a><a class="headerlink" href="#d-arrays" title="Link to this heading">#</a></h2>
 <p>Create an array of zeros</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
@@ -548,7 +557,7 @@ Numpy provides many useful types and methods to perform numerical computations i
 </div>
 </section>
 <section id="linspace">
-<h2>linspace<a class="headerlink" href="#linspace" title="Link to this heading">#</a></h2>
+<h2><a class="reference external" href="https://numpy.org/doc/stable/reference/generated/numpy.linspace.html">linspace</a><a class="headerlink" href="#linspace" title="Link to this heading">#</a></h2>
 <p>This behaves same way as Matlab’s <a class="reference external" href="https://mathworks.com/help/matlab/ref/linspace.html">linspace</a> function.</p>
 <p>Generate 10 uniformly spaced numbers in [1,10]</p>
 <div class="cell docutils container">
@@ -588,7 +597,7 @@ Numpy provides many useful types and methods to perform numerical computations i
 <p>Note that we get last element of array using <code class="docutils literal notranslate"><span class="pre">x[-1]</span></code>; similarly, the last but one is given by <code class="docutils literal notranslate"><span class="pre">x[-2]</span></code>, etc.</p>
 </section>
 <section id="arange">
-<h2>arange<a class="headerlink" href="#arange" title="Link to this heading">#</a></h2>
+<h2><a class="reference external" href="https://numpy.org/doc/stable/reference/generated/numpy.arange.html">arange</a><a class="headerlink" href="#arange" title="Link to this heading">#</a></h2>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">x</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">arange</span><span class="p">(</span><span class="mi">1</span><span class="p">,</span><span class="mi">10</span><span class="p">)</span>
@@ -707,14 +716,14 @@ m, m+1, \ldots, n-1
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">x</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">ones</span><span class="p">(</span><span class="mi">5</span><span class="p">)</span>
 <span class="n">y</span> <span class="o">=</span> <span class="n">x</span>
 <span class="n">x</span><span class="p">[:]</span> <span class="o">=</span> <span class="mf">0.0</span>
-<span class="nb">print</span><span class="p">(</span><span class="n">x</span><span class="p">)</span>
-<span class="nb">print</span><span class="p">(</span><span class="n">y</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="s1">&#39;x = &#39;</span><span class="p">,</span> <span class="n">x</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="s1">&#39;y = &#39;</span><span class="p">,</span> <span class="n">y</span><span class="p">)</span>
 </pre></div>
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>[0. 0. 0. 0. 0.]
-[0. 0. 0. 0. 0.]
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>x =  [0. 0. 0. 0. 0.]
+y =  [0. 0. 0. 0. 0.]
 </pre></div>
 </div>
 </div>
@@ -729,21 +738,21 @@ m, m+1, \ldots, n-1
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">x</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">ones</span><span class="p">(</span><span class="mi">5</span><span class="p">)</span>
 <span class="n">y</span> <span class="o">=</span> <span class="n">x</span><span class="o">.</span><span class="n">copy</span><span class="p">()</span>     <span class="c1"># or y = np.copy(x)</span>
 <span class="n">x</span><span class="p">[:]</span> <span class="o">=</span> <span class="mf">0.0</span>
-<span class="nb">print</span><span class="p">(</span><span class="n">x</span><span class="p">)</span>
-<span class="nb">print</span><span class="p">(</span><span class="n">y</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="s1">&#39;x = &#39;</span><span class="p">,</span> <span class="n">x</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="s1">&#39;y = &#39;</span><span class="p">,</span> <span class="n">y</span><span class="p">)</span>
 </pre></div>
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>[0. 0. 0. 0. 0.]
-[1. 1. 1. 1. 1.]
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>x =  [0. 0. 0. 0. 0.]
+y =  [1. 1. 1. 1. 1.]
 </pre></div>
 </div>
 </div>
 </div>
 </section>
 <section id="id1">
-<h2>2-d Arrays<a class="headerlink" href="#id1" title="Link to this heading">#</a></h2>
+<h2>2-d <a class="reference external" href="https://numpy.org/doc/stable/reference/generated/numpy.array.html">arrays</a><a class="headerlink" href="#id1" title="Link to this heading">#</a></h2>
 <p>2-d arrays can be considered as matrices, though Numpy has a separate <a class="reference external" href="https://numpy.org/doc/stable/reference/generated/numpy.matrix.html">matrix</a> class.</p>
 <p>Create an array of zeros</p>
 <div class="cell docutils container">
@@ -855,8 +864,8 @@ m, m+1, \ldots, n-1
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>[[0.5075053  0.99144578 0.29311582]
- [0.88151654 0.9555733  0.22665998]]
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>[[0.41108936 0.84816921 0.37831493]
+ [0.66188116 0.3177071  0.62854594]]
 A.size = 6
 A.shape = (2, 3)
 A.shape[0] = 2  (number of rows)
@@ -875,12 +884,12 @@ A.shape[1] = 3  (number of columns)
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>0 0 0.5075052995007603
-0 1 0.9914457785892692
-0 2 0.29311581886580385
-1 0 0.881516537940394
-1 1 0.955573296915215
-1 2 0.22665997669236482
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>0 0 0.4110893602999395
+0 1 0.8481692050257489
+0 2 0.378314930024258
+1 0 0.6618811631785446
+1 1 0.3177070967587593
+1 2 0.628545938305191
 </pre></div>
 </div>
 </div>
@@ -1267,9 +1276,9 @@ Element in first row = 1.0 &lt;class &#39;numpy.float64&#39;&gt;
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>[[0.76129343 0.89916661 0.64174928 0.3687933 ]
- [0.21506367 0.96178757 0.63461321 0.43008262]
- [0.38886835 0.32111157 0.55789419 0.1076841 ]]
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>[[0.29450221 0.52167551 0.15527899 0.36733927]
+ [0.00856161 0.0864905  0.36822072 0.91203836]
+ [0.3686966  0.3244773  0.15778119 0.29007593]]
 </pre></div>
 </div>
 </div>
@@ -1281,7 +1290,7 @@ Element in first row = 1.0 &lt;class &#39;numpy.float64&#39;&gt;
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>[0.76129343 0.89916661 0.64174928 0.3687933 ]
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>[0.29450221 0.52167551 0.15527899 0.36733927]
 </pre></div>
 </div>
 </div>
@@ -1293,7 +1302,7 @@ Element in first row = 1.0 &lt;class &#39;numpy.float64&#39;&gt;
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>[0.76129343 0.21506367 0.38886835]
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>[0.29450221 0.00856161 0.3686966 ]
 </pre></div>
 </div>
 </div>
@@ -1305,8 +1314,8 @@ Element in first row = 1.0 &lt;class &#39;numpy.float64&#39;&gt;
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>[[0.76129343 0.89916661 0.64174928]
- [0.21506367 0.96178757 0.63461321]]
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>[[0.29450221 0.52167551 0.15527899]
+ [0.00856161 0.0864905  0.36822072]]
 </pre></div>
 </div>
 </div>
@@ -1320,8 +1329,8 @@ Element in first row = 1.0 &lt;class &#39;numpy.float64&#39;&gt;
 </div>
 <div class="cell_output docutils container">
 <div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>[[0.         0.         0.         0.        ]
- [0.21506367 0.96178757 0.63461321 0.43008262]
- [0.38886835 0.32111157 0.55789419 0.1076841 ]]
+ [0.00856161 0.0864905  0.36822072 0.91203836]
+ [0.3686966  0.3244773  0.15778119 0.29007593]]
 </pre></div>
 </div>
 </div>
@@ -1543,7 +1552,20 @@ dot     =  28
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">A</span> <span class="o">=</span> <span class="mi">2</span><span class="o">*</span><span class="n">np</span><span class="o">.</span><span class="n">random</span><span class="o">.</span><span class="n">rand</span><span class="p">(</span><span class="mi">3</span><span class="p">,</span><span class="mi">3</span><span class="p">)</span> <span class="o">-</span> <span class="mi">1</span>
 <span class="nb">print</span><span class="p">(</span><span class="n">A</span><span class="p">)</span>
-<span class="nb">print</span><span class="p">(</span><span class="s1">&#39;min       = &#39;</span><span class="p">,</span><span class="n">np</span><span class="o">.</span><span class="n">min</span><span class="p">(</span><span class="n">A</span><span class="p">))</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>[[ 0.93774845 -0.62490362 -0.67370156]
+ [ 0.44407738 -0.24722729  0.2913612 ]
+ [ 0.67862452 -0.7727293   0.01704539]]
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="nb">print</span><span class="p">(</span><span class="s1">&#39;min       = &#39;</span><span class="p">,</span><span class="n">np</span><span class="o">.</span><span class="n">min</span><span class="p">(</span><span class="n">A</span><span class="p">))</span>
 <span class="nb">print</span><span class="p">(</span><span class="s1">&#39;max       = &#39;</span><span class="p">,</span><span class="n">np</span><span class="o">.</span><span class="n">max</span><span class="p">(</span><span class="n">A</span><span class="p">))</span>
 <span class="nb">print</span><span class="p">(</span><span class="s1">&#39;abs min   = &#39;</span><span class="p">,</span><span class="n">np</span><span class="o">.</span><span class="n">abs</span><span class="p">(</span><span class="n">A</span><span class="p">)</span><span class="o">.</span><span class="n">min</span><span class="p">())</span> <span class="c1"># np.min(np.abs(x))</span>
 <span class="nb">print</span><span class="p">(</span><span class="s1">&#39;abs max   = &#39;</span><span class="p">,</span><span class="n">np</span><span class="o">.</span><span class="n">abs</span><span class="p">(</span><span class="n">A</span><span class="p">)</span><span class="o">.</span><span class="n">max</span><span class="p">())</span> <span class="c1"># np.max(np.abs(x))</span>
@@ -1556,18 +1578,15 @@ dot     =  28
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>[[-0.04896876  0.19179626  0.50714973]
- [-0.85228118  0.98428168 -0.28386496]
- [-0.13496191 -0.77940328 -0.30026726]]
-min       =  -0.8522811836177107
-max       =  0.9842816780360499
-abs min   =  0.048968755501538785
-abs max   =  0.9842816780360499
-sum       =  -0.7165196847511637
-Frob norm =  1.6697311639911323
-L1 norm   =  1.9554812198801665
-L2 norm   =  1.4298547528091052
-Linf norm =  2.120427816884129
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>min       =  -0.7727293018853978
+max       =  0.937748446519449
+abs min   =  0.017045387698360726
+abs max   =  0.937748446519449
+sum       =  0.05029515859964895
+Frob norm =  1.7677387353526335
+L1 norm   =  2.0604503482856478
+L2 norm   =  1.6431125700165283
+Linf norm =  2.2363536283264307
 </pre></div>
 </div>
 </div>
@@ -1578,20 +1597,21 @@ Linf norm =  2.120427816884129
 <p>Let</p>
 <div class="math notranslate nohighlight">
 \[
-x, y \in \re^n, \qquad A \in \re^{n \times n}
+x \in \re^n, \qquad A \in \re^{m \times n}, \qquad y = A x \in \re^m
 \]</div>
-<p>To compute the matrix-vector product <span class="math notranslate nohighlight">\(y=Ax\)</span>, we can do it element-wise</p>
+<p>We can compute this element-wise</p>
 <div class="math notranslate nohighlight">
 \[
-y_i = \sum_{j=0}^{n-1} A_{ij} x_j, \qquad 0 \le i \le n-1
+y_i = \sum_{j=0}^{n-1} A_{ij} x_j, \qquad 0 \le i \le m-1
 \]</div>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">n</span> <span class="o">=</span> <span class="mi">10</span>
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">m</span><span class="p">,</span> <span class="n">n</span> <span class="o">=</span> <span class="mi">5</span><span class="p">,</span> <span class="mi">10</span>
 <span class="n">x</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">random</span><span class="o">.</span><span class="n">rand</span><span class="p">(</span><span class="n">n</span><span class="p">)</span>
-<span class="n">A</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">random</span><span class="o">.</span><span class="n">rand</span><span class="p">(</span><span class="n">n</span><span class="p">,</span><span class="n">n</span><span class="p">)</span>
-<span class="n">y</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">zeros</span><span class="p">(</span><span class="n">n</span><span class="p">)</span> <span class="c1"># Important to set to zero</span>
-<span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="n">n</span><span class="p">):</span>
+<span class="n">A</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">random</span><span class="o">.</span><span class="n">rand</span><span class="p">(</span><span class="n">m</span><span class="p">,</span><span class="n">n</span><span class="p">)</span>
+<span class="n">y</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">zeros</span><span class="p">(</span><span class="n">m</span><span class="p">)</span> <span class="c1"># Important to set to zero</span>
+<span class="k">assert</span> <span class="n">A</span><span class="o">.</span><span class="n">shape</span><span class="p">[</span><span class="mi">1</span><span class="p">]</span> <span class="o">==</span> <span class="nb">len</span><span class="p">(</span><span class="n">x</span><span class="p">)</span> <span class="ow">and</span> <span class="nb">len</span><span class="p">(</span><span class="n">y</span><span class="p">)</span> <span class="o">==</span> <span class="n">A</span><span class="o">.</span><span class="n">shape</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span>
+<span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="n">m</span><span class="p">):</span>
     <span class="k">for</span> <span class="n">j</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="n">n</span><span class="p">):</span>
         <span class="n">y</span><span class="p">[</span><span class="n">i</span><span class="p">]</span> <span class="o">+=</span> <span class="n">A</span><span class="p">[</span><span class="n">i</span><span class="p">,</span><span class="n">j</span><span class="p">]</span><span class="o">*</span><span class="n">x</span><span class="p">[</span><span class="n">j</span><span class="p">]</span>
 </pre></div>
@@ -1614,7 +1634,7 @@ y_i = \sum_{j=0}^{n-1} A_{ij} x_j, \qquad 0 \le i \le n-1
 <p>We can also compute the product column-wise. Let</p>
 <div class="math notranslate nohighlight">
 \[
-A_{:,j} = \textrm{j'th column of A}
+A_{:,j} = \textrm{j'th column of A} \in \re^m
 \]</div>
 <p>Then the matrix-vector product can also be written as</p>
 <div class="math notranslate nohighlight">
@@ -1653,6 +1673,7 @@ C_{ij} = \sum_{k=0}^{n-1} A_{ik} B_{kj}, \qquad 0 \le i \le m-1, \quad 0 \le j \
 <span class="n">A</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">random</span><span class="o">.</span><span class="n">rand</span><span class="p">(</span><span class="n">m</span><span class="p">,</span><span class="n">n</span><span class="p">)</span>
 <span class="n">B</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">random</span><span class="o">.</span><span class="n">rand</span><span class="p">(</span><span class="n">n</span><span class="p">,</span><span class="n">p</span><span class="p">)</span>
 <span class="n">C</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">zeros</span><span class="p">((</span><span class="n">m</span><span class="p">,</span><span class="n">p</span><span class="p">))</span>
+<span class="k">assert</span> <span class="n">A</span><span class="o">.</span><span class="n">shape</span><span class="p">[</span><span class="mi">1</span><span class="p">]</span> <span class="o">==</span> <span class="n">B</span><span class="o">.</span><span class="n">shape</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span>
 <span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="n">m</span><span class="p">):</span>
     <span class="k">for</span> <span class="n">j</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="n">p</span><span class="p">):</span>
         <span class="k">for</span> <span class="n">k</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="n">n</span><span class="p">):</span>
@@ -1661,7 +1682,12 @@ C_{ij} = \sum_{k=0}^{n-1} A_{ik} B_{kj}, \qquad 0 \le i \le m-1, \quad 0 \le j \
 </div>
 </div>
 </div>
-<p>Let us verify the result is correct by computing the Frobenius norm</p>
+<p>Let us verify the result is correct by computing</p>
+<div class="math notranslate nohighlight">
+\[
+|C-AB|_\infty = \max_{i,j} |C_{ij} - (AB)_{ij}|
+\]</div>
+<p>using <code class="docutils literal notranslate"><span class="pre">&#64;</span></code> operator</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="nb">print</span><span class="p">(</span><span class="n">np</span><span class="o">.</span><span class="n">abs</span><span class="p">(</span><span class="n">C</span> <span class="o">-</span> <span class="n">A</span><span class="nd">@B</span><span class="p">)</span><span class="o">.</span><span class="n">max</span><span class="p">())</span>
@@ -1702,7 +1728,17 @@ C_{ij} = (\textrm{i'th row of A}) \cdot (\textrm{j'th column of B})
 <p>Given <span class="math notranslate nohighlight">\(a \in \re^m\)</span> and <span class="math notranslate nohighlight">\(b \in \re^n\)</span>, both considered as column vectors, their outer product</p>
 <div class="math notranslate nohighlight">
 \[\begin{split}
-A = a b^\top = \begin{bmatrix} 
+A = a b^\top = 
+\begin{bmatrix} 
+| \\
+a \\
+|
+\end{bmatrix} 
+\begin{bmatrix}
+- b^\top -
+\end{bmatrix}
+=
+\begin{bmatrix} 
 |     &amp;  |    &amp;        &amp; | \\
 a b_0 &amp; a b_1 &amp; \ldots &amp; a b_{n-1} \\
 |     &amp;  |    &amp;        &amp; | 
@@ -1718,14 +1754,15 @@ A_{ij} = a_i b_j, \qquad 0 \le i \le m-1, \quad 0 \le j \le n-1
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">a</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">array</span><span class="p">([</span><span class="mi">1</span><span class="p">,</span><span class="mi">2</span><span class="p">,</span><span class="mi">3</span><span class="p">])</span>
 <span class="n">b</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">array</span><span class="p">([</span><span class="mi">1</span><span class="p">,</span><span class="mi">2</span><span class="p">])</span>
 <span class="n">A</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">outer</span><span class="p">(</span><span class="n">a</span><span class="p">,</span><span class="n">b</span><span class="p">)</span>
-<span class="nb">print</span><span class="p">(</span><span class="n">A</span><span class="o">.</span><span class="n">shape</span><span class="p">)</span>
-<span class="nb">print</span><span class="p">(</span><span class="n">A</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="s1">&#39;A.shape = &#39;</span><span class="p">,</span> <span class="n">A</span><span class="o">.</span><span class="n">shape</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="s1">&#39;A = </span><span class="se">\n</span><span class="s1">&#39;</span><span class="p">,</span> <span class="n">A</span><span class="p">)</span>
 </pre></div>
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>(3, 2)
-[[1 2]
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>A.shape =  (3, 2)
+A = 
+ [[1 2]
  [2 4]
  [3 6]]
 </pre></div>
@@ -1764,17 +1801,17 @@ y = [ 0.0000000e+00  1.0000000e+00  1.2246468e-16 -1.0000000e+00
 </div>
 <div class="cell_output docutils container">
 <div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>A =
- [[0.00147926 0.2261816  0.82556885 0.74242935 0.21462124]
- [0.24125749 0.54785061 0.0113233  0.32205721 0.04513169]
- [0.55162106 0.24597817 0.85623146 0.98825738 0.80936176]
- [0.5077604  0.52658186 0.80956508 0.5666205  0.27146706]
- [0.62850096 0.65680715 0.29979796 0.21333474 0.53848344]]
+ [[0.57967164 0.98869451 0.88841815 0.86019669 0.87549651]
+ [0.42601033 0.64026176 0.81545801 0.91653152 0.06720356]
+ [0.36085784 0.03052578 0.12679537 0.71809825 0.52168686]
+ [0.72881359 0.53460096 0.52467878 0.66738559 0.08505146]
+ [0.45397115 0.21072628 0.90679047 0.62179947 0.90331248]]
 Y =
- [[0.00147926 0.22425803 0.73493366 0.67607992 0.21297737]
- [0.23892388 0.52085362 0.01132305 0.31651867 0.04511638]
- [0.52406853 0.24350517 0.75537845 0.83506855 0.72384696]
- [0.48622142 0.5025812  0.72398723 0.53678377 0.26814506]
- [0.58793283 0.6105914  0.29532718 0.21172021 0.51283463]]
+ [[0.54774925 0.83530896 0.77607514 0.75797087 0.76786167]
+ [0.41324102 0.59740538 0.72803966 0.79349556 0.06715298]
+ [0.35307695 0.03052104 0.12645589 0.65795374 0.49834332]
+ [0.66598509 0.50949772 0.50093502 0.61893464 0.08494896]
+ [0.4385379  0.20917017 0.78752984 0.58249876 0.78538168]]
 </pre></div>
 </div>
 </div>
@@ -2011,9 +2048,9 @@ shape Y=  (4, 3)
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>[[0.40098591 0.49444805 0.86503748]
- [0.93447328 0.78802463 0.38338443]
- [0.99842242 0.34319277 0.28958959]]
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>[[0.29705114 0.11128848 0.74488823]
+ [0.38289021 0.3441734  0.9408736 ]
+ [0.07171821 0.9970439  0.88018262]]
 </pre></div>
 </div>
 </div>
@@ -2030,9 +2067,9 @@ shape Y=  (4, 3)
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>4.009859116858677242e-01 4.944480464676915821e-01 8.650374803348866992e-01
-9.344732808740876528e-01 7.880246301212699978e-01 3.833844340292695829e-01
-9.984224193315376361e-01 3.431927671059471496e-01 2.895895932791662242e-01
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>2.970511364367061091e-01 1.112884804164442354e-01 7.448882278389685752e-01
+3.828902113460344037e-01 3.441734022825998496e-01 9.408736037092526594e-01
+7.171821452252480356e-02 9.970438971703722286e-01 8.801826228634598293e-01
 </pre></div>
 </div>
 </div>
@@ -2119,7 +2156,7 @@ y = [2. 4. 6. 8.]
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>236 ms ± 2.4 ms per loop (mean ± std. dev. of 10 runs, 10 loops each)
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>237 ms ± 2.82 ms per loop (mean ± std. dev. of 10 runs, 10 loops each)
 </pre></div>
 </div>
 </div>
@@ -2133,7 +2170,7 @@ y = [2. 4. 6. 8.]
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>771 μs ± 27.3 μs per loop (mean ± std. dev. of 10 runs, 10 loops each)
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>866 μs ± 68.5 μs per loop (mean ± std. dev. of 10 runs, 10 loops each)
 </pre></div>
 </div>
 </div>
@@ -2207,12 +2244,12 @@ y = [2. 4. 6. 8.]
   </div>
   <nav class="bd-toc-nav page-toc">
     <ul class="visible nav section-nav flex-column">
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#d-arrays">1-d Arrays</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#d-arrays">1-d arrays</a></li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#linspace">linspace</a></li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#arange">arange</a></li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#beware-of-pitfalls-1">Beware of pitfalls - 1</a></li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#beware-of-pitfalls-2">Beware of pitfalls - 2</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#id1">2-d Arrays</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#id1">2-d arrays</a></li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#diagonal-matrix">Diagonal matrix</a></li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#empty-like-etc">empty_like, etc.</a></li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#d-array-is-neither-row-nor-column-vector">1-D array is neither row nor column vector</a></li>
