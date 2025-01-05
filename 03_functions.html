@@ -378,7 +378,7 @@
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#lambda-for-simple-functions">lambda: for simple functions</a></li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#variables-inside-functions-are-local">Variables inside functions are local</a></li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#beware-of-global-variables">Beware of global variables</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#functions-can-be-passed-as-arguments-to-other-functions">Functions can be passed as arguments to other functions</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#pass-a-function-as-argument-to-other-functions">Pass a function as argument to other functions</a></li>
 </ul>
             </nav>
         </div>
@@ -509,17 +509,18 @@ m = \min_{0 \le i \le n-1} x_i
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">x</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">random</span><span class="o">.</span><span class="n">rand</span><span class="p">(</span><span class="mi">10</span><span class="p">)</span>
 <span class="n">mval</span> <span class="o">=</span> <span class="n">minval</span><span class="p">(</span><span class="n">x</span><span class="p">)</span>
-<span class="nb">print</span><span class="p">(</span><span class="n">x</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="s1">&#39;x = </span><span class="se">\n</span><span class="s1">&#39;</span><span class="p">,</span> <span class="n">x</span><span class="p">)</span>
 <span class="nb">print</span><span class="p">(</span><span class="s1">&#39;Minimum = &#39;</span><span class="p">,</span><span class="n">mval</span><span class="p">)</span>
 <span class="nb">print</span><span class="p">(</span><span class="s1">&#39;Numpy   = &#39;</span><span class="p">,</span> <span class="n">x</span><span class="o">.</span><span class="n">min</span><span class="p">())</span>
 </pre></div>
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>[0.84278684 0.42048189 0.46521409 0.55018627 0.9550992  0.7748146
- 0.73879645 0.28154078 0.88497173 0.92230036]
-Minimum =  0.2815407761026262
-Numpy   =  0.2815407761026262
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>x = 
+ [0.70026426 0.11799043 0.03819973 0.89971182 0.18479672 0.31544066
+ 0.66223104 0.92609063 0.77007852 0.79046218]
+Minimum =  0.03819972852204845
+Numpy   =  0.03819972852204845
 </pre></div>
 </div>
 </div>
@@ -560,9 +561,9 @@ M = \max_{0 \le i \le n-1} x_i
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>[0.4277368  0.62624436 0.0851047  0.49055919 0.9702497 ]
-Minimum = 0.08510470127550984 0.08510470127550984
-Maximum = 0.9702497034557188 0.9702497034557188
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>[0.77052045 0.25633446 0.81180204 0.08874579 0.35502443]
+Minimum = 0.08874578982788117 0.08874578982788117
+Maximum = 0.811802038362315 0.811802038362315
 </pre></div>
 </div>
 </div>
@@ -675,7 +676,7 @@ Maximum = 0.9998741276738751
 </div>
 </div>
 </div>
-<p>The variable <code class="docutils literal notranslate"><span class="pre">p</span> <span class="pre">=</span> <span class="pre">1.234</span></code> is a global variable.</p>
+<p>The variable <code class="docutils literal notranslate"><span class="pre">p</span> <span class="pre">=</span> <span class="pre">1.234</span></code> which is declared outside the functions is a global variable.</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">fun4</span><span class="p">(</span><span class="mf">1.0</span><span class="p">)</span>
@@ -693,8 +694,8 @@ Maximum = 0.9998741276738751
 <p>The variable <code class="docutils literal notranslate"><span class="pre">p</span> <span class="pre">=</span> <span class="pre">1.0</span></code> is a local variable in <code class="docutils literal notranslate"><span class="pre">fun4</span></code>; this is ok, you can have a local and global variable of the same name, they have independent existence. But in <code class="docutils literal notranslate"><span class="pre">fun5</span></code>, the global variable <code class="docutils literal notranslate"><span class="pre">p</span> <span class="pre">=</span> <span class="pre">1.234</span></code> is used since there is no local variable of the same name. If you wanted to use the global variable, then it is fine, but if you forgot to declare <code class="docutils literal notranslate"><span class="pre">p</span></code> inside <code class="docutils literal notranslate"><span class="pre">fun5</span></code>, then you have a bug, and it can be difficult to detect.</p>
 <p>You have to be very careful with global variables. If you forget to declare some variable inside a function, and a global variable with the same name exists, then your program will run but likely give wrong answers. We should ideally never use global variables, but they are rampant in jupyter notebooks. To avoid global variables, you have to declare ALL variables inside functions and not declare anything in the global scope. It is good practice not to rely on global variables, but instead write <a class="reference external" href="https://en.wikipedia.org/wiki/Pure_function">pure functions</a>.</p>
 </section>
-<section id="functions-can-be-passed-as-arguments-to-other-functions">
-<h2>Functions can be passed as arguments to other functions<a class="headerlink" href="#functions-can-be-passed-as-arguments-to-other-functions" title="Link to this heading">#</a></h2>
+<section id="pass-a-function-as-argument-to-other-functions">
+<h2>Pass a function as argument to other functions<a class="headerlink" href="#pass-a-function-as-argument-to-other-functions" title="Link to this heading">#</a></h2>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="k">def</span> <span class="nf">sin</span><span class="p">(</span><span class="n">x</span><span class="p">):</span>
@@ -799,7 +800,7 @@ Maximum = 0.9998741276738751
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#lambda-for-simple-functions">lambda: for simple functions</a></li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#variables-inside-functions-are-local">Variables inside functions are local</a></li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#beware-of-global-variables">Beware of global variables</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#functions-can-be-passed-as-arguments-to-other-functions">Functions can be passed as arguments to other functions</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#pass-a-function-as-argument-to-other-functions">Pass a function as argument to other functions</a></li>
 </ul>
   </nav></div>
 

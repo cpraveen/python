@@ -799,7 +799,7 @@ g(1) = 129.72606342238427
 </div>
 </div>
 <div class="cell_output docutils container">
-<img alt="_images/c0c05e92f0890e65be9b69f454bf8fdb3e2172f7078879aed4a471199dc67cd2.svg" src="_images/c0c05e92f0890e65be9b69f454bf8fdb3e2172f7078879aed4a471199dc67cd2.svg" />
+<img alt="_images/4116d5452849d7724e9c3e6911f2ebb2f7aac47cb49510ef06f4dc406e8caf3d.svg" src="_images/4116d5452849d7724e9c3e6911f2ebb2f7aac47cb49510ef06f4dc406e8caf3d.svg" />
 </div>
 </div>
 </section>
@@ -810,7 +810,12 @@ g(1) = 129.72606342238427
 \[
 f''(x) \approx \frac{f(x-h) - 2 f(x) + f(x+h)}{h^2}
 \]</div>
-<p>We perform Taylor expansion around <span class="math notranslate nohighlight">\(x\)</span> to find the error in this approximation</p>
+<p>We perform Taylor expansion around <span class="math notranslate nohighlight">\(x\)</span> to find the error in this approximation: write</p>
+<div class="math notranslate nohighlight">
+\[
+f(x \pm h) = f(x) \pm h f'(x) + \frac{h^2}{2} f''(x) \pm \ldots
+\]</div>
+<p>and simplify the rhs. This can be done by sympy.</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">x</span><span class="p">,</span> <span class="n">h</span> <span class="o">=</span> <span class="n">symbols</span><span class="p">(</span><span class="s2">&quot;x,h&quot;</span><span class="p">)</span>
@@ -832,7 +837,7 @@ f''(x) \approx \frac{f(x-h) - 2 f(x) + f(x+h)}{h^2}
 <p>The leading error term is <span class="math notranslate nohighlight">\(O(h^2)\)</span></p>
 <div class="math notranslate nohighlight">
 \[
-\frac{f(x-h) - 2 f(x) + f(x+h)}{h^2} - f''(x) = \frac{h^2}{12} f^{(4)}(x) + \frac{h^4}{360} f^{(6)}(x) + O(h^6)
+\textrm{error} = \frac{f(x-h) - 2 f(x) + f(x+h)}{h^2} - f''(x) = \frac{h^2}{12} f^{(4)}(x) + \frac{h^4}{360} f^{(6)}(x) + O(h^6) = O(h^2)
 \]</div>
 <p>so that the formula is second order accurate.</p>
 </section>
