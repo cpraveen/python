@@ -409,11 +409,11 @@
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>[[0.87111821 0.31187189 0.73385661 0.72677295 0.07240477]
- [0.44226267 0.59105743 0.09242915 0.68903363 0.11738665]
- [0.78506291 0.96707229 0.91154786 0.90142869 0.43679561]
- [0.8422057  0.44554821 0.92483793 0.56105259 0.72655769]
- [0.18180581 0.95439448 0.02457123 0.35919562 0.99608076]]
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>[[0.33911584 0.33983027 0.18356471 0.49806757 0.87012815]
+ [0.13930144 0.28749137 0.06245455 0.07396226 0.82214739]
+ [0.4485826  0.10560218 0.48585983 0.29188189 0.14497399]
+ [0.1166754  0.27421038 0.69054981 0.73867287 0.20314372]
+ [0.39307696 0.0810385  0.23737933 0.09207158 0.82029455]]
 </pre></div>
 </div>
 </div>
@@ -444,7 +444,7 @@
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>[ 7.90123934  4.70416407 -2.73678701 -7.54381747 -2.67843186]
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>[ 0.06600506  0.23784019  1.1578897  -0.0960198   0.73928296]
 </pre></div>
 </div>
 </div>
@@ -457,8 +457,8 @@
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>[-8.88178420e-16 -8.88178420e-16 -2.16493490e-15 -2.01227923e-16
- -3.33066907e-16]
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>[0.00000000e+00 0.00000000e+00 0.00000000e+00 1.11022302e-16
+ 0.00000000e+00]
 </pre></div>
 </div>
 </div>
@@ -472,7 +472,7 @@
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>[ 7.90123934  4.70416407 -2.73678701 -7.54381747 -2.67843186]
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>[ 0.06600506  0.23784019  1.1578897  -0.0960198   0.73928296]
 </pre></div>
 </div>
 </div>
@@ -608,7 +608,7 @@ y = a + b x
 </div>
 </div>
 <div class="cell_output docutils container">
-<img alt="_images/4693c89e57a1ebfbed1f15bf22376ad922775258713a61c7924b06cdda8c82b8.svg" src="_images/4693c89e57a1ebfbed1f15bf22376ad922775258713a61c7924b06cdda8c82b8.svg" />
+<img alt="_images/b59a61865539f8edcf3bfc16e4da7a9169691088e70875084b2cfe256afec70c.svg" src="_images/b59a61865539f8edcf3bfc16e4da7a9169691088e70875084b2cfe256afec70c.svg" />
 </div>
 </div>
 <p>Define the function we want to fit. The first argument is the independent variable, and remaining are the parameters that we want to find.</p>
@@ -634,10 +634,10 @@ y = a + b x
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Fitted parameters =  1.0261373850198612 1.9635261663379917
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Fitted parameters =  0.9540986497218163 2.1018287305100385
 </pre></div>
 </div>
-<img alt="_images/398ca4fae8a1bc21525f415cd54400b68a4107fbd52035e0a85e19552ed958d5.svg" src="_images/398ca4fae8a1bc21525f415cd54400b68a4107fbd52035e0a85e19552ed958d5.svg" />
+<img alt="_images/bebea593eca0d7ec171e63b1daa0d4ad850ff56895788de39c619c637a13a8ef.svg" src="_images/bebea593eca0d7ec171e63b1daa0d4ad850ff56895788de39c619c637a13a8ef.svg" />
 </div>
 </div>
 <p>We can also use the <a class="reference external" href="https://numpy.org/doc/stable/reference/generated/numpy.polyfit.html">polyfit</a> function or <a class="reference external" href="https://numpy.org/doc/stable/reference/generated/numpy.polynomial.polynomial.Polynomial.fit.html#numpy.polynomial.polynomial.Polynomial.fit">fit</a> function from numpy to do this.</p>
@@ -649,7 +649,7 @@ y = a + b x
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Polynomial coefficients =  [1.96352617 1.02613739]
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Polynomial coefficients =  [2.10182873 0.95409865]
 </pre></div>
 </div>
 </div>
@@ -670,7 +670,7 @@ p(x) = c[0] * x^{deg} + c[1] * x^{deg-1} + \ldots + c[-1]
 </div>
 </div>
 <div class="cell_output docutils container">
-<img alt="_images/fdddcdccebdc874946e525076a34fbfd6006ee486d8c7fe26dbd8111f90471ea.svg" src="_images/fdddcdccebdc874946e525076a34fbfd6006ee486d8c7fe26dbd8111f90471ea.svg" />
+<img alt="_images/5c9a3a37f17eaf595d048d1ad5800d325d0eca091ca8737da4c3406a9367b027.svg" src="_images/5c9a3a37f17eaf595d048d1ad5800d325d0eca091ca8737da4c3406a9367b027.svg" />
 </div>
 </div>
 </section>
