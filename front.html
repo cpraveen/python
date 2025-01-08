@@ -375,6 +375,7 @@
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#run-on-your-own-computer-recommended">Run on your own computer (Recommended)</a></li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#binder-read-edit-run-the-notebooks">binder: Read/edit/run the notebooks</a></li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#colab-read-edit-run-the-notebooks">colab: Read/edit/run the notebooks</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#installing-python">Installing python</a></li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#other-resources">Other resources</a></li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#table-of-contents">Table of contents</a></li>
 </ul>
@@ -417,6 +418,21 @@ jupyter-lab
 <li><p><a class="reference external" href="http://colab.research.google.com/github/cpraveen/python/blob/master/06_scipy.ipynb">Scipy</a></p></li>
 </ul>
 <p>After importing into colab, you can edit and run the notebooks but the <strong>changes you make will not be saved</strong>. To save your changes, you must first make a copy of the notebook into your google drive by <code class="docutils literal notranslate"><span class="pre">File</span> <span class="pre">--&gt;</span> <span class="pre">Save</span> <span class="pre">a</span> <span class="pre">copy</span> <span class="pre">in</span> <span class="pre">drive</span></code>.</p>
+</section>
+<section id="installing-python">
+<h2>Installing python<a class="headerlink" href="#installing-python" title="Link to this heading">#</a></h2>
+<p>To install Python on windows, see <a class="reference external" href="https://learn.microsoft.com/en-us/windows/python/beginners">Python on Windows</a>. After you install Python, open PowerShell and install other modules using pip</p>
+<div class="highlight-shell notranslate"><div class="highlight"><pre><span></span>pip<span class="w"> </span>install<span class="w"> </span>numpy<span class="w"> </span>scipy<span class="w"> </span>sympy<span class="w"> </span>matplotlib<span class="w"> </span>jupyterlab
+</pre></div>
+</div>
+<p>On mac, I recommend using homebrew and then</p>
+<div class="highlight-shell notranslate"><div class="highlight"><pre><span></span>brew<span class="w"> </span>install<span class="w"> </span>miniforge
+conda<span class="w"> </span>update<span class="w"> </span>conda
+conda<span class="w"> </span>update<span class="w"> </span>--all
+conda<span class="w"> </span>install<span class="w"> </span>numpy<span class="w"> </span>scipy<span class="w"> </span>sympy<span class="w"> </span>matplotlib<span class="w"> </span>jupyterlab
+</pre></div>
+</div>
+<p>On Linux also, you can first install miniforge and then the other modules as above.</p>
 </section>
 <section id="other-resources">
 <h2>Other resources<a class="headerlink" href="#other-resources" title="Link to this heading">#</a></h2>
@@ -509,6 +525,7 @@ jupyter-lab
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#run-on-your-own-computer-recommended">Run on your own computer (Recommended)</a></li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#binder-read-edit-run-the-notebooks">binder: Read/edit/run the notebooks</a></li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#colab-read-edit-run-the-notebooks">colab: Read/edit/run the notebooks</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#installing-python">Installing python</a></li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#other-resources">Other resources</a></li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#table-of-contents">Table of contents</a></li>
 </ul>
