@@ -38,7 +38,9 @@ To install Python on windows, see [Python on Windows](https://learn.microsoft.co
 pip install numpy scipy sympy matplotlib jupyterlab
 ```
 
-On mac, I recommend using homebrew and then
+A better option on windows is to first install [wsl](https://learn.microsoft.com/en-us/windows/wsl/install) and then install python inside wsl.
+
+On mac, I recommend using [homebrew](https://www.brew.sh) and then
 
 ```shell
 brew install miniforge
@@ -47,7 +49,7 @@ conda update --all
 conda install numpy scipy sympy matplotlib jupyterlab
 ```
 
-On Linux also, you can first install miniforge and then the other modules as above.
+On Linux also, you can first install [miniforge](https://github.com/conda-forge/miniforge/releases) and then the other modules as above.
 
 ## Other resources
 
