@@ -30,6 +30,27 @@ or import the individual notebooks into colab using the following links
 
 After importing into colab, you can edit and run the notebooks but the **changes you make will not be saved**. To save your changes, you must first make a copy of the notebook into your google drive by `File --> Save a copy in drive`.
 
+## Installing python
+
+To install Python on windows, see [Python on Windows](https://learn.microsoft.com/en-us/windows/python/beginners). After you install Python, open PowerShell and install other modules using pip
+
+```shell
+pip install numpy scipy sympy matplotlib jupyterlab
+```
+
+A better option on windows is to first install [wsl](https://learn.microsoft.com/en-us/windows/wsl/install) and then install python inside wsl.
+
+On mac, I recommend using [homebrew](https://www.brew.sh) and then
+
+```shell
+brew install miniforge
+conda update conda
+conda update --all
+conda install numpy scipy sympy matplotlib jupyterlab
+```
+
+On Linux also, you can first install [miniforge](https://github.com/conda-forge/miniforge/releases) and then the other modules as above.
+
 ## Other resources
 
 * [Python tutorial](https://docs.python.org/tutorial)
