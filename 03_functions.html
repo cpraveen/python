@@ -392,8 +392,8 @@
                   
   <section class="tex2jax_ignore mathjax_ignore" id="functions">
 <h1>Functions<a class="headerlink" href="#functions" title="Link to this heading">#</a></h1>
-<p><span class="math notranslate nohighlight">\(\newcommand{\re}{\mathbb{R}}\)</span>
-A function is something which takes some input arguments and returns one or more output values. These are called <code class="docutils literal notranslate"><span class="pre">def</span></code> in Python, short for definition. They have following structure</p>
+<p><span class="math notranslate nohighlight">\(\newcommand{\re}{\mathbb{R}}\)</span></p>
+<p>A function is something which takes some input arguments and returns one or more output values. These are called <code class="docutils literal notranslate"><span class="pre">def</span></code> in Python, short for definition. They have following structure</p>
 <div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="k">def</span> <span class="nf">functionname</span><span class="p">(</span><span class="n">arg1</span><span class="p">,</span><span class="n">arg2</span><span class="p">,</span><span class="n">arg3</span><span class="p">):</span>
     <span class="n">DO</span> <span class="n">SOME</span> <span class="n">COMPUTATION</span>
     <span class="k">return</span> <span class="n">result</span>
@@ -481,7 +481,7 @@ z_i = x_i + y_i, \qquad 0 \le i \le n-1
 <div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">n</span> <span class="o">=</span> <span class="mi">5</span>
 <span class="n">x</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">ones</span><span class="p">(</span><span class="n">n</span><span class="p">)</span>
 <span class="n">y</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">ones</span><span class="p">(</span><span class="n">n</span><span class="o">+</span><span class="mi">1</span><span class="p">)</span>
-<span class="n">z</span> <span class="o">=</span> <span class="nb">sum</span><span class="p">(</span><span class="n">x</span><span class="p">,</span><span class="n">y</span><span class="p">)</span>
+<span class="n">z</span> <span class="o">=</span> <span class="n">sum2</span><span class="p">(</span><span class="n">x</span><span class="p">,</span><span class="n">y</span><span class="p">)</span>
 </pre></div>
 </div>
 </section>
@@ -517,10 +517,10 @@ m = \min_{0 \le i \le n-1} x_i
 </div>
 <div class="cell_output docutils container">
 <div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>x = 
- [0.70026426 0.11799043 0.03819973 0.89971182 0.18479672 0.31544066
- 0.66223104 0.92609063 0.77007852 0.79046218]
-Minimum =  0.03819972852204845
-Numpy   =  0.03819972852204845
+ [0.70507787 0.90448614 0.82896946 0.84375627 0.2748875  0.98969898
+ 0.69077271 0.60006227 0.82116189 0.45408038]
+Minimum =  0.2748874956474454
+Numpy   =  0.2748874956474454
 </pre></div>
 </div>
 </div>
@@ -561,9 +561,9 @@ M = \max_{0 \le i \le n-1} x_i
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>[0.77052045 0.25633446 0.81180204 0.08874579 0.35502443]
-Minimum = 0.08874578982788117 0.08874578982788117
-Maximum = 0.811802038362315 0.811802038362315
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>[0.05435853 0.43760101 0.82413884 0.85577178 0.70382578]
+Minimum = 0.0543585255636414 0.0543585255636414
+Maximum = 0.8557717785941638 0.8557717785941638
 </pre></div>
 </div>
 </div>
