@@ -16,33 +16,30 @@
     document.documentElement.dataset.mode = localStorage.getItem("mode") || "";
     document.documentElement.dataset.theme = localStorage.getItem("theme") || "";
   </script>
-  <!--
-    this give us a css class that will be invisible only if js is disabled
-  -->
-  <noscript>
-    <style>
-      .pst-js-only { display: none !important; }
-
-    </style>
-  </noscript>
   
   <!-- Loaded before other Sphinx assets -->
-  <link href="_static/styles/theme.css?digest=8878045cc6db502f8baf" rel="stylesheet" />
-<link href="_static/styles/pydata-sphinx-theme.css?digest=8878045cc6db502f8baf" rel="stylesheet" />
+  <link href="_static/styles/theme.css?digest=dfe6caa3a7d634c4db9b" rel="stylesheet" />
+<link href="_static/styles/bootstrap.css?digest=dfe6caa3a7d634c4db9b" rel="stylesheet" />
+<link href="_static/styles/pydata-sphinx-theme.css?digest=dfe6caa3a7d634c4db9b" rel="stylesheet" />
 
-    <link rel="stylesheet" type="text/css" href="_static/pygments.css?v=fa44fd50" />
-    <link rel="stylesheet" type="text/css" href="_static/styles/sphinx-book-theme.css?v=a3416100" />
+  
+  <link href="_static/vendor/fontawesome/6.5.2/css/all.min.css?digest=dfe6caa3a7d634c4db9b" rel="stylesheet" />
+  <link rel="preload" as="font" type="font/woff2" crossorigin href="_static/vendor/fontawesome/6.5.2/webfonts/fa-solid-900.woff2" />
+<link rel="preload" as="font" type="font/woff2" crossorigin href="_static/vendor/fontawesome/6.5.2/webfonts/fa-brands-400.woff2" />
+<link rel="preload" as="font" type="font/woff2" crossorigin href="_static/vendor/fontawesome/6.5.2/webfonts/fa-regular-400.woff2" />
+
+    <link rel="stylesheet" type="text/css" href="_static/pygments.css?v=03e43079" />
+    <link rel="stylesheet" type="text/css" href="_static/styles/sphinx-book-theme.css?v=eba8b062" />
     <link rel="stylesheet" type="text/css" href="_static/togglebutton.css?v=13237357" />
     <link rel="stylesheet" type="text/css" href="_static/copybutton.css?v=76b2166b" />
     <link rel="stylesheet" type="text/css" href="_static/mystnb.4510f1fc1dee50b3e5859aac5469c37c29e427902b24a333a5f9fcb2f0b3ac41.css?v=be8a1c11" />
     <link rel="stylesheet" type="text/css" href="_static/sphinx-thebe.css?v=4fa983c6" />
     <link rel="stylesheet" type="text/css" href="_static/sphinx-design.min.css?v=95c83b7e" />
   
-  <!-- So that users can add custom icons -->
-  <script src="_static/scripts/fontawesome.js?digest=8878045cc6db502f8baf"></script>
   <!-- Pre-loaded scripts that we'll load fully later -->
-  <link rel="preload" as="script" href="_static/scripts/bootstrap.js?digest=8878045cc6db502f8baf" />
-<link rel="preload" as="script" href="_static/scripts/pydata-sphinx-theme.js?digest=8878045cc6db502f8baf" />
+  <link rel="preload" as="script" href="_static/scripts/bootstrap.js?digest=dfe6caa3a7d634c4db9b" />
+<link rel="preload" as="script" href="_static/scripts/pydata-sphinx-theme.js?digest=dfe6caa3a7d634c4db9b" />
+  <script src="_static/vendor/fontawesome/6.5.2/js/all.min.js?digest=dfe6caa3a7d634c4db9b"></script>
 
     <script src="_static/documentation_options.js?v=9eb32ce0"></script>
     <script src="_static/doctools.js?v=9a2dae69"></script>
@@ -69,7 +66,6 @@
     <link rel="prev" title="Functions" href="03_functions.html" />
   <meta name="viewport" content="width=device-width, initial-scale=1"/>
   <meta name="docsearch:language" content="en"/>
-  <meta name="docsearch:version" content="" />
   </head>
   
   
@@ -85,8 +81,19 @@
     <i class="fa-solid fa-arrow-up"></i>Back to top</button>
 
   
-  <dialog id="pst-search-dialog">
-    
+  <input type="checkbox"
+          class="sidebar-toggle"
+          id="pst-primary-sidebar-checkbox"/>
+  <label class="overlay overlay-primary" for="pst-primary-sidebar-checkbox"></label>
+  
+  <input type="checkbox"
+          class="sidebar-toggle"
+          id="pst-secondary-sidebar-checkbox"/>
+  <label class="overlay overlay-secondary" for="pst-secondary-sidebar-checkbox"></label>
+  
+  <div class="search-button__wrapper">
+    <div class="search-button__overlay"></div>
+    <div class="search-button__search-container">
 <form class="bd-search d-flex align-items-center"
       action="search.html"
       method="get">
@@ -94,6 +101,7 @@
   <input type="search"
          class="form-control"
          name="q"
+         id="search-input"
          placeholder="Search this book..."
          aria-label="Search this book..."
          autocomplete="off"
@@ -101,8 +109,8 @@
          autocapitalize="off"
          spellcheck="false"/>
   <span class="search-button__kbd-shortcut"><kbd class="kbd-shortcut__modifier">Ctrl</kbd>+<kbd>K</kbd></span>
-</form>
-  </dialog>
+</form></div>
+  </div>
 
   <div class="pst-async-banner-revealer d-none">
   <aside id="bd-header-version-warning" class="d-none d-print-none" aria-label="Version warning"></aside>
@@ -118,8 +126,7 @@
       
       
       
-      <dialog id="pst-primary-sidebar-modal"></dialog>
-      <div id="pst-primary-sidebar" class="bd-sidebar-primary bd-sidebar">
+      <div class="bd-sidebar-primary bd-sidebar">
         
 
   
@@ -149,17 +156,21 @@
     
     
     <img src="_static/logo.png" class="logo__image only-light" alt="Python for Scientific Computing - Home"/>
-    <img src="_static/logo.png" class="logo__image only-dark pst-js-only" alt="Python for Scientific Computing - Home"/>
+    <script>document.write(`<img src="_static/logo.png" class="logo__image only-dark" alt="Python for Scientific Computing - Home"/>`);</script>
   
   
 </a></div>
         <div class="sidebar-primary-item">
 
-<button class="btn search-button-field search-button__button pst-js-only" title="Search" aria-label="Search" data-bs-placement="bottom" data-bs-toggle="tooltip">
- <i class="fa-solid fa-magnifying-glass"></i>
- <span class="search-button__default-text">Search</span>
- <span class="search-button__kbd-shortcut"><kbd class="kbd-shortcut__modifier">Ctrl</kbd>+<kbd class="kbd-shortcut__modifier">K</kbd></span>
-</button></div>
+ <script>
+ document.write(`
+   <button class="btn search-button-field search-button__button" title="Search" aria-label="Search" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <i class="fa-solid fa-magnifying-glass"></i>
+    <span class="search-button__default-text">Search</span>
+    <span class="search-button__kbd-shortcut"><kbd class="kbd-shortcut__modifier">Ctrl</kbd>+<kbd class="kbd-shortcut__modifier">K</kbd></span>
+   </button>
+ `);
+ </script></div>
         <div class="sidebar-primary-item"><nav class="bd-links bd-docs-nav" aria-label="Main">
     <div class="bd-toc-item navbar-nav active">
         
@@ -187,14 +198,9 @@
   
   
   <div class="sidebar-primary-items__end sidebar-primary__section">
-      <div class="sidebar-primary-item">
-<div id="ethical-ad-placement"
-      class="flat"
-      data-ea-publisher="readthedocs"
-      data-ea-type="readthedocs-sidebar"
-      data-ea-manual="true">
-</div></div>
   </div>
+  
+  <div id="rtd-footer-container"></div>
 
 
       </div>
@@ -338,16 +344,24 @@
 
 
 
-<button class="btn btn-sm nav-link pst-navbar-icon theme-switch-button pst-js-only" aria-label="Color mode" data-bs-title="Color mode"  data-bs-placement="bottom" data-bs-toggle="tooltip">
-  <i class="theme-switch fa-solid fa-sun                fa-lg" data-mode="light" title="Light"></i>
-  <i class="theme-switch fa-solid fa-moon               fa-lg" data-mode="dark"  title="Dark"></i>
-  <i class="theme-switch fa-solid fa-circle-half-stroke fa-lg" data-mode="auto"  title="System Settings"></i>
-</button>
+<script>
+document.write(`
+  <button class="btn btn-sm nav-link pst-navbar-icon theme-switch-button" title="light/dark" aria-label="light/dark" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <i class="theme-switch fa-solid fa-sun fa-lg" data-mode="light"></i>
+    <i class="theme-switch fa-solid fa-moon fa-lg" data-mode="dark"></i>
+    <i class="theme-switch fa-solid fa-circle-half-stroke fa-lg" data-mode="auto"></i>
+  </button>
+`);
+</script>
 
 
-<button class="btn btn-sm pst-navbar-icon search-button search-button__button pst-js-only" title="Search" aria-label="Search" data-bs-placement="bottom" data-bs-toggle="tooltip">
+<script>
+document.write(`
+  <button class="btn btn-sm pst-navbar-icon search-button search-button__button" title="Search" aria-label="Search" data-bs-placement="bottom" data-bs-toggle="tooltip">
     <i class="fa-solid fa-magnifying-glass fa-lg"></i>
-</button>
+  </button>
+`);
+</script>
 <button class="sidebar-toggle secondary-toggle btn btn-sm" title="Toggle secondary sidebar" data-bs-placement="bottom" data-bs-toggle="tooltip">
     <span class="fa-solid fa-list"></span>
 </button>
@@ -400,8 +414,8 @@
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="o">%</span><span class="k">config</span> InlineBackend.figure_format = &#39;svg&#39;
-<span class="kn">import</span> <span class="nn">numpy</span> <span class="k">as</span> <span class="nn">np</span>
-<span class="kn">import</span> <span class="nn">matplotlib.pyplot</span> <span class="k">as</span> <span class="nn">plt</span>
+<span class="kn">import</span><span class="w"> </span><span class="nn">numpy</span><span class="w"> </span><span class="k">as</span><span class="w"> </span><span class="nn">np</span>
+<span class="kn">import</span><span class="w"> </span><span class="nn">matplotlib.pyplot</span><span class="w"> </span><span class="k">as</span><span class="w"> </span><span class="nn">plt</span>
 </pre></div>
 </div>
 </div>
@@ -430,7 +444,7 @@ f(x) = x \sin(x) \sin(50 x)
 </div>
 </div>
 <div class="cell_output docutils container">
-<img alt="_images/d33ec67c29e1e678026a8726da6a0aeee0af13055b621f833576dc217b33e9a3.svg" src="_images/d33ec67c29e1e678026a8726da6a0aeee0af13055b621f833576dc217b33e9a3.svg" />
+<img alt="_images/b8941be6a1d3cb60f9c64957dbb7a942746f53583a6ca724fdecc5db5134b0af.svg" src="_images/b8941be6a1d3cb60f9c64957dbb7a942746f53583a6ca724fdecc5db5134b0af.svg" />
 </div>
 </div>
 </section>
@@ -454,7 +468,7 @@ f(x) = x \sin(x) \sin(50 x)
 </div>
 </div>
 <div class="cell_output docutils container">
-<img alt="_images/085e13619f2d6a8f7d32d97aa6e20d3ffefb3e79b239775f51903c0878b43e69.svg" src="_images/085e13619f2d6a8f7d32d97aa6e20d3ffefb3e79b239775f51903c0878b43e69.svg" />
+<img alt="_images/63bb6a591a95faa4b1c985c08ede114a1805335f93b3d9ebc27a7d816716e4aa.svg" src="_images/63bb6a591a95faa4b1c985c08ede114a1805335f93b3d9ebc27a7d816716e4aa.svg" />
 </div>
 </div>
 <p>The line colors are set to different values automatically, which is useful to distinguish the graphs.</p>
@@ -481,7 +495,7 @@ f(x) = x \sin(x) \sin(50 x)
 </div>
 </div>
 <div class="cell_output docutils container">
-<img alt="_images/445e5af6984c62bf6aab9c40936f372f6a5f720d48c3baa6dcf96f9d7c1a541c.svg" src="_images/445e5af6984c62bf6aab9c40936f372f6a5f720d48c3baa6dcf96f9d7c1a541c.svg" />
+<img alt="_images/5a5ac118d3a13a7a20ede95d40ae6be528d4c14ee72985b0d6494fdc67894b98.svg" src="_images/5a5ac118d3a13a7a20ede95d40ae6be528d4c14ee72985b0d6494fdc67894b98.svg" />
 </div>
 </div>
 <p>We can also specify parameters like this</p>
@@ -493,7 +507,7 @@ f(x) = x \sin(x) \sin(50 x)
 </div>
 </div>
 <div class="cell_output docutils container">
-<img alt="_images/984f158e278f6ad1d61a9b7bfe12841d697191af485af1e001740fa7b89b5f49.svg" src="_images/984f158e278f6ad1d61a9b7bfe12841d697191af485af1e001740fa7b89b5f49.svg" />
+<img alt="_images/853168cddc8667f6b432d14ef79c9dd2e46d4111cf2b5e6d20d8fdfa43308c8a.svg" src="_images/853168cddc8667f6b432d14ef79c9dd2e46d4111cf2b5e6d20d8fdfa43308c8a.svg" />
 </div>
 </div>
 </section>
@@ -518,7 +532,7 @@ f(x) = x \sin(x) \sin(50 x)
 </div>
 </div>
 <div class="cell_output docutils container">
-<img alt="_images/f3ecd4577a6e840ece6ac0a028c3abcf7727c58376c2d9afa55a158f8ea30071.svg" src="_images/f3ecd4577a6e840ece6ac0a028c3abcf7727c58376c2d9afa55a158f8ea30071.svg" />
+<img alt="_images/4a1f8bbcf06d4097c3764f8bc02f66b6157864a87031b3a60b36547b8bd62aaf.svg" src="_images/4a1f8bbcf06d4097c3764f8bc02f66b6157864a87031b3a60b36547b8bd62aaf.svg" />
 </div>
 </div>
 </section>
@@ -559,7 +573,7 @@ f(x) = x \sin(x) \sin(50 x)
 </div>
 </div>
 <div class="cell_output docutils container">
-<img alt="_images/0cbf41687217ab45f8b823294e33c8132818567bd6352c686aa743ffe7ef1b40.svg" src="_images/0cbf41687217ab45f8b823294e33c8132818567bd6352c686aa743ffe7ef1b40.svg" />
+<img alt="_images/b50c18ab3dac1080322e3f1faf4a6581738973ed67f0c930a092657ff28bbc23.svg" src="_images/b50c18ab3dac1080322e3f1faf4a6581738973ed67f0c930a092657ff28bbc23.svg" />
 </div>
 </div>
 </section>
@@ -580,7 +594,7 @@ y = \exp(x), \qquad x \in [-100,0]
 </div>
 </div>
 <div class="cell_output docutils container">
-<img alt="_images/95a7d8a06f35a0cd6b7ec1dbf86a5d0e922ff0e9bd4218badee6d0e4dad09b3f.svg" src="_images/95a7d8a06f35a0cd6b7ec1dbf86a5d0e922ff0e9bd4218badee6d0e4dad09b3f.svg" />
+<img alt="_images/6c3720df42495e32b2884a5b60db484f66243b6c1006a441ada54325ef9ce834.svg" src="_images/6c3720df42495e32b2884a5b60db484f66243b6c1006a441ada54325ef9ce834.svg" />
 </div>
 </div>
 <p>The y axis has very small to very large values and the usual linear scale plot does not show this variation properly. We next plot the y axis in log scale.</p>
@@ -592,7 +606,7 @@ y = \exp(x), \qquad x \in [-100,0]
 </div>
 </div>
 <div class="cell_output docutils container">
-<img alt="_images/2d7adaef76bc12c6598fdb1a4f6ff04d847d759c1b44a1159f43254a068e08cb.svg" src="_images/2d7adaef76bc12c6598fdb1a4f6ff04d847d759c1b44a1159f43254a068e08cb.svg" />
+<img alt="_images/706fe6c40f62b5f84dfb5ca3feeaebcecc0856598d13d183e328f4d38e414b62.svg" src="_images/706fe6c40f62b5f84dfb5ca3feeaebcecc0856598d13d183e328f4d38e414b62.svg" />
 </div>
 </div>
 <p>The linear curve clearly shows the exponential character of the function.</p>
@@ -614,7 +628,7 @@ y = x^{-2}, \qquad x \in [10^{-3}, 10^{-2}]
 </div>
 </div>
 <div class="cell_output docutils container">
-<img alt="_images/80d6759aac5e0b6ad060ede44adc683d11c6b1b37e08d812bd5c8e60fe05fa59.svg" src="_images/80d6759aac5e0b6ad060ede44adc683d11c6b1b37e08d812bd5c8e60fe05fa59.svg" />
+<img alt="_images/c79382285eaf453fa4c64eead2ea89b795a9402be8602d7b2b26c299fe07d1b3.svg" src="_images/c79382285eaf453fa4c64eead2ea89b795a9402be8602d7b2b26c299fe07d1b3.svg" />
 </div>
 </div>
 <p>The variations in both axes are too large, so we plot both axes in log scale.</p>
@@ -626,7 +640,7 @@ y = x^{-2}, \qquad x \in [10^{-3}, 10^{-2}]
 </div>
 </div>
 <div class="cell_output docutils container">
-<img alt="_images/8875a2c343371ee1b8951dddac6b112c34c4d994ece13e3bcc147f055eae8d99.svg" src="_images/8875a2c343371ee1b8951dddac6b112c34c4d994ece13e3bcc147f055eae8d99.svg" />
+<img alt="_images/a6044b34cfdf75b6a9645c9db06b3aa18d266e2cef91cd68011fa709254499d7.svg" src="_images/a6044b34cfdf75b6a9645c9db06b3aa18d266e2cef91cd68011fa709254499d7.svg" />
 </div>
 </div>
 </section>
@@ -643,7 +657,7 @@ y = x^{-2}, \qquad x \in [10^{-3}, 10^{-2}]
 </div>
 </div>
 <div class="cell_output docutils container">
-<img alt="_images/0f5c041180efabe04ce0065e3094794d07ebb012e41eb5f3d360becd598a324d.svg" src="_images/0f5c041180efabe04ce0065e3094794d07ebb012e41eb5f3d360becd598a324d.svg" />
+<img alt="_images/5d268d7ea5d3738a0b0c38a43c5458490de884994fc67196363265e93b9428d8.svg" src="_images/5d268d7ea5d3738a0b0c38a43c5458490de884994fc67196363265e93b9428d8.svg" />
 </div>
 </div>
 <div class="cell docutils container">
@@ -654,7 +668,7 @@ y = x^{-2}, \qquad x \in [10^{-3}, 10^{-2}]
 </div>
 </div>
 <div class="cell_output docutils container">
-<img alt="_images/add2da7420155e173c6d12b7203d866bd07e360939a967dc7a95166673e6902c.svg" src="_images/add2da7420155e173c6d12b7203d866bd07e360939a967dc7a95166673e6902c.svg" />
+<img alt="_images/623b6a8783e4d8fa90550c218ccb1e29a2a60acebad527ea27628b3d9bbade66.svg" src="_images/623b6a8783e4d8fa90550c218ccb1e29a2a60acebad527ea27628b3d9bbade66.svg" />
 </div>
 </div>
 </section>
@@ -674,7 +688,7 @@ y = x^{-2}, \qquad x \in [10^{-3}, 10^{-2}]
 </div>
 </div>
 <div class="cell_output docutils container">
-<img alt="_images/4a63478c6f452d258fe9777e90e93cbac14795b9275f30442a40c9d5ca342660.svg" src="_images/4a63478c6f452d258fe9777e90e93cbac14795b9275f30442a40c9d5ca342660.svg" />
+<img alt="_images/5efb9fc94687d916eb068fb0332a979ac319a84df9b2cdef5f001a8195fbba94.svg" src="_images/5efb9fc94687d916eb068fb0332a979ac319a84df9b2cdef5f001a8195fbba94.svg" />
 </div>
 </div>
 </section>
@@ -704,7 +718,7 @@ y = x^{-2}, \qquad x \in [10^{-3}, 10^{-2}]
 </div>
 </div>
 <div class="cell_output docutils container">
-<img alt="_images/cbfae018a9feb6813e8ca0ffb0608e9db60c57275e49f0b4dac285cb4bb385df.svg" src="_images/cbfae018a9feb6813e8ca0ffb0608e9db60c57275e49f0b4dac285cb4bb385df.svg" />
+<img alt="_images/5fe50745933193baff44ad11122e8465d35f58fb0a2036177d9f3e1c8ed0a4b5.svg" src="_images/5fe50745933193baff44ad11122e8465d35f58fb0a2036177d9f3e1c8ed0a4b5.svg" />
 </div>
 </div>
 </section>
@@ -731,7 +745,7 @@ y = x^{-2}, \qquad x \in [10^{-3}, 10^{-2}]
 </div>
 </div>
 <div class="cell_output docutils container">
-<img alt="_images/7f14f370f89eda26dc252a0321e1a1a8b6940c915588266e042c8e19a10f20c3.svg" src="_images/7f14f370f89eda26dc252a0321e1a1a8b6940c915588266e042c8e19a10f20c3.svg" />
+<img alt="_images/b401ade18993117c33ce8d8a36fc0f09516a72bc099b4584a5b743d5ae872428.svg" src="_images/b401ade18993117c33ce8d8a36fc0f09516a72bc099b4584a5b743d5ae872428.svg" />
 </div>
 </div>
 <p>There are many <a class="reference external" href="https://matplotlib.org/stable/users/explain/colors/colormaps.html">colormaps</a> available.</p>
@@ -761,7 +775,7 @@ y = x^{-2}, \qquad x \in [10^{-3}, 10^{-2}]
 </div>
 </div>
 <div class="cell_output docutils container">
-<img alt="_images/0906b241331ae35c00be3827236b28c5982b708fcd4d984b7eeceedf18b40b8c.svg" src="_images/0906b241331ae35c00be3827236b28c5982b708fcd4d984b7eeceedf18b40b8c.svg" />
+<img alt="_images/2cdb56c86980f13576186627fb1565c67bf2dd3e298f2cef2f74dd7a1ff4f074.svg" src="_images/2cdb56c86980f13576186627fb1565c67bf2dd3e298f2cef2f74dd7a1ff4f074.svg" />
 </div>
 </div>
 </section>
@@ -793,7 +807,7 @@ y = x^{-2}, \qquad x \in [10^{-3}, 10^{-2}]
 </div>
 </div>
 <div class="cell_output docutils container">
-<img alt="_images/587dcd9fe802e2efee72247b08928b08de9ad94ad6d5904e5dddab8764b4002e.svg" src="_images/587dcd9fe802e2efee72247b08928b08de9ad94ad6d5904e5dddab8764b4002e.svg" />
+<img alt="_images/64fab2ee52db8b38ded045a6ae3dedc46c6048f30d87797fe9ca0e96fff51df2.svg" src="_images/64fab2ee52db8b38ded045a6ae3dedc46c6048f30d87797fe9ca0e96fff51df2.svg" />
 </div>
 </div>
 <p>A <span class="math notranslate nohighlight">\(1 \times 2\)</span> matrix of plots.</p>
@@ -830,7 +844,7 @@ y = x^{-2}, \qquad x \in [10^{-3}, 10^{-2}]
 </div>
 </div>
 <div class="cell_output docutils container">
-<img alt="_images/d9afaec4a27b1d1532219141800c38e1e2bb2bcea5c84f004d7070ad2f368f29.svg" src="_images/d9afaec4a27b1d1532219141800c38e1e2bb2bcea5c84f004d7070ad2f368f29.svg" />
+<img alt="_images/8905f7de25ba4390f22219a5d868a60a0e3bce32281c4e4d336bb6d5e0081941.svg" src="_images/8905f7de25ba4390f22219a5d868a60a0e3bce32281c4e4d336bb6d5e0081941.svg" />
 </div>
 </div>
 <p>We can make a <span class="math notranslate nohighlight">\(2 \times 2\)</span> matrix of plots like this.</p>
@@ -885,7 +899,7 @@ y = x^{-2}, \qquad x \in [10^{-3}, 10^{-2}]
 </div>
 </div>
 <div class="cell_output docutils container">
-<img alt="_images/e25405418ab6dcfd3faf43735807287ec3934d725d8d0aee07af4e9af661e5c2.svg" src="_images/e25405418ab6dcfd3faf43735807287ec3934d725d8d0aee07af4e9af661e5c2.svg" />
+<img alt="_images/a1a6d18f3bcb8a4264153316abffcc0407a855d3c60ab132cca5029fd698036d.svg" src="_images/a1a6d18f3bcb8a4264153316abffcc0407a855d3c60ab132cca5029fd698036d.svg" />
 </div>
 </div>
 </section>
@@ -946,8 +960,7 @@ y = x^{-2}, \qquad x \in [10^{-3}, 10^{-2}]
             
             
               
-                <dialog id="pst-secondary-sidebar-modal"></dialog>
-                <div id="pst-secondary-sidebar" class="bd-sidebar-secondary bd-toc"><div class="sidebar-secondary-items sidebar-secondary__inner">
+                <div class="bd-sidebar-secondary bd-toc"><div class="sidebar-secondary-items sidebar-secondary__inner">
 
 
   <div class="sidebar-secondary-item">
@@ -1017,8 +1030,8 @@ By Praveen Chandrashekar
   </div>
   
   <!-- Scripts loaded after <body> so the DOM is not blocked -->
-  <script defer src="_static/scripts/bootstrap.js?digest=8878045cc6db502f8baf"></script>
-<script defer src="_static/scripts/pydata-sphinx-theme.js?digest=8878045cc6db502f8baf"></script>
+  <script src="_static/scripts/bootstrap.js?digest=dfe6caa3a7d634c4db9b"></script>
+<script src="_static/scripts/pydata-sphinx-theme.js?digest=dfe6caa3a7d634c4db9b"></script>
 
   <footer class="bd-footer">
   </footer>
